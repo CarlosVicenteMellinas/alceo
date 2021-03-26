@@ -83,7 +83,7 @@
 				<section class="wrapper style1">1
 					<div class="container">
 						<?php
-							$link = mysqli_connect('172.18.0.2', 'bdAdmin', 'C0nTr@s3ñ4', 'AlceoBD');
+							$link = mysqli_connect('172.18.0.2', 'dbAdmin', 'C0nTr@s3ñ4', 'AlceoBD');
 							if (!$link) {
 								die("Connection failed: " . mysqli_connect_error());
 							}
