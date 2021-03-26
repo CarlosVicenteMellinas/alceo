@@ -89,8 +89,10 @@
 									<div class="inner">
 									<?php
 										$link = mysqli_connect('172.18.0.2', 'dbAdmin', 'C0nTr@s3ñ4', 'AlceoBD');
-										echo "<h3>Hola que ase</h3>";
-										echo "<h2>0.00 €</h2>";
+										$query = mysqli_query($link, 'SELECT * FROM PLANES WHERE cod=4');
+										$results = mysqli_fetch_array($query);
+										echo "<h3>".$results["nombre"]."</h3>";
+										echo "<h2>".$results["precio"]." €</h2>";
 										mysqli_close($link);
 									?>
 										<p>Duis neque nisi, dapibus sed mattis et quis, nibh. Sed et dapibus nisl amet mattis, sed a rutrum accumsan sed. Suspendisse eu.</p>

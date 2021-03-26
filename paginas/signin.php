@@ -41,10 +41,26 @@
 				</section>
 
             <!-- Formulario Signin -->
-                
-                <div id="signin">
-
+                <div id="sigin">
+                    <h2>¡Crea tu cuenta!</h2>
+                    <form id="signinForm" action="../controllers/signinController.php" method="POST">
+                        <label for="nombre" >Nombre Completo: </label>
+                        <input type="text" id="nombre" name="nombre">
+                        <label for="nick" >Nombre de Usuario: </label>
+                        <input type="text" id="nick" name="nick">
+                        <label for="contrasena">Contraseña: </label>
+                        <input type="password" id="contrasena" name="contrasena">
+                        <label for="contrasena2">Vuelve a introducir la contraseña: </label>
+                        <input type="password" id="contrasena2" name="contrasena2">
+                        <label for="correo">Correo Electronico: </label>
+                        <input type="email" id="correo" name="correo">
+                        <label for="telefono">Telefono: </label>
+                        <input type="tel" id="telefono" name="telefono">
+                        <label for="plan">Plan</label>
+                        <input type="text" id="plan" name="plan">
+                    </form>
                 </div>
+                
 
 			<!-- Footer -->
             <div id="footer">
