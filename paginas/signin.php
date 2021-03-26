@@ -45,19 +45,19 @@
                     <h2>¡Crea tu cuenta!</h2>
                     <form id="signinForm" action="../controllers/signinController.php" method="POST">
                         <label for="nombre" >Nombre Completo: </label>
-                        <input type="text" id="nombre" name="nombre">
+                        <input type="text" id="nombre" name="nombre" required>
                         <label for="nick" >Nombre de Usuario: </label>
-                        <input type="text" id="nick" name="nick">
+                        <input type="text" id="nick" name="nick" required>
                         <label for="contrasena">Contraseña: </label>
-                        <input type="password" id="contrasena" name="contrasena">
+                        <input type="password" id="contrasena" name="contrasena" required>
                         <label for="contrasena2">Vuelve a introducir la contraseña: </label>
-                        <input type="password" id="contrasena2" name="contrasena2">
+                        <input type="password" id="contrasena2" name="contrasena2" required>
                         <label for="correo">Correo Electronico: </label>
-                        <input type="email" id="correo" name="correo">
+                        <input type="email" id="correo" name="correo" required>
                         <label for="telefono">Telefono: </label>
-                        <input type="tel" id="telefono" name="telefono">
+                        <input type="tel" id="telefono" name="telefono" required>
                         <label for="plan">Plan</label>
-                        <select id="plan">
+                        <select id="plan" required>
                             <option selected disabled>No seleccionado</option>
                             <?php 
                                 $link = mysqli_connect('172.18.0.2', 'dbAdmin', 'C0nTr@s3ñ4', 'AlceoBD');
