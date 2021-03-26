@@ -89,7 +89,6 @@
 							}
 							echo "Connected successfully";
 							mysqli_close($link);
-							?>
 						?>
 						<div class="row">
 							<section class="col-6 col-12-narrower">
