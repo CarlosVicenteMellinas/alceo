@@ -121,8 +121,10 @@
 									<div class="inner">
 									<?php
 										$link = mysqli_connect('172.18.0.2', 'dbAdmin', 'C0nTr@s3ñ4', 'AlceoBD');
-										echo "<h3>Hola que ase</h3>";
-										echo "<h2>0.00 €</h2>";
+										$query = mysqli_query($link, 'SELECT * FROM PLANES WHERE cod=2');
+										$results = mysqli_fetch_array($query);
+										echo "<h3>".$results["nombre"]."</h3>";
+										echo "<h2>".$results["precio"]." €</h2>";
 										mysqli_close($link);
 									?>
 										<p¿>Quieres ir mas allá? Guarda hasta 4 rutinas con tu seguimiento de pesos y publica tus propios artículos en nuestra sección de blog y comenta en ellos.</p>
@@ -135,8 +137,10 @@
 									<div class="inner">
 									<?php
 										$link = mysqli_connect('172.18.0.2', 'dbAdmin', 'C0nTr@s3ñ4', 'AlceoBD');
-										echo "<h3>Hola que ase</h3>";
-										echo "<h2>0.00 €</h2>";
+										$query = mysqli_query($link, 'SELECT * FROM PLANES WHERE cod=3');
+										$results = mysqli_fetch_array($query);
+										echo "<h3>".$results["nombre"]."</h3>";
+										echo "<h2>".$results["precio"]." €</h2>";
 										mysqli_close($link);
 									?>
 										<p>¿Eres un profesional del sector y te dedicas a ello? Guarda todas las rutinas que quieras, compartelas con otros usuarios individualizando la tabla de pesos y publica tus propios artículos en nuestra sección de blog y comenta en ellos.</p>
