@@ -80,8 +80,11 @@
 				</section>
 
 			<!-- Posts -->
-				<section class="wrapper style1">
+				<section class="wrapper style1">1
 					<div class="container">
+						<?php
+							$link = mysqli_connect('localhost', 'bdAdmin', 'C0nTr@s3ñ4', 'AlceoBD');
+						?>
 						<div class="row">
 							<section class="col-6 col-12-narrower">
 								<div class="box post">
