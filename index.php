@@ -82,20 +82,17 @@
 			<!-- Posts -->
 				<section class="wrapper style1">1
 					<div class="container">
-						<?php
-							$link = mysqli_connect('172.18.0.2', 'dbAdmin', 'C0nTr@s3ñ4', 'AlceoBD');
-							if (!$link) {
-								die("Connection failed: " . mysqli_connect_error());
-							}
-							echo "Connected successfully";
-							mysqli_close($link);
-						?>
 						<div class="row">
 							<section class="col-6 col-12-narrower">
 								<div class="box post">
 									<a href="#" class="image left"><img src="images/pic01.png" alt="" /></a>
 									<div class="inner">
-										<h3>Hola que ase</h3>
+									<?php
+										$link = mysqli_connect('172.18.0.2', 'dbAdmin', 'C0nTr@s3ñ4', 'AlceoBD');
+										echo "<h3>Hola que ase</h3>";
+										echo "<h2>0.00 €</h2>";
+										mysqli_close($link);
+									?>
 										<p>Duis neque nisi, dapibus sed mattis et quis, nibh. Sed et dapibus nisl amet mattis, sed a rutrum accumsan sed. Suspendisse eu.</p>
 									</div>
 								</div>
@@ -105,6 +102,7 @@
 									<a href="#" class="image left"><img src="images/pic01.png" alt="" /></a>
 									<div class="inner">
 										<h3>Plan básico</h3>
+										<h2>0.00 €</h2>
 										<p>Guarda una unica rutina, ideal para quien quiere probar nuestro sistema de creación de rutinas.</p>
 									</div>
 								</div>
@@ -116,6 +114,7 @@
 									<a href="#" class="image left"><img src="images/pic01.png" alt="" /></a>
 									<div class="inner">
 										<h3>Plan pro</h3>
+										<h2>0.00 €</h2>
 										<p¿>Quieres ir mas allá? Guarda hasta 4 rutinas con tu seguimiento de pesos y publica tus propios artículos en nuestra sección de blog y comenta en ellos.</p>
 									</div>
 								</div>
@@ -125,6 +124,7 @@
 									<a href="#" class="image left"><img src="images/pic01.png" alt="" /></a>
 									<div class="inner">
 										<h3>Plan Personal Trainer</h3>
+										<h2>0.00 €</h2>
 										<p>¿Eres un profesional del sector y te dedicas a ello? Guarda todas las rutinas que quieras, compartelas con otros usuarios individualizando la tabla de pesos y publica tus propios artículos en nuestra sección de blog y comenta en ellos.</p>
 									</div>
 								</div>
