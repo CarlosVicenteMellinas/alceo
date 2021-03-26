@@ -26,7 +26,7 @@ function validarNombre(nombreUsuario) {
 
 function comprobar() {
     if (validarNombre(nombre.textContent)) {
-        nombre.setCustomValidity('');
+        nombre.setCustomValidity('El nombre no es correcto');
     } else {
         nombre.setCustomValidity('El nombre no es correcto');
     }
