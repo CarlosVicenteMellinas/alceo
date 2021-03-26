@@ -18,12 +18,12 @@
 				<div id="header">
 
 					<!-- Logo -->
-						<a href="index.html" id="logo"><img src="./images/logo-alceo.png" width="9%"></a>
+						<a href="index.php" id="logo"><img src="./images/logo-alceo.png" width="9%"></a>
 
 					<!-- Nav -->
 						<nav id="nav">
 							<ul>
-								<li class="current"><a href="index.html">Home</a></li>
+								<li class="current"><a href="index.php">Home</a></li>
 								<li><a href="#">Comunidad</a></li></li>
 								<li><a href="/paginas/area-usuario.html">Área de usuario</a></li>
 								<li><a href="#">Contacto</a></li>
