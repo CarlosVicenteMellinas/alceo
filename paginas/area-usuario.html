@@ -39,6 +39,21 @@
 						<a href="#" class="button">Ir al generador</a>
 					</header>
 				</section>
+
+            <!-- Formulario Login -->
+                
+                <div id="loginSignin">
+                    <div id="login">
+                        <form id="loginForm" action="../controllers/loginController.php" method="POST">
+                            <label for="loginNombre">Usuario: </label>
+                            <input type="text" id="loginNombre" name="loginNombre">
+                            <label for="loginContrasena">Contraeña: </label>
+                            <input type="password" id="loginContrasena" name="loginContrasena">
+                            <input type="submit" id="loginButton" value="Iniciar Sesión">
+                        </form>
+                    </div>
+                </div>
+
 			<!-- Footer -->
             <div id="footer">
                 <div class="container">
@@ -101,8 +116,7 @@
                     </div>
 
             </div>
-
-    </div>
+        </div>
 		<!-- Scripts -->
 			<script src="assets/js/jquery.min.js"></script>
 			<script src="assets/js/jquery.dropotron.min.js"></script>
