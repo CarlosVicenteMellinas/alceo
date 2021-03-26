@@ -40,24 +40,12 @@
 					</header>
 				</section>
 
-            <!-- Formulario Login -->
+            <!-- Formulario Signin -->
                 
-                <div id="loginSignin">
-                    <div id="login">
-                        <form id="loginForm" action="../controllers/loginController.php" method="POST">
-                            <label for="loginNombre">Usuario: </label>
-                            <input type="text" id="loginNombre" name="loginNombre">
-                            <label for="loginContrasena">Contraseña: </label>
-                            <input type="password" id="loginContrasena" name="loginContrasena">
-                            <input type="submit" id="loginButton" value="Iniciar Sesión">
-                        </form>
-                    </div>
-                    <div id="signin">
-                        <form id="signin" action="signin.php" method="POST">
-                            <input type="submit" id="signinButton" value="Crear cuenta">
-                        </form>
-                    </div>
+                <div id="signin">
+
                 </div>
+
 			<!-- Footer -->
             <div id="footer">
                 <div class="container">
