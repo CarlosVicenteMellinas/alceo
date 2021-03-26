@@ -80,7 +80,7 @@
 				</section>
 
 			<!-- Posts -->
-				<section class="wrapper style1">1
+				<section class="wrapper style1">
 					<div class="container">
 						<div class="row">
 							<section class="col-6 col-12-narrower">
@@ -101,8 +101,13 @@
 								<div class="box post">
 									<a href="#" class="image left"><img src="images/pic01.png" alt="" /></a>
 									<div class="inner">
-										<h3>Plan básico</h3>
-										<h2>0.00 €</h2>
+									<?php
+										$link = mysqli_connect('172.18.0.2', 'dbAdmin', 'C0nTr@s3ñ4', 'AlceoBD');
+										$nombre = $link->query('SELECT nombre FROM PLANES WHERE cod=1');
+										echo "<h3>$nombre</h3>";
+										echo "<h2>0.00 €</h2>";
+										mysqli_close($link);
+									?>
 										<p>Guarda una unica rutina, ideal para quien quiere probar nuestro sistema de creación de rutinas.</p>
 									</div>
 								</div>
@@ -113,8 +118,12 @@
 								<div class="box post">
 									<a href="#" class="image left"><img src="images/pic01.png" alt="" /></a>
 									<div class="inner">
-										<h3>Plan pro</h3>
-										<h2>0.00 €</h2>
+									<?php
+										$link = mysqli_connect('172.18.0.2', 'dbAdmin', 'C0nTr@s3ñ4', 'AlceoBD');
+										echo "<h3>Hola que ase</h3>";
+										echo "<h2>0.00 €</h2>";
+										mysqli_close($link);
+									?>
 										<p¿>Quieres ir mas allá? Guarda hasta 4 rutinas con tu seguimiento de pesos y publica tus propios artículos en nuestra sección de blog y comenta en ellos.</p>
 									</div>
 								</div>
@@ -123,8 +132,12 @@
 								<div class="box post">
 									<a href="#" class="image left"><img src="images/pic01.png" alt="" /></a>
 									<div class="inner">
-										<h3>Plan Personal Trainer</h3>
-										<h2>0.00 €</h2>
+									<?php
+										$link = mysqli_connect('172.18.0.2', 'dbAdmin', 'C0nTr@s3ñ4', 'AlceoBD');
+										echo "<h3>Hola que ase</h3>";
+										echo "<h2>0.00 €</h2>";
+										mysqli_close($link);
+									?>
 										<p>¿Eres un profesional del sector y te dedicas a ello? Guarda todas las rutinas que quieras, compartelas con otros usuarios individualizando la tabla de pesos y publica tus propios artículos en nuestra sección de blog y comenta en ellos.</p>
 									</div>
 								</div>
