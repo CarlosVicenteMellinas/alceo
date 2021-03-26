@@ -103,8 +103,8 @@
 									<div class="inner">
 									<?php
 										$link = mysqli_connect('172.18.0.2', 'dbAdmin', 'C0nTr@s3ñ4', 'AlceoBD');
-										echo $nombre = mysqli_query($link, 'SELECT nombre FROM PLANES WHERE cod=1');
-										echo "<h3>$nombre</h3>";
+										$nombre = mysqli_query($link, 'SELECT nombre FROM PLANES WHERE cod=1');
+										echo "<h3>Plan Estandar</h3>";
 										echo "<h2>0.00 €</h2>";
 										mysqli_close($link);
 									?>
