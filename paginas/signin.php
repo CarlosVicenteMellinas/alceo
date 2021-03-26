@@ -57,7 +57,7 @@
                         <label for="telefono">Telefono: </label>
                         <input type="tel" id="telefono" name="telefono" required>
                         <label for="plan">Plan</label>
-                        <select id="plan" required>
+                        <select id="plan" name="plan" required>
                             <option selected disabled>No seleccionado</option>
                             <?php 
                                 $link = mysqli_connect('172.18.0.2', 'dbAdmin', 'C0nTr@s3ñ4', 'AlceoBD');
