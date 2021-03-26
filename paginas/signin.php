@@ -59,11 +59,16 @@
                         <label for="plan">Plan</label>
                         <select id="plan">
                             <option selected disabled>No seleccionado</option>
-                            <option>Plan Gratuito</option>
-                            <option>Plan Estandar</option>
-                            <option>Plan Premium</option>
-                            <option>Plan Personal Trainer</option>
+                            <?php 
+                                $link = mysqli_connect('172.18.0.2', 'dbAdmin', 'C0nTr@s3ñ4', 'AlceoBD');
+                                $query = mysqli_query($link, 'SELECT * FROM PLANES');
+                                while ($results = mysqli_fetch_array($query)) {
+                                    echo '<option>'.$results["nombre"].'</option>';
+                                }
+                                mysqli_close($link);
+                            ?>
                         </select>
+                        <br><br>
                         <input type="submit" id="enviar" value="Crear cuenta">
                     </form>
                 </div>
