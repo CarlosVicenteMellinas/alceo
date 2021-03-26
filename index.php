@@ -84,6 +84,12 @@
 					<div class="container">
 						<?php
 							$link = mysqli_connect('localhost', 'bdAdmin', 'C0nTr@s3ñ4', 'AlceoBD');
+							if (!$link) {
+								die("Connection failed: " . mysqli_connect_error());
+							}
+							echo "Connected successfully";
+							mysqli_close($link);
+							?>
 						?>
 						<div class="row">
 							<section class="col-6 col-12-narrower">
