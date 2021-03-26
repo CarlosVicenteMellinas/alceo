@@ -57,7 +57,14 @@
                         <label for="telefono">Telefono: </label>
                         <input type="tel" id="telefono" name="telefono">
                         <label for="plan">Plan</label>
-                        <input type="text" id="plan" name="plan">
+                        <select id="plan">
+                            <option selected disabled>No seleccionado</option>
+                            <option>Plan Gratuito</option>
+                            <option>Plan Estandar</option>
+                            <option>Plan Premium</option>
+                            <option>Plan Personal Trainer</option>
+                        </select>
+                        <input type="submit" id="enviar" value="Crear cuenta">
                     </form>
                 </div>
                 
