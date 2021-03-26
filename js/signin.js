@@ -21,15 +21,26 @@ function inicializarVar() {
 }
 
 function validarNombre(nombreUsuario) {
-    console.log("Funciona");
+    return nombreUsuario.lenght =! 0;
 }
 
-function validar() {
-    validarNombre(nombre.textContent);
+function comprobar() {
+    if (validarNombre(nombre.textContent)) {
+        nombre.setCustomValidity('');
+    } else {
+        nombre.setCustomValidity('El nombre no es correcto');
+    }
+}
+
+function enviar() {
+    comprobar();
+    if (form.checkValidity()) {
+        form.submit();
+    }
 }
 
 $(document).ready(() => {
     inicializarVar();
-    form.onsubmit(validar);
+    boton.onclick = enviar;
 
 });
