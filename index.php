@@ -105,8 +105,8 @@
 										$link = mysqli_connect('172.18.0.2', 'dbAdmin', 'C0nTr@s3ñ4', 'AlceoBD');
 										$query = mysqli_query($link, 'SELECT * FROM PLANES WHERE cod=1');
 										$results = mysqli_fetch_array($query);
-										echo "<h3>$results->nombre</h3>";
-										echo "<h2>$results->precio €</h2>";
+										echo "<h3>".$results["nombre"]."</h3>";
+										echo "<h2>".$results["precio"]." €</h2>";
 										mysqli_close($link);
 									?>
 										<p>Guarda una unica rutina, ideal para quien quiere probar nuestro sistema de creación de rutinas.</p>
