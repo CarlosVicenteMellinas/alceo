@@ -45,8 +45,15 @@ function iniciarSesion($usuario) {
     header("Location: ../paginas/area-usuario.php");
 }
 
+function cerrarSesion() {
+    session_start();
+    session_destroy();
+}
+
 if (!empty($_POST['loginNombre']) && !empty($_POST['loginContrasena'])) {
     comprobarCredenciales();
+} else if (!empty($_POST['cerrarSesion'])) {
+    cerrarSesion();
 } else {
     echo 'Pagina de error';
 }
