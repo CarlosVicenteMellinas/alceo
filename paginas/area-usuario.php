@@ -42,7 +42,7 @@
 
             <!-- Formulario Login -->
                 <?php if(!empty($_SESSION['usuario'])) {
-                    echo '<h1>Tamoh logueado: '.$_SESSION['usuario'].'</h1>'
+                    echo '<h1>Tamoh logueado: '.$_SESSION['usuario'].'</h1>';
                 }
                 ?>
                 <div id="loginSignin">
