@@ -1,7 +1,15 @@
 <?php
 
-if (!empty($_POST['usuario']) && !empty($_POST['contasena'])) {
-    comprobarDatos();
+function comprobarCredenciales() {
+    iniciarSesion();
+}
+
+function iniciarSesion() {
+    echo 'Funciona';
+}
+
+if (!empty($_POST['loginNombre']) && !empty($_POST['loginContrasena'])) {
+    comprobarCredenciales();
 } else {
     echo 'Pagina de error';
 }
