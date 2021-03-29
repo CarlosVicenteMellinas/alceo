@@ -29,7 +29,7 @@
 						<nav id="nav">
 							<ul>
 								<li class="current"><a href="../index.php">Home</a></li>
-                                <li class="current"><a href="index.php">Admin Home</a></li>
+                                <li><a href="index.php">Admin Home</a></li>
 								<li><a href="#">Comunidad</a></li></li>
 								<li><a href="ejercicios.php">Ejercicios</a></li>
 								<li><a href="#">Grupos Musculares</a></li>
@@ -48,6 +48,26 @@
             <!-- Creacion -->
                 <div>
                     <h2>Ejercicios</h2>
+                    <div id="insert">
+                        <form id="insertForm" action="../controllers/ejercicioController.php" method="POST">
+                            <label for="nombre">Nombre: </label>
+                            <input type="text" id="nombre" name="nombre" required>
+                            <?php if (!empty($nombreError)) {echo '<p class="error">'.$nombreError.'</p>';}?>
+
+                            <label for="dificultad">Dificultad: </label>
+                            <input type="number" min="1" max="5" id="dificultad" name="dificultad" required>
+                            
+                            <label for="foto">Foto: </label>
+                            <input type="text" id="foto" name="foto">
+                            <?php if (!empty($fotoError)) {echo '<p class="error">'.$nombreError.'</p>';}?>
+
+                            <label for="video">Video: </label>
+                            <input type="text" id="video" name="video">
+                            <?php if (!empty($videoError)) {echo '<p class="error">'.$nombreError.'</p>';}?>
+
+                            <input type="submit" id="loginButton" value="Iniciar Sesión">
+                        </form>
+                    </div>
                 </div>
 
             <!-- Modificacion -->
