@@ -2074,6 +2074,10 @@ input, select, textarea {
 		line-height: 1em;
 	}
 
+	option > select {
+		border-bottom: 1px solid #699f76;
+	}
+
 	label {
 		display: block;
 		color: inherit;
