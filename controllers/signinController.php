@@ -75,6 +75,15 @@ function validarCorreo($link) {
         include '../paginas/signin.php';
     }
 
+    $query = mysqli_query($link, 'SELECT * FROM USUARIO WHERE correo="'.$correo.'" ');
+    $results = mysqli_fetch_array($query);
+    if ($results > 0) {
+        mysqli_close($link);
+        $valido = false;
+        $emailError = 'El correo ya esta registrado';
+        include '../paginas/signin.php';
+    }
+
     return $valido;
 }
 
