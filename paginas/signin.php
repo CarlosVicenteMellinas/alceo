@@ -46,6 +46,8 @@
                     <form id="signinForm" action="../controllers/signinController.php" method="POST">
                         <label for="nombre" >Nombre Completo: </label>
                         <input type="text" id="nombre" name="nombre" required>
+                        <?php if (!empty($nombreError)) {echo '<p class="error">'.$nombreError.'</p>';} ?>
+
                         <label for="nick" >Nombre de Usuario: </label>
                         <input type="text" id="nick" name="nick" required>
                         <?php if (!empty($nickError)) {echo '<p class="error">'.$nickError.'</p>';} ?>

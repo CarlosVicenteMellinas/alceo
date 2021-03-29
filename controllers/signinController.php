@@ -1,5 +1,19 @@
 <?php
 
+function validarNombre($link) {
+    $nombre = limpiarDatos($_POST['nombre']);
+    $valido = true;
+
+    if (strlen($nombre) > 200) {
+        mysqli_close($link);
+        $valido = false;
+        $nombreError = 'El nombre no puede tener una longitud superior a 200 caracteres';
+        include '../paginas/signin.php';
+    }
+
+    return $valido;
+}
+
 function validarNick($link) {
     $nick = limpiarDatos($_POST['nick']);
     $valido = true;
@@ -30,6 +44,13 @@ function validarContrasena($link) {
         mysqli_close($link);
         $valido = false;
         $contasenaError = 'La contraseña debe de tener una longitud superior a 8 caracteres';
+        include '../paginas/signin.php';
+    }
+
+    if (strlen($contrasena1) > 200) {
+        mysqli_close($link);
+        $valido = false;
+        $contasenaError = 'El nombre no puede tener una longitud superior a 200 caracteres';
         include '../paginas/signin.php';
     }
 
@@ -96,7 +117,7 @@ function limpiarDatos($data) {
 
 function comprobarDatos() {
     $link = mysqli_connect('172.18.0.2', 'dbAdmin', 'C0nTr@s3ñ4', 'AlceoBD');
-    if (validarNick($link) && validarContrasena($link) && validarCorreo($link)) {
+    if (validarNombre($link) && validarNick($link) && validarContrasena($link) && validarCorreo($link)) {
         crearUsuario();
     }
 }
