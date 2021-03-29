@@ -52,7 +52,14 @@ function validarContrasena($link) {
         $valido = false;
         $contasenaError = 'La contraseña debe de tener al menos un caracter numérico';
         include '../paginas/signin.php';
-     }
+    }
+
+    if ($contrasena2 !== $contrasena1) {
+        mysqli_close($link);
+        $valido = false;
+        $contasenaError = 'Las contraseñas no coinciden';
+        include '../paginas/signin.php';
+    }
 
     return $valido;
 }
