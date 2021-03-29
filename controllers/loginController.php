@@ -28,7 +28,7 @@ function comprobarCredenciales() {
     if ($results['contrasenya'] !== $contrasena) {
         mysqli_close($link);
         $valido = false;
-        $contrasenaError = 'La contraseña no es correcta';
+        $contrasenaError = 'La contraseña no es correcta: '.$contrasena;
         include '../paginas/area-usuario.php';
     }
 
