@@ -64,7 +64,7 @@
                             <label for="video">Video: </label>
                             <input type="file" id="video" name="video">
                             <?php if (!empty($videoError)) {echo '<p class="error">'.$nombreError.'</p>';}?>
-
+                            <br><br>
                             <input type="submit" id="crearEjercicio" value="Crear Ejercicio">
                         </form>
                     </div>
