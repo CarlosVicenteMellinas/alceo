@@ -24,11 +24,38 @@ function validarNombre(nombreUsuario) {
     return nombreUsuario.lenght =! 0;
 }
 
+function validarNick(nick) {
+    return nick.lenght =! 0;
+}
+
+function validarContrasena(pass) {
+    return pass.lenght =! 0;
+}
+
+function validarContrasenas(pass1, pass2) {
+    return pass1 === pass2;
+}  
+
 function comprobar() {
     if (validarNombre(nombre.textContent)) {
         nombre.setCustomValidity('');
     } else {
         nombre.setCustomValidity('El nombre no es correcto');
+    }
+    if (validarNick(nick.textContent)) {
+        nombre.setCustomValidity('');
+    } else {
+        nombre.setCustomValidity('El nickname no es correcto');
+    }
+    if (validarContrasena(contrasena.textContent)) {
+        nombre.setCustomValidity('');
+    } else {
+        nombre.setCustomValidity('La contaseña no es válida');
+    }
+    if (validarContrasenas(contrasena.textContent, contrasena2.textContent)) {
+        nombre.setCustomValidity('');
+    } else {
+        nombre.setCustomValidity('Las contraseñas no coinciden');
     }
 }
 
