@@ -13,6 +13,8 @@ function validarNick($link) {
         mysqli_close($link);
         $nickError = 'El nick no esta disponible';
         include '../paginas/signin.php';
+    } else {
+        echo '<p>Casi crack</p>';
     }
 }
 
