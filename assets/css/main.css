@@ -183,10 +183,10 @@ input, select, textarea {
 		padding: 1em 0 1em 2em;
 	}
 
-	#loginSignin {
+	#loginSignin, #signinForm {
 		padding: 30px 0px 30px 0px;
 		width: 80% !important;
-		text-align: center;
+		text-align: left;
 		margin: auto;
 	}
 
@@ -2016,6 +2016,8 @@ input, select, textarea {
 	input[type="text"],
 	input[type="password"],
 	input[type="email"],
+	input[type="tel"]
+	select
 	textarea {
 		-moz-appearance: none;
 		-webkit-appearance: none;

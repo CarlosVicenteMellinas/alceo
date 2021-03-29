@@ -43,8 +43,9 @@
             <!-- Formulario Signin -->
                 <div id="sigin">
                     <h2>¡Crea tu cuenta!</h2>
-                    <form id="signinForm" action="../controllers/signinController.php" method="POST">
-                        <label for="nombre" >Nombre Completo: </label>
+                    <form id="signinForm" action="../controllers/signinController.php" method="POST" style="width: 80%">
+                    <p>pene</p>    
+                    <label for="nombre" >Nombre Completo: </label>
                         <input type="text" id="nombre" name="nombre" required>
                         <?php if (!empty($nombreError)) {echo '<p class="error">'.$nombreError.'</p>';} ?>
 
