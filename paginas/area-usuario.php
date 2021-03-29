@@ -49,6 +49,7 @@
                     </form>
             <?php }  
             else { ?>
+            <!-- Formulario Inicio Sesion -->
                 <div id="loginSignin">
                     <div id="login">
                         <form id="loginForm" action="../controllers/loginController.php" method="POST">
