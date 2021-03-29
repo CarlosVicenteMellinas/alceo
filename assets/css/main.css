@@ -2993,6 +2993,12 @@ input, select, textarea {
 					font-size: 1.25em;
 				}
 
+				.tituloForm {
+					font-size: 30px !important;
+					text-align: center !important;
+					padding-top: 20px;
+				}
+
 		/* Box */
 
 			.box.highlight {
