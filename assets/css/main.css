@@ -196,11 +196,8 @@ input, select, textarea {
 		text-align: left;
 		margin: auto;
 	}
-
-	#cerrarSesion {
-		width: 60% !important;
-	}
-	input#loginButton, input#signinButton {
+	
+	input#loginButton, input#signinButton, #cerrarSesion {
 		margin-top: 20px;
 		display: inline;
 	}
