@@ -29,6 +29,7 @@
 						<nav id="nav">
 							<ul>
 								<li class="current"><a href="../index.php">Home</a></li>
+                                <li class="current"><a href="index.php">Admin Home</a></li>
 								<li><a href="#">Comunidad</a></li></li>
 								<li><a href="ejercicios.php">Ejercicios</a></li>
 								<li><a href="#">Grupos Musculares</a></li>
