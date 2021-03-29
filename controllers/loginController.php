@@ -42,7 +42,7 @@ function iniciarSesion($usuario) {
     session_start();
     session_regenerate_id();
     $_SESSION['usuario'] = $usuario;
-    header("Location: ../paginas/area-usuario.html");
+    header("Location: ../paginas/area-usuario.php");
 }
 
 if (!empty($_POST['loginNombre']) && !empty($_POST['loginContrasena'])) {
