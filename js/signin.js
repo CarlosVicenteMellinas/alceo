@@ -62,7 +62,7 @@ function comprobar() {
 function enviar() {
     comprobar();
     if (form.checkValidity()) {
-        form.submit();
+        //form.submit();
     }
 }
 
