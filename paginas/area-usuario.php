@@ -39,38 +39,41 @@
 						<a href="#" class="button">Ir al generador</a>
 					</header>
 				</section>
-
-            <!-- Formulario Login -->
-                <?php 
-                session_start();
-                if(!empty($_SESSION['usuario'])) {
+            <!-- Area Usuario -->
+            <?php 
+            session_start();
+            if(!empty($_SESSION['usuario'])) {
                     echo '<h1>Tamoh logueado: '.$_SESSION['usuario'].'</h1>';
                     echo '<form id="cerrarSesion" action="../controllers/loginController.php" method="POST">';
                     echo '<input type="submit" name="cerrarSesion" id="cerrarSesion" value="Cerrar Sesion">';
                     echo '</form>';
-                }
-                ?>
-                <div id="loginSignin">
-                    <div id="login">
-                        <form id="loginForm" action="../controllers/loginController.php" method="POST">
-                            <label for="loginNombre">Usuario: </label>
-                            <input type="text" id="loginNombre" name="loginNombre" required>
-                            <?php if (!empty($usuarioError)) {echo '<p class="error">'.$usuarioError.'</p>';} ?>
+                //Mucho codigo hay que hacer dos paginas
+                } 
+                else {
+                    echo '<div id="loginSignin">
+                        <div id="login">
+                            <form id="loginForm" action="../controllers/loginController.php" method="POST">
+                                <label for="loginNombre">Usuario: </label>
+                                <input type="text" id="loginNombre" name="loginNombre" required>';
+                                if (!empty($usuarioError)) {echo '<p class="error">'.$usuarioError.'</p>';}
 
-                            <label for="loginContrasena">Contraseña: </label>
-                            <input type="password" id="loginContrasena" name="loginContrasena" required>
-                            <?php if (!empty($contrasenaError)) {echo '<p class="error">'.$contrasenaError.'</p>';} ?>
-                            
-                            <input type="submit" id="loginButton" value="Iniciar Sesión">
-                        </form>
-                    </div>
-                    <p><em>¿Has olvidado tu contraseña?</em> Pues haber estudiado porque aún no tenemos esta función disponible :)</p>
-                    <div id="signin">
-                        <form id="signin" action="signin.php" method="POST">
-                            <input type="submit" id="signinButton" value="Crear cuenta">
-                        </form>
-                    </div>
-                </div>
+                                echo '<label for="loginContrasena">Contraseña: </label>
+                                <input type="password" id="loginContrasena" name="loginContrasena" required>';
+                                if (!empty($contrasenaError)) {echo '<p class="error">'.$contrasenaError.'</p>';}
+                                
+                                echo '<input type="submit" id="loginButton" value="Iniciar Sesión">
+                            </form>
+                        </div>
+                        <p><em>¿Has olvidado tu contraseña?</em> Pues haber estudiado porque aún no tenemos esta función disponible :)</p>
+                        <div id="signin">
+                            <form id="signin" action="signin.php" method="POST">
+                                <input type="submit" id="signinButton" value="Crear cuenta">
+                            </form>
+                        </div>
+                    </div>';
+                }
+            ?>
+            
 			<!-- Footer -->
             <div id="footer">
                 <div class="container">
@@ -116,6 +119,7 @@
                         </section>
                     </div>
                 </div>
+                
 
                 <!-- Icons -->
                     <ul class="icons">
