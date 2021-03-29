@@ -58,11 +58,11 @@
                             <input type="number" min="1" max="5" id="dificultad" name="dificultad" required>
                             
                             <label for="foto">Foto: </label>
-                            <input type="text" id="foto" name="foto">
+                            <input type="file" id="foto" name="foto">
                             <?php if (!empty($fotoError)) {echo '<p class="error">'.$nombreError.'</p>';}?>
 
                             <label for="video">Video: </label>
-                            <input type="text" id="video" name="video">
+                            <input type="file" id="video" name="video">
                             <?php if (!empty($videoError)) {echo '<p class="error">'.$nombreError.'</p>';}?>
 
                             <input type="submit" id="loginButton" value="Iniciar Sesión">
