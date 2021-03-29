@@ -33,6 +33,27 @@ function validarContrasena($link) {
         include '../paginas/signin.php';
     }
 
+    if (!preg_match('`[a-z]`', $contrasena1)) {
+        mysqli_close($link);
+        $valido = false;
+        $contasenaError = 'La contraseña debe de tener al menos una letra minúscula';
+        include '../paginas/signin.php';
+    }
+
+    if (!preg_match('`[A-Z]`', $contrasena1)) {
+        mysqli_close($link);
+        $valido = false;
+        $contasenaError = 'La contraseña debe de tener al menos una letra mayúscula';
+        include '../paginas/signin.php';
+    }
+
+    if (!preg_match('`[0-9]`',$contrasena1)){
+        mysqli_close($link);
+        $valido = false;
+        $contasenaError = 'La contraseña debe de tener al menos un caracter numérico';
+        include '../paginas/signin.php';
+     }
+
     return $valido;
 }
 
