@@ -15,6 +15,7 @@ function validarNick($link) {
         include '../paginas/signin.php';
     } else {
         echo '<p>Casi crack</p>';
+        echo $results;
     }
 }
 
