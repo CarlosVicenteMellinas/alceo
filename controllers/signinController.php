@@ -2,8 +2,11 @@
 
 function validarNick($link) {
     $nick = limpiarDatos($_POST['nick']);
+    $valido = true;
+
     if (strlen($nick) > 20) {
         mysqli_close($link);
+        $valido = false;
         $nickError = 'El nick no puede tener una longitud superior a 20 caracteres';
         include '../paginas/signin.php';
     }
@@ -11,9 +14,11 @@ function validarNick($link) {
     $results = mysqli_fetch_array($query);
     if ($results > 0) {
         mysqli_close($link);
+        $valido = false;
         $nickError = 'El nick no esta disponible';
         include '../paginas/signin.php';
-    } 
+    }
+    return $valido;
 }
 
 function limpiarDatos($data) {
