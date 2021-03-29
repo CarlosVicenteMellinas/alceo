@@ -1,7 +1,25 @@
 <?php
 
+function validarNick($link) {
+    $nick = limpiarDatos($_POST['nick']);
+    if (strlen($nick) > 20) {
+        $nickError = 'El nick no puede tener una longitud superior a 20 caracteres';
+        include '../paginas/signin.php';
+    }
+
+}
+
+function limpiarDatos($data) {
+    $data = trim($data);
+    $data = stripslashes($data);
+    $data = htmlspecialchars($data);
+}
+
 function comprobarDatos() {
-    crearUsuario();
+    $link = mysqli_connect('172.18.0.2', 'dbAdmin', 'C0nTr@s3ñ4', 'AlceoBD');
+    if (validarNick($link)) {
+        crearUsuario();
+    }
 }
 
 function crearUsuario() {
