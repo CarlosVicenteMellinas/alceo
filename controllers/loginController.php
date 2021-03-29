@@ -15,7 +15,7 @@ function comprobarCredenciales() {
 
     $query = mysqli_query($link, 'SELECT * FROM USUARIO WHERE nickname="'.$usuario.'" ');
     $results = mysqli_fetch_array($query);
-    if ($results = 0) {
+    if ($results === 0) {
         mysqli_close($link);
         $valido = false;
         $usuarioError = 'El usuario no existe';
