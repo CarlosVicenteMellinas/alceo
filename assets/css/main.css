@@ -183,6 +183,18 @@ input, select, textarea {
 		padding: 1em 0 1em 2em;
 	}
 
+	#loginSignin {
+		padding: 30px 0px 30px 0px;
+		width: 80% !important;
+		text-align: center;
+		margin: auto;
+	}
+
+	input#loginButton, input#signinButton {
+		margin-top: 20px;
+		display: inline;
+	}
+
 /* Container */
 
 	.container {
