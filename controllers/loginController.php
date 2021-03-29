@@ -23,9 +23,17 @@ function comprobarCredenciales() {
     }
     mysqli_free_result($query);
 
+    $query = mysqli_query($link, 'SELECT * FROM USUARIO WHERE nickname="'.$usuario.'" ');
+    $results = mysqli_fetch_array($query);
+    if ($results['contrasenya'] !== $contrasena) {
+        mysqli_close($link);
+        $valido = false;
+        $contrasenaError = 'La contraseña no es correcta';
+        include '../paginas/area-usuario.php';
+    }
+
     if ($valido) {
-        echo $results;
-        //iniciarSesion();
+        iniciarSesion();
     }
 }
 

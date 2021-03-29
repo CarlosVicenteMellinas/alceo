@@ -51,6 +51,8 @@
 
                             <label for="loginContrasena">Contraseña: </label>
                             <input type="password" id="loginContrasena" name="loginContrasena" required>
+                            <?php if (!empty($contrasenaError)) {echo '<p class="error">'.$contrasenaError.'</p>';} ?>
+                            
                             <input type="submit" id="loginButton" value="Iniciar Sesión">
                         </form>
                     </div>
