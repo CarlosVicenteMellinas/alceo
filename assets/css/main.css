@@ -2074,10 +2074,6 @@ input, select, textarea {
 		line-height: 1em;
 	}
 
-	option > select {
-		border-bottom: 1px solid #699f76;
-	}
-
 	label {
 		display: block;
 		color: inherit;
@@ -3302,6 +3298,37 @@ input, select, textarea {
 					top: 0;
 					margin-top: 1.25em;
 					font-size: 1em;
+				}
+
+				input[type="tel"], select {
+					-moz-appearance: none;
+					-webkit-appearance: none;
+					-ms-appearance: none;
+					appearance: none;
+					-moz-transition: border-color 0.2s ease-in-out;
+					-webkit-transition: border-color 0.2s ease-in-out;
+					-ms-transition: border-color 0.2s ease-in-out;
+					transition: border-color 0.2s ease-in-out;
+					background: #fff;
+					border: solid 1px #e0e0e0;
+					border-radius: 5px;
+					color: inherit;
+					display: block;
+					outline: 0;
+					padding: 0.75em;
+					text-decoration: none;
+					width: 80%;
+					line-height: 1em;
+				}
+			
+				input[type="tel"]:focus, select:focus {
+					border-color: #699f76
+				}
+			
+				input[type="text"],
+				input[type="password"],
+				input[type="email"] {
+					line-height: 1em;
 				}
 
 		/* Menu */
