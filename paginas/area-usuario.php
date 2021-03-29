@@ -25,7 +25,7 @@
 							<ul>
 								<li><a href="../index.php">Home</a></li>
 								<li><a href="#">Comunidad</a></li></li>
-								<li  class="current"><a href="/paginas/area-usuario.html">Área de usuario</a></li>
+								<li  class="current"><a href="/paginas/area-usuario.php">Área de usuario</a></li>
 								<li><a href="#">Contacto</a></li>
 							</ul>
 						</nav>
@@ -47,6 +47,7 @@
                         <form id="loginForm" action="../controllers/loginController.php" method="POST">
                             <label for="loginNombre">Usuario: </label>
                             <input type="text" id="loginNombre" name="loginNombre" required>
+                            
                             <label for="loginContrasena">Contraseña: </label>
                             <input type="password" id="loginContrasena" name="loginContrasena" required>
                             <input type="submit" id="loginButton" value="Iniciar Sesión">
