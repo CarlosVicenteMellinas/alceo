@@ -8,7 +8,7 @@ function validarNick($link) {
         include '../paginas/signin.php';
     }
     $query = mysqli_query($link, 'SELECT * FROM USUARIOS WHERE nickname="'.$nick.'" ');
-    $results = mysqli_num_rows($query);
+    $results = mysqli_fetch_array($query);
     if ($results > 0) {
         mysqli_close($link);
         $nickError = 'El nick no esta disponible';
