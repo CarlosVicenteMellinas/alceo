@@ -58,11 +58,12 @@ function comprobar() {
         contrasena2.setCustomValidity('Las contraseñas no coinciden');
     }
 }
-
+//Tremendo coladero
 function enviar() {
     comprobar();
+    form.checkValidity()
     if (form.checkValidity()) {
-        //form.submit();
+        form.submit();
     }
 }
 
