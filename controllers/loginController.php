@@ -48,6 +48,8 @@ function iniciarSesion($usuario) {
 function cerrarSesion() {
     session_start();
     session_destroy();
+    header("Location: ../paginas/area-usuario.php");
+
 }
 
 if (!empty($_POST['loginNombre']) && !empty($_POST['loginContrasena'])) {
