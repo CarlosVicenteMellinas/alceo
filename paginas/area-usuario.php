@@ -43,7 +43,7 @@
             <?php 
             session_start();
             if(!empty($_SESSION['usuario'])) { 
-                echo '<h1>Tamoh logueado: '.$_SESSION['usuario'].'</h1>'; ?>
+                echo '<h1 class="tituloForm">Tamoh logueado: '.$_SESSION['usuario'].'</h1>'; ?>
                     <form id="cerrarSesion" action="../controllers/loginController.php" method="POST">
                         <input type="submit" name="cerrarSesion" id="cerrarSesion" value="Cerrar Sesion">
                     </form>
