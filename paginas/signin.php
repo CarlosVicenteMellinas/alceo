@@ -57,8 +57,11 @@
                         <label for="contrasena2">Vuelve a introducir la contraseña: </label>
                         <input type="password" id="contrasena2" name="contrasena2" required>
                         <label for="correo">Correo Electronico: </label>
+                        
                         <input type="email" id="correo" name="correo" required>
                         <label for="telefono">Telefono: </label>
+                        <?php if (!empty($emailError)) {echo '<p class="error">'.$emailError.'</p>';} ?>
+                        
                         <input type="tel" id="telefono" name="telefono" required>
                         <label for="plan">Plan</label>
                         <select id="plan" name="plan" required>

@@ -64,6 +64,20 @@ function validarContrasena($link) {
     return $valido;
 }
 
+function validarCorreo($link) {
+    $correo = limpiarDatos($_POST['correo']);
+    $valido = true;
+
+    if (!filter_var($correo, FILTER_VALIDATE_EMAIL)) {
+        mysqli_close($link);
+        $valido = false;
+        $emailError = 'La direccion introducida no es válida';
+        include '../paginas/signin.php';
+    }
+
+    return $valido;
+}
+
 function limpiarDatos($data) {
     $data = trim($data);
     $data = stripslashes($data);
@@ -73,7 +87,7 @@ function limpiarDatos($data) {
 
 function comprobarDatos() {
     $link = mysqli_connect('172.18.0.2', 'dbAdmin', 'C0nTr@s3ñ4', 'AlceoBD');
-    if (validarNick($link) && validarContrasena($link)) {
+    if (validarNick($link) && validarContrasena($link) && validarCorreo($link)) {
         crearUsuario();
     }
 }
@@ -87,7 +101,7 @@ function crearUsuario() {
 }
 
 
-if (!empty($_POST['nombre']) && !empty($_POST['nick']) && !empty($_POST['contrasena']) && !empty($_POST['correo']) && !empty($_POST['telefono']) && !empty($_POST['plan'])) {
+if (!empty($_POST['nombre']) && !empty($_POST['nick']) && !empty($_POST['contrasena']) && !empty($_POST['contrasena2']) && !empty($_POST['correo']) && !empty($_POST['telefono']) && !empty($_POST['plan'])) {
     comprobarDatos();
 } else {
     echo 'Pagina de error';
