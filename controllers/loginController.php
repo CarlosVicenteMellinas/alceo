@@ -24,7 +24,8 @@ function comprobarCredenciales() {
     mysqli_free_result($query);
 
     if ($valido) {
-        iniciarSesion();
+        echo $results;
+        //iniciarSesion();
     }
 }
 
