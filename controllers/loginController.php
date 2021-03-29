@@ -14,7 +14,7 @@ function comprobarCredenciales() {
     $valido = true;
 
     $query = mysqli_query($link, 'SELECT * FROM USUARIO WHERE nickname="'.$usuario.'" ');
-    $results = mysqli_fetch_array($query);
+    $results = mysqli_num_rows($query);
     if ($results === 0) {
         mysqli_close($link);
         $valido = false;

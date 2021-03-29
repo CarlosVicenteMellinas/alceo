@@ -47,7 +47,8 @@
                         <form id="loginForm" action="../controllers/loginController.php" method="POST">
                             <label for="loginNombre">Usuario: </label>
                             <input type="text" id="loginNombre" name="loginNombre" required>
-                            
+                            <?php if (!empty($usuarioError)) {echo '<p class="error">'.$usuarioError.'</p>';} ?>
+
                             <label for="loginContrasena">Contraseña: </label>
                             <input type="password" id="loginContrasena" name="loginContrasena" required>
                             <input type="submit" id="loginButton" value="Iniciar Sesión">
