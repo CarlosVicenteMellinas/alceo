@@ -42,7 +42,7 @@
 
             <!-- Formulario Signin -->
                 <div id="sigin">
-                    <h2>¡Crea tu cuenta!</h2>
+                    <h2 class="tituloForm">¡Crea tu cuenta!</h2>
                     <form id="signinForm" action="../controllers/signinController.php" method="POST" >
                     <label for="nombre" >Nombre Completo: </label>
                         <input type="text" id="nombre" name="nombre" required>

@@ -195,6 +195,11 @@ input, select, textarea {
 		display: inline;
 	}
 
+	.tituloForm {
+		font-size: 50px;
+		text-align: center;
+		padding-top: 20px;
+	}
 /* Container */
 
 	.container {
@@ -2060,7 +2065,7 @@ input, select, textarea {
 		outline: 0;
 		padding: 0.75em;
 		text-decoration: none;
-		width: 30%;
+		width: 40%;
 		line-height: 1em;
 	}
 
