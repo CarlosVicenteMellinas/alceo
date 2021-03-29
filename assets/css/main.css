@@ -2016,7 +2016,7 @@ input, select, textarea {
 	input[type="text"],
 	input[type="password"],
 	input[type="email"],
-	input[type="tel"]
+	input[type="tel"],
 	select
 	textarea {
 		-moz-appearance: none;
