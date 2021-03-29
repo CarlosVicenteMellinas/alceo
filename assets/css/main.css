@@ -196,8 +196,8 @@ input, select, textarea {
 	}
 
 	.tituloForm {
-		font-size: 50px;
-		text-align: center;
+		font-size: 50px !important;
+		text-align: center !important;
 		padding-top: 20px;
 	}
 /* Container */
