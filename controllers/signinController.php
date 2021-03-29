@@ -7,7 +7,7 @@ function validarNick($link) {
         $nickError = 'El nick no puede tener una longitud superior a 20 caracteres';
         include '../paginas/signin.php';
     }
-    $query = mysqli_query($link, 'SELECT * FROM USUARIOS WHERE nickname='.$nick.' ');
+    $query = mysqli_query($link, 'SELECT * FROM USUARIOS WHERE nickname="'.$nick.'" ');
     $results = mysqli_num_rows($query);
     if ($results > 0) {
         mysqli_close($link);
