@@ -32,13 +32,17 @@ function comprobarCredenciales() {
         include '../paginas/area-usuario.php';
     }
 
+    mysqli_close($link);
     if ($valido) {
-        iniciarSesion();
+        iniciarSesion($usuario);
     }
 }
 
-function iniciarSesion() {
-    echo 'Funciona';
+function iniciarSesion($usuario) {
+    session_start();
+    session_regenerate_id();
+    $_SESSION['usuario'] = $usuario;
+    header("Location: ../paginas/area-usuario.html");
 }
 
 if (!empty($_POST['loginNombre']) && !empty($_POST['loginContrasena'])) {

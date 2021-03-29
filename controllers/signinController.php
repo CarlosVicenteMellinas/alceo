@@ -120,6 +120,7 @@ function comprobarDatos() {
     if (validarNombre($link) && validarNick($link) && validarContrasena($link) && validarCorreo($link)) {
         crearUsuario();
     }
+    mysqli_close($link);
 }
 
 function crearUsuario() {
