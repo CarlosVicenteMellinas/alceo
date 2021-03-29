@@ -49,8 +49,11 @@
                         <label for="nick" >Nombre de Usuario: </label>
                         <input type="text" id="nick" name="nick" required>
                         <?php if (!empty($nickError)) {echo '<p class="error">'.$nickError.'</p>';} ?>
+                        
                         <label for="contrasena">Contraseña: </label>
                         <input type="password" id="contrasena" name="contrasena" required>
+                        <?php if (!empty($contasenaError)) {echo '<p class="error">'.$contasenaError.'</p>';} ?>
+                        
                         <label for="contrasena2">Vuelve a introducir la contraseña: </label>
                         <input type="password" id="contrasena2" name="contrasena2" required>
                         <label for="correo">Correo Electronico: </label>
