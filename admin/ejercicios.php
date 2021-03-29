@@ -47,7 +47,7 @@
 
             <!-- Creacion -->
                 <div>
-                    <h2>Ejercicios</h2>
+                    <h2 class="tituloForm">Ejercicios</h2>
                     <div id="insert">
                         <form id="insertForm" action="../controllers/ejercicioController.php" method="POST">
                             <label for="nombre">Nombre: </label>
