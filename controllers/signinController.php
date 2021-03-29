@@ -50,7 +50,7 @@ function validarContrasena($link) {
     if (strlen($contrasena1) > 200) {
         mysqli_close($link);
         $valido = false;
-        $contasenaError = 'El nombre no puede tener una longitud superior a 200 caracteres';
+        $contasenaError = 'La contraseña no puede tener una longitud superior a 200 caracteres';
         include '../paginas/signin.php';
     }
 
@@ -118,6 +118,7 @@ function limpiarDatos($data) {
 function comprobarDatos() {
     $link = mysqli_connect('172.18.0.2', 'dbAdmin', 'C0nTr@s3ñ4', 'AlceoBD');
     if (validarNombre($link) && validarNick($link) && validarContrasena($link) && validarCorreo($link)) {
+        mysqli_close($link);
         crearUsuario();
     }
     mysqli_close($link);
@@ -128,7 +129,7 @@ function crearUsuario() {
     $query = mysqli_query($link, 'INSERT INTO USUARIO (nombre, nickname, contrasenya, correo, telefono, plan) VALUES 
     ("'.$_POST["nombre"].'", "'.$_POST["nick"].'", "'.$_POST["contrasena"].'", "'.$_POST["correo"].'", "'.$_POST["telefono"].'", '.$_POST["plan"].')');
     mysqli_close($link);
-    header("Location: ../paginas/area-usuario.html");
+    header("Location: ../paginas/area-usuario.php");
 }
 
 
