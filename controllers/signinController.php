@@ -14,8 +14,7 @@ function validarNick($link) {
         $nickError = 'El nick no esta disponible';
         include '../paginas/signin.php';
     } else {
-        echo '<p>Casi crack</p>';
-        echo $results;
+        echo '<p>Casi crack'.$results.'</p>';
     }
 }
 
