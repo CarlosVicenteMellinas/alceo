@@ -43,19 +43,19 @@ function comprobar() {
         nombre.setCustomValidity('El nombre no es correcto');
     }
     if (validarNick(nick.textContent)) {
-        nombre.setCustomValidity('');
+        nick.setCustomValidity('');
     } else {
-        nombre.setCustomValidity('El nickname no es correcto');
+        nick.setCustomValidity('El nickname no es correcto');
     }
     if (validarContrasena(contrasena.textContent)) {
-        nombre.setCustomValidity('');
+        contrasena.setCustomValidity('');
     } else {
-        nombre.setCustomValidity('La contaseña no es válida');
+        contrasena.setCustomValidity('La contaseña no es válida');
     }
     if (validarContrasenas(contrasena.textContent, contrasena2.textContent)) {
-        nombre.setCustomValidity('');
+        contrasena2.setCustomValidity('');
     } else {
-        nombre.setCustomValidity('Las contraseñas no coinciden');
+        contrasena2.setCustomValidity('Las contraseñas no coinciden');
     }
 }
 
