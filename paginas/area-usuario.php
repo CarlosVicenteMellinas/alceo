@@ -41,7 +41,9 @@
 				</section>
 
             <!-- Formulario Login -->
-                <?php if(!empty($_SESSION['usuario'])) {
+                <?php 
+                session_start();
+                if(!empty($_SESSION['usuario'])) {
                     echo '<h1>Tamoh logueado: '.$_SESSION['usuario'].'</h1>';
                 }
                 ?>
