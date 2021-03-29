@@ -21,6 +21,21 @@ function validarNick($link) {
     return $valido;
 }
 
+function validarContrasena($link) {
+    $contrasena1 = limpiarDatos($_POST['contrasena']);
+    $contrasena2 = limpiarDatos($_POST['contrasena2']);
+    $valido = true;
+
+    if (strlen($contrasena1) < 8) {
+        mysqli_close($link);
+        $valido = false;
+        $contasenaError = 'La contraseña debe de tener una longitud superior a 8 caracteres';
+        include '../paginas/signin.php';
+    }
+
+    return $valido;
+}
+
 function limpiarDatos($data) {
     $data = trim($data);
     $data = stripslashes($data);
@@ -30,7 +45,7 @@ function limpiarDatos($data) {
 
 function comprobarDatos() {
     $link = mysqli_connect('172.18.0.2', 'dbAdmin', 'C0nTr@s3ñ4', 'AlceoBD');
-    if (validarNick($link)) {
+    if (validarNick($link) && validarContrasena($link)) {
         crearUsuario();
     }
 }
