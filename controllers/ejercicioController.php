@@ -58,7 +58,9 @@ function insertar() {
     }
 }
 
-if (!empty($_POST['nombre']) && !empty($_POST['dificultad'])) {
+if (!empty($_POST['addForm'])) {
+    include '../admin/ejercicios/AddEjercicios.php';
+} else if (!empty($_POST['crearEjercicio']) && !empty($_POST['nombre']) && !empty($_POST['dificultad'])) {
     comprobarDatos();
 } else {
     echo 'Pagina de error';

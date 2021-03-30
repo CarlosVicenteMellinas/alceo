@@ -23,15 +23,15 @@
 				<div id="header">
 
 					<!-- Logo -->
-						<a href="../index.php" id="logo"><img src="..//images/logo-alceo.png" width="9%"></a>
+						<a href="../index.php" id="logo"><img src="../images/logo-alceo.png" width="9%"></a>
 
 					<!-- Nav -->
 						<nav id="nav">
 							<ul>
 								<li><a href="../index.php">Home</a></li>
-                                <li><a href="index.php">Admin Home</a></li>
+                                <li><a href="../admin/index.php">Admin Home</a></li>
 								<li><a href="#">Comunidad</a></li></li>
-								<li class="current"><a href="ejercicios.php">Ejercicios</a></li>
+								<li class="current"><a href="../admin/ejercicios.php">Ejercicios</a></li>
 								<li><a href="#">Grupos Musculares</a></li>
 							</ul>
 						</nav>
@@ -40,18 +40,31 @@
             <!-- Creacion -->
                 <div>
                     <h2 class="tituloForm">Ejercicios</h2>
-                    <div id="forms">
-                        <form id="addForm" action="../controllers/ejercicioController.php" method="POST">
-                            <input type="submit" id="addForm" name="addForm" value="Crear Ejercicio">
-                        </form>
-                        <form id="editForm" action="../controllers/ejercicioController.php" method="POST">
-                            <input type="submit" name="editForm" id="editForm" value="Editar Ejercicio">
-                        </form>
-                        <form id="deleteForm" action="../controllers/ejercicioController.php" method="POST">
-                            <input type="submit" name="deleteForm" id="deleteForm" value="Borrar Ejercicio">
+                    <div id="insert">
+                        <form id="insertForm" action="../controllers/ejercicioController.php" method="POST">
+                            <label for="nombre">Nombre: </label>
+                            <input type="text" id="nombre" name="nombre" required>
+                            <?php if (!empty($nombreError)) {echo '<p class="error">'.$nombreError.'</p>';}?>
+
+                            <label for="dificultad">Dificultad: </label>
+                            <input type="number" min="1" max="5" id="dificultad" name="dificultad" required>
+                            
+                            <label for="foto">Foto: </label>
+                            <input type="file" id="foto" name="foto">
+                            <?php if (!empty($fotoError)) {echo '<p class="error">'.$nombreError.'</p>';}?>
+
+                            <label for="video">Video: </label>
+                            <input type="file" id="video" name="video">
+                            <?php if (!empty($videoError)) {echo '<p class="error">'.$nombreError.'</p>';}?>
+                            <br><br>
+                            <input type="submit" id="crearEjercicio" name="crearEjercicio" value="Crear Ejercicio">
                         </form>
                     </div>
                 </div>
+
+            <!-- Modificacion -->
+
+            <!-- Eliminación -->
         </div>
 
          <!-- Scripts -->
