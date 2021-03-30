@@ -1,4 +1,5 @@
 <?php
+require_once "../model/db.php";
 
 function limpiarDatos($data) {
     $data = trim($data);
@@ -8,7 +9,7 @@ function limpiarDatos($data) {
 }
 
 function comprobarCredenciales() {
-    $link = mysqli_connect('172.18.0.2', 'dbAdmin', 'C0nTr@s3ñ4', 'AlceoBD');
+    $link = Conectar::conexion();
     $usuario = limpiarDatos($_POST['loginNombre']);
     $contrasena = limpiarDatos($_POST['loginContrasena']);
     $valido = true;

@@ -1,4 +1,5 @@
 <?php
+require_once "../model/db.php";
 
 function validarNombre($link) {
     $nombre = limpiarDatos($_POST['nombre']);
@@ -116,7 +117,7 @@ function limpiarDatos($data) {
 }
 
 function comprobarDatos() {
-    $link = mysqli_connect('172.18.0.2', 'dbAdmin', 'C0nTr@s3ñ4', 'AlceoBD');
+    $link = Conectar::conexion();
     if (validarNombre($link) && validarNick($link) && validarContrasena($link) && validarCorreo($link)) {
         mysqli_close($link);
         crearUsuario();
@@ -125,18 +126,28 @@ function comprobarDatos() {
 }
 
 function crearUsuario() {
-    $link = mysqli_connect('172.18.0.2', 'dbAdmin', 'C0nTr@s3ñ4', 'AlceoBD');
+    $link =Conectar::conexion();
     $query = mysqli_query($link, 'INSERT INTO USUARIO (nombre, nickname, contrasenya, correo, telefono, plan) VALUES 
     ("'.$_POST["nombre"].'", "'.$_POST["nick"].'", "'.$_POST["contrasena"].'", "'.$_POST["correo"].'", "'.$_POST["telefono"].'", '.$_POST["plan"].')');
     mysqli_close($link);
     header("Location: ../paginas/area-usuario.php");
 }
 
+function cargarPaginaSignin() {
+    $link =Conectar::conexion();
+    $query = mysqli_query($link, 'SELECT * FROM PLANES');
+    $options = array();
+    while ($results = mysqli_fetch_array($query)) {
+        array_push($options,'<option value="'.$results["cod"].'">'.$results["nombre"].'</option>');
+    }
+    mysqli_close($link);
+    include "../paginas/signin.php";
+}
 
 if (!empty($_POST['nombre']) && !empty($_POST['nick']) && !empty($_POST['contrasena']) && !empty($_POST['contrasena2']) && !empty($_POST['correo']) && !empty($_POST['telefono']) && !empty($_POST['plan'])) {
     comprobarDatos();
 } else {
-    echo 'Pagina de error';
+    cargarPaginaSignin();
 }
 
 ?>

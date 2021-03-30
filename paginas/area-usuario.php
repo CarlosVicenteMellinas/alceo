@@ -66,7 +66,7 @@
                     </div>
                     <p><em>¿Has olvidado tu contraseña?</em> Pues haber estudiado porque aún no tenemos esta función disponible :)</p>
                     <div id="signin">
-                        <form id="signin" action="signin.php" method="POST">
+                        <form id="signin" action="../controllers/signinController.php" method="POST">
                             <input type="submit" id="signinButton" value="Crear cuenta">
                         </form>
                     </div>

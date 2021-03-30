@@ -69,12 +69,9 @@
                         <select id="plan" name="plan" required>
                             <option selected disabled>No seleccionado</option>
                             <?php 
-                                $link = mysqli_connect('172.18.0.2', 'dbAdmin', 'C0nTr@s3ñ4', 'AlceoBD');
-                                $query = mysqli_query($link, 'SELECT * FROM PLANES');
-                                while ($results = mysqli_fetch_array($query)) {
-                                    echo '<option value="'.$results["cod"].'">'.$results["nombre"].'</option>';
+                                foreach ($options as $option) {
+                                    echo $option;
                                 }
-                                mysqli_close($link);
                             ?>
                         </select>
                         <br><br>

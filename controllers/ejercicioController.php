@@ -1,4 +1,5 @@
 <?php
+require_once "../model/db.php";
 
 function limpiarDatos($data) {
     $data = trim($data);
@@ -24,7 +25,7 @@ function validarNombre($link) {
 
 
 function comprobarDatos() {
-    $link = mysqli_connect('172.18.0.2', 'dbAdmin', 'C0nTr@s3ñ4', 'AlceoBD');
+    $link = Conectar::conexion();
 
     if (validarNombre($link)) {
         insertar();
@@ -33,7 +34,7 @@ function comprobarDatos() {
 }
 
 function insertar() {
-    $link = mysqli_connect('172.18.0.2', 'dbAdmin', 'C0nTr@s3ñ4', 'AlceoBD');
+    $link = Conectar::conexion();
     if (!empty($_POST['foto']) && !empty($_POST['video'])) {
         $query = mysqli_query($link, 'INSERT INTO EJERCICIO (nombre, dificultad, foto, video) VALUES 
         ("'.$_POST["nombre"].'", '.$_POST["dificultad"].', "'.$_POST["foto"].'", "'.$_POST["video"].'")');
