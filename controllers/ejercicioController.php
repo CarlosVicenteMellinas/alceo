@@ -128,7 +128,7 @@ function eliminar($cod) {
     $link = Conectar::conexion();
     $query = mysqli_query($link, 'DELETE FROM EJERCICIO WHERE cod='.$cod.';');
     mysqli_close($link);
-    header("Location: ../admin/ejercicios.php");
+    cargarIndex();
 }
 
 function cargarIndex() {
