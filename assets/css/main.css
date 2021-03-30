@@ -207,6 +207,15 @@ input, select, textarea {
 		text-align: center !important;
 		padding-top: 20px;
 	}
+
+	#forms {
+		display: flex;
+		justify-content: space-around;
+	}
+
+	#forms form {
+		text-align: center;
+	}
 /* Container */
 
 	.container {

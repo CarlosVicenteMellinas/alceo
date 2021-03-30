@@ -43,12 +43,15 @@
                     <div id="forms">
                         <form id="addForm" action="../controllers/ejercicioController.php" method="POST">
                             <input type="submit" id="addForm" name="addForm" value="Crear Ejercicio">
+                            <label for="addForm">Añade un nuevo ejercicio</label>
                         </form>
                         <form id="editForm" action="../controllers/ejercicioController.php" method="POST">
                             <input type="submit" name="editForm" id="editForm" value="Editar Ejercicio">
+                            <label for="editForm">Edita un ejercicio ya existente</label>
                         </form>
                         <form id="deleteForm" action="../controllers/ejercicioController.php" method="POST">
                             <input type="submit" name="deleteForm" id="deleteForm" value="Borrar Ejercicio">
+                            <label for="deleteForm">Elimina un ejercicio</label>
                         </form>
                     </div>
                 </div>
