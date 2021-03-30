@@ -37,13 +37,13 @@
 						</nav>
 				</div>
 
-            <!-- Modificacion -->
+            <!-- Eliminacion -->
                 <div>
                     <h2 class="tituloForm">Ejercicios</h2>
                     <div id="alter">
-                        <form id="selectForm">
+                        <form id="selectForm" action="../controllers/ejercicioController.php" method="POST">
                             <label for="">Selecciona un ejercicio:</label>
-                            <select id="ejercicio" onchange='<?php echo 'changeValues('.json_encode($ejercicios).')'; ?>'>
+                            <select id="ejercicio" onchange='<?php echo 'setID('.json_encode($ejercicios).')'; ?>'>
                                 <option disabled selected>No seleccionado</option>
                                 <?php 
                                     foreach ($options as $option) {
@@ -51,25 +51,9 @@
                                     }
                                 ?>
                             </select>
-                        </form>
-                        <form id="alterForm" action="../controllers/ejercicioController.php" method="POST">
-                            <label for="nombre">Nombre: </label>
-                            <input type="text" id="nombre" name="nombre" required>
-                            <?php if (!empty($nombreError)) {echo '<p class="error">'.$nombreError.'</p>';}?>
-
-                            <label for="dificultad">Dificultad: </label>
-                            <input type="number" min="1" max="5" id="dificultad" name="dificultad" required>
-                            
-                            <label for="foto">Foto: </label>
-                            <input type="file" id="foto" name="foto">
-                            <?php if (!empty($fotoError)) {echo '<p class="error">'.$nombreError.'</p>';}?>
-
-                            <label for="video">Video: </label>
-                            <input type="file" id="video" name="video">
-                            <?php if (!empty($videoError)) {echo '<p class="error">'.$nombreError.'</p>';}?>
                             <br><br>
                             <input type="hidden" id="id" name="id" value="">
-                            <input type="submit" id="editarEjercicio" name="editarEjercicio" value="Editar Ejercicio">
+                            <input type="submit" id="eliminarEjercicio" name="eliminarEjercicio" value="Eliminar Ejercicio">
                         </form>
                     </div>
                 </div>

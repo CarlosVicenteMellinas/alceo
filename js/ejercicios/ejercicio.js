@@ -11,6 +11,13 @@ function changeValues(data) {
     dificultad.value = ejercicio[2];
 }
 
+function setID(data) {
+    let cod = select.value;
+    let ejercicio = getEjercicio(cod, data);
+    id.value = ejercicio[0];
+   
+}
+
 function getEjercicio(cod, data) {
     let ejercicio;
     for (let dato of data) {
