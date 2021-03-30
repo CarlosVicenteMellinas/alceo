@@ -57,7 +57,7 @@
                 </div>
                 <div>
                     <h3>Ejercicios disponibles:</h3>
-                    <table>
+                    <table id="ejercicios">
                         <tr><td>Cod</td><td>Nombre</td><td>Dificultad</td><td>Foto</td><td>Video</td></tr>
                         <?php
                         foreach ($ejercicios as $ejercicio) {
