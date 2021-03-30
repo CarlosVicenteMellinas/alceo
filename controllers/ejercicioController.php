@@ -131,6 +131,17 @@ function eliminar($cod) {
     header("Location: ../admin/ejercicios.php");
 }
 
+function cargarIndex() {
+    $link = Conectar::conexion();
+    $query = mysqli_query($link, 'SELECT * FROM EJERCICIO');
+    $ejercicios = array();
+    while ($results = mysqli_fetch_array($query)) {
+        array_push($ejercicios,'<tr><td>'.$results["cod"].'</td><td>'.$results["nombre"].'</td><td>'.$results["dificultad"].'</td><td>'.$results["foto"].'</td><td>'.$results["video"].'</td></tr>');
+    }
+    include '../admin/ejercicios.php';
+    mysqli_close($link);
+}
+
 if (!empty($_POST['addForm'])) {
     include '../admin/ejercicios/AddEjercicios.php';
 } else if (!empty($_POST['crearEjercicio']) && !empty($_POST['nombre']) && !empty($_POST['dificultad'])) {
@@ -144,6 +155,6 @@ if (!empty($_POST['addForm'])) {
 } else if (!empty($_POST["eliminarEjercicio"]) && !empty($_POST['id'])) {
     eliminar(limpiarDatos($_POST['id']));
 } else {
-    echo 'Pagina de error';
+   cargarIndex();
 }
 ?>

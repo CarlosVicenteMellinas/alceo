@@ -29,9 +29,9 @@
 						<nav id="nav">
 							<ul>
 								<li><a href="../index.php">Home</a></li>
-                                <li><a href="index.php">Admin Home</a></li>
+                                <li><a href="../admin/index.php">Admin Home</a></li>
 								<li><a href="#">Comunidad</a></li></li>
-								<li class="current"><a href="ejercicios.php">Ejercicios</a></li>
+								<li class="current"><a href="../controllers/ejercicioController.php">Ejercicios</a></li>
 								<li><a href="#">Grupos Musculares</a></li>
 							</ul>
 						</nav>
@@ -54,6 +54,17 @@
                             <label for="deleteForm">Elimina un ejercicio</label>
                         </form>
                     </div>
+                </div>
+                <div>
+                    <h3>Ejercicios disponibles:</h3>
+                    <table>
+                        <tr><td>Cod</td><td>Nombre</td><td>Dificultad</td><td>Foto</td><td>Video</td></tr>
+                        <?php
+                        foreach ($ejercicios as $ejercicio) {
+                            echo $ejercicio;
+                        }
+                        ?>
+                    </table>
                 </div>
         </div>
 

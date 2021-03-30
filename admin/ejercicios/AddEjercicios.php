@@ -31,7 +31,7 @@
 								<li><a href="../index.php">Home</a></li>
                                 <li><a href="../admin/index.php">Admin Home</a></li>
 								<li><a href="#">Comunidad</a></li></li>
-								<li class="current"><a href="../admin/ejercicios.php">Ejercicios</a></li>
+								<li class="current"><a href="../controllers/ejercicioController.php">Ejercicios</a></li>
 								<li><a href="#">Grupos Musculares</a></li>
 							</ul>
 						</nav>
