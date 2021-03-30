@@ -37,11 +37,22 @@
 						</nav>
 				</div>
 
-            <!-- Creacion -->
+            <!-- Modificacion -->
                 <div>
                     <h2 class="tituloForm">Ejercicios</h2>
-                    <div id="insert">
-                        <form id="insertForm" action="../controllers/ejercicioController.php" method="POST">
+                    <div id="alter">
+                        <form id="selectForm">
+                            <label for="">Selecciona un ejercicio:</label>
+                            <select id="ejercicio" onchange='<?php echo 'changeValues('.json_encode($ejercicios).')'; ?>'>
+                                <option disabled selected>No seleccionado</option>
+                                <?php 
+                                    foreach ($options as $option) {
+                                        echo $option;
+                                    }
+                                ?>
+                            </select>
+                        </form>
+                        <form id="alterForm" action="../controllers/ejercicioController.php" method="POST">
                             <label for="nombre">Nombre: </label>
                             <input type="text" id="nombre" name="nombre" required>
                             <?php if (!empty($nombreError)) {echo '<p class="error">'.$nombreError.'</p>';}?>
@@ -57,11 +68,11 @@
                             <input type="file" id="video" name="video">
                             <?php if (!empty($videoError)) {echo '<p class="error">'.$nombreError.'</p>';}?>
                             <br><br>
-                            <input type="submit" id="crearEjercicio" name="crearEjercicio" value="Crear Ejercicio">
+                            <input type="hidden" id="id" name="id" value="">
+                            <input type="submit" id="editarEjercicio" name="editarEjercicio" value="Editar Ejercicio">
                         </form>
                     </div>
                 </div>
-
         </div>
 
          <!-- Scripts -->
@@ -71,6 +82,7 @@
         <script src="../assets/js/breakpoints.min.js"></script>
         <script src="../assets/js/util.js"></script>
         <script src="../assets/js/main.js"></script>
+        <script src="../js/ejercicios/editEjercicio.js"></script>
 
         <?php 
             } else {
