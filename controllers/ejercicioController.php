@@ -18,7 +18,7 @@ function validarNombre($link) {
         mysqli_close($link);
         $valido = false;
         $nombreError = 'El nombre no esta disponible';
-        include '../admin/ejercicios.php';
+        cargarIndex();
     }
     return $valido;
 }
@@ -41,22 +41,22 @@ function insertar() {
         $query = mysqli_query($link, 'INSERT INTO EJERCICIO (nombre, dificultad, foto, video) VALUES 
         ("'.limpiarDatos($_POST["nombre"]).'", '.limpiarDatos($_POST["dificultad"]).', "'.limpiarDatos($_POST["foto"]).'", "'.limpiarDatos($_POST["video"]).'")');
         mysqli_close($link);
-        header("Location: ../admin/ejercicios.php");
+        cargarIndex();
     } else if (!empty($_POST['foto'])) {
         $query = mysqli_query($link, 'INSERT INTO EJERCICIO (nombre, dificultad, foto) VALUES 
         ("'.limpiarDatos($_POST["nombre"]).'", '.limpiarDatos($_POST["dificultad"]).', "'.limpiarDatos($_POST["foto"]).'")');
         mysqli_close($link);
-        header("Location: ../admin/ejercicios.php");
+        cargarIndex();
     } else if (!empty($_POST['video'])) { 
         $query = mysqli_query($link, 'INSERT INTO EJERCICIO (nombre, dificultad, video) VALUES 
         ("'.limpiarDatos($_POST["nombre"]).'", '.limpiarDatos($_POST["dificultad"]).', "'.limpiarDatos($_POST["video"]).'")');
         mysqli_close($link);
-        header("Location: ../admin/ejercicios.php");
+        cargarIndex();
     } else {
         $query = mysqli_query($link, 'INSERT INTO EJERCICIO (nombre, dificultad) VALUES 
        ("'.limpiarDatos($_POST["nombre"]).'", '.limpiarDatos($_POST["dificultad"]).')');
         mysqli_close($link);
-        header("Location: ../admin/ejercicios.php");
+        cargarIndex();
     }
 }
 
@@ -92,21 +92,21 @@ function editar() {
         $query = mysqli_query($link, 'UPDATE EJERCICIO SET nombre="'.limpiarDatos($_POST["nombre"]).'", dificultad='.limpiarDatos($_POST["dificultad"]).', 
         foto="'.limpiarDatos($_POST["foto"]).'", video="'.limpiarDatos($_POST["video"]).'" WHERE cod='.limpiarDatos($_POST["id"]).';');
         mysqli_close($link);
-        header("Location: ../admin/ejercicios.php");
+        cargarIndex();
     } else if (!empty($_POST['foto'])) {
         $query = mysqli_query($link, 'UPDATE EJERCICIO SET nombre="'.limpiarDatos($_POST["nombre"]).'", dificultad='.limpiarDatos($_POST["dificultad"]).', 
         foto="'.limpiarDatos($_POST["foto"]).'" WHERE cod='.limpiarDatos($_POST["id"]).';');
         mysqli_close($link);
-        header("Location: ../admin/ejercicios.php");
+        cargarIndex();
     } else if (!empty($_POST['video'])) { 
         $query = mysqli_query($link, 'UPDATE EJERCICIO SET nombre="'.limpiarDatos($_POST["nombre"]).'", dificultad='.limpiarDatos($_POST["dificultad"]).', 
         video="'.limpiarDatos($_POST["video"]).'" WHERE cod='.limpiarDatos($_POST["id"]).';');
         mysqli_close($link);
-        header("Location: ../admin/ejercicios.php");
+        cargarIndex();
     } else {
         $query = mysqli_query($link, 'UPDATE EJERCICIO SET nombre="'.limpiarDatos($_POST["nombre"]).'", dificultad='.limpiarDatos($_POST["dificultad"]).' WHERE cod='.limpiarDatos($_POST["id"]).';');
         mysqli_close($link);
-        header("Location: ../admin/ejercicios.php");
+        cargarIndex();
     }
 } 
 
