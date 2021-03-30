@@ -26,7 +26,7 @@
 								<li class="current"><a href="../index.php">Home</a></li>
 								<li><a href="#">Comunidad</a></li></li>
 								<li><a href="/paginas/area-usuario.php">Área de usuario</a></li>
-								<li><a href="#">Contacto</a></li>
+								<li><a href="#">Contacto 2</a></li>
 							</ul>
 						</nav>
 
