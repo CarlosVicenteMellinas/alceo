@@ -43,6 +43,15 @@ function iniciarSesion($usuario) {
     session_start();
     session_regenerate_id();
     $_SESSION['usuario'] = $usuario;
+    $inactividad = 6;
+    if(isset($_SESSION["timeout"])){
+        $sessionTTL = time() - $_SESSION["timeout"];
+        if($sessionTTL > $inactividad){
+            session_destroy();
+            header("Location: ../paginas/area-usuario.php");
+        }
+    }
+    $_SESSION["timeout"] = time();
     header("Location: ../paginas/area-usuario.php");
 }
 
