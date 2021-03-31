@@ -12,9 +12,17 @@
 		<link rel="stylesheet" href="../assets/css/main.css" />
 	</head>
 	<body class="is-preload">
-        <?php 
-        session_start();
+    <?php 
+		session_start();
         if (!empty($_SESSION['usuario'])) {
+			$inactividad = 600;
+			if(isset($_SESSION["timeout"])){
+				$sessionTTL = time() - $_SESSION["timeout"];
+				if($sessionTTL > $inactividad){
+					session_destroy();
+					header("Location: /paginas/area-usuario.php");
+				}
+			}
             if ($_SESSION['usuario'] === 'admin') {
         ?>
 		<div id="page-wrapper">

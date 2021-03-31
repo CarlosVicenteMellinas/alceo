@@ -15,7 +15,7 @@
         <?php 
 		session_start();
         if (!empty($_SESSION['usuario'])) {
-			$inactividad = 6;
+			$inactividad = 600;
 			if(isset($_SESSION["timeout"])){
 				$sessionTTL = time() - $_SESSION["timeout"];
 				if($sessionTTL > $inactividad){
