@@ -13,8 +13,16 @@
 	</head>
 	<body class="is-preload">
         <?php 
-        session_start();
+		session_start();
         if (!empty($_SESSION['usuario'])) {
+			$inactividad = 6;
+			if(isset($_SESSION["timeout"])){
+				$sessionTTL = time() - $_SESSION["timeout"];
+				if($sessionTTL > $inactividad){
+					session_destroy();
+					header("Location: /paginas/area-usuario.php");
+				}
+			}
             if ($_SESSION['usuario'] === 'admin') {
         ?>
 		<div id="page-wrapper">

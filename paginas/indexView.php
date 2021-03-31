@@ -12,24 +12,33 @@
 		<link rel="stylesheet" href="/assets/css/main.css" />
 	</head>
 	<body class="is-preload">
+	<?php
+        session_start();
+        $inactividad = 6;
+        if(isset($_SESSION["timeout"])){
+            $sessionTTL = time() - $_SESSION["timeout"];
+            if($sessionTTL > $inactividad){
+                session_destroy();
+                header("Location: /paginas/area-usuario.php");
+            }
+        }
+        ?>
 		<div id="page-wrapper">
 
 			<!-- Header -->
 				<div id="header">
+				<!-- Logo -->
+					<a href="/index.php" id="logo"><img src="/images/logo-alceo.png" width="9%"></a>
 
-					<!-- Logo -->
-						<a href="/index.php" id="logo"><img src="/images/logo-alceo.png" width="9%"></a>
-
-					<!-- Nav -->
-						<nav id="nav">
-							<ul>
-								<li class="current"><a href="/index.php">Home</a></li>
-								<li><a href="#">Comunidad</a></li></li>
-								<li><a href="/paginas/area-usuario.php">Área de usuario</a></li>
-								<li><a href="#">Contacto</a></li>
-							</ul>
-						</nav>
-
+				<!-- Nav -->
+					<nav id="nav">
+						<ul>
+							<li class="current"><a href="/index.php">Home</a></li>
+							<li><a href="#">Comunidad</a></li></li>
+							<li><a href="/paginas/area-usuario.php">Área de usuario</a></li>
+							<li><a href="#">Contacto</a></li>
+						</ul>
+					</nav>
 				</div>
 
 			<!-- Banner -->
