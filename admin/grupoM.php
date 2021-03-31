@@ -38,7 +38,6 @@
 							<ul>
 								<li><a href="/index.php">Home</a></li>
                                 <li><a href="/admin/index.php">Admin Home</a></li>
-								<li><a href="#">Comunidad</a></li></li>
 								<li><a href="/controllers/ejercicioController.php">Ejercicios</a></li>
 								<li class="current"><a href="/controllers/grupoM/grupoMController.php">Grupos Musculares</a></li>
 							</ul>
