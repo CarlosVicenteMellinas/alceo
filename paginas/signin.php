@@ -15,13 +15,13 @@
         <?php
         session_start();
         $inactividad = 600;
-        if(isset($_SESSION["timeout"])){
+        if(!empty($_SESSION["timeout"])){
             $sessionTTL = time() - $_SESSION["timeout"];
             if($sessionTTL > $inactividad){
                 session_destroy();
                 header("Location: /paginas/area-usuario.php");
             }
-        }
+        } 
         ?>
 		<div id="page-wrapper">
 

@@ -12,16 +12,16 @@
 		<link rel="stylesheet" href="/assets/css/main.css" />
 	</head>
 	<body class="is-preload">
-    <?php
-        session_start();
+        <?php
+	    session_start();
         $inactividad = 600;
-        if(isset($_SESSION["timeout"])){
+        if(!empty($_SESSION["timeout"])){
             $sessionTTL = time() - $_SESSION["timeout"];
             if($sessionTTL > $inactividad){
                 session_destroy();
                 header("Location: /paginas/area-usuario.php");
             }
-        }
+        } 
         ?>
 		<div id="page-wrapper">
 
@@ -52,7 +52,6 @@
 				</section>
             <!-- Area Usuario -->
             <?php 
-            session_start();
             if(!empty($_SESSION['usuario'])) { 
                 echo '<h1>Tamoh logueado: '.$_SESSION['usuario'].'</h1>'; ?>
                     <form id="cerrarSesion" action="/controllers/loginController.php" method="POST">
