@@ -9,7 +9,7 @@ function validarNombre($link) {
         mysqli_close($link);
         $valido = false;
         $nombreError = 'El nombre no puede tener una longitud superior a 200 caracteres';
-        include '../paginas/signin.php';
+        cargarPaginaSignin();
     }
 
     return $valido;
@@ -23,7 +23,7 @@ function validarNick($link) {
         mysqli_close($link);
         $valido = false;
         $nickError = 'El nick no puede tener una longitud superior a 20 caracteres';
-        include '../paginas/signin.php';
+        cargarPaginaSignin();
     }
     $query = mysqli_query($link, 'SELECT * FROM USUARIO WHERE nickname="'.$nick.'" ');
     $results = mysqli_fetch_array($query);
@@ -31,7 +31,7 @@ function validarNick($link) {
         mysqli_close($link);
         $valido = false;
         $nickError = 'El nick no esta disponible';
-        include '../paginas/signin.php';
+        cargarPaginaSignin();
     }
     return $valido;
 }
@@ -45,42 +45,42 @@ function validarContrasena($link) {
         mysqli_close($link);
         $valido = false;
         $contasenaError = 'La contraseña debe de tener una longitud superior a 8 caracteres';
-        include '../paginas/signin.php';
+        cargarPaginaSignin();
     }
 
     if (strlen($contrasena1) > 200) {
         mysqli_close($link);
         $valido = false;
         $contasenaError = 'La contraseña no puede tener una longitud superior a 200 caracteres';
-        include '../paginas/signin.php';
+        cargarPaginaSignin();
     }
 
     if (!preg_match('`[a-z]`', $contrasena1)) {
         mysqli_close($link);
         $valido = false;
         $contasenaError = 'La contraseña debe de tener al menos una letra minúscula';
-        include '../paginas/signin.php';
+        cargarPaginaSignin();
     }
 
     if (!preg_match('`[A-Z]`', $contrasena1)) {
         mysqli_close($link);
         $valido = false;
         $contasenaError = 'La contraseña debe de tener al menos una letra mayúscula';
-        include '../paginas/signin.php';
+        cargarPaginaSignin();
     }
 
     if (!preg_match('`[0-9]`',$contrasena1)){
         mysqli_close($link);
         $valido = false;
         $contasenaError = 'La contraseña debe de tener al menos un caracter numérico';
-        include '../paginas/signin.php';
+        cargarPaginaSignin();
     }
 
     if ($contrasena2 !== $contrasena1) {
         mysqli_close($link);
         $valido = false;
         $contasenaError = 'Las contraseñas no coinciden';
-        include '../paginas/signin.php';
+        cargarPaginaSignin();
     }
 
     return $valido;
@@ -94,7 +94,7 @@ function validarCorreo($link) {
         mysqli_close($link);
         $valido = false;
         $emailError = 'La direccion introducida no es válida';
-        include '../paginas/signin.php';
+        cargarPaginaSignin();
     }
 
     $query = mysqli_query($link, 'SELECT * FROM USUARIO WHERE correo="'.$correo.'" ');
@@ -103,7 +103,7 @@ function validarCorreo($link) {
         mysqli_close($link);
         $valido = false;
         $emailError = 'El correo ya esta registrado';
-        include '../paginas/signin.php';
+        cargarPaginaSignin();
     }
 
     return $valido;
