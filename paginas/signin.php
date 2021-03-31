@@ -9,7 +9,7 @@
 		<title>Alceo - Deporte y Salud en tu mano</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="../assets/css/main.css" />
+		<link rel="stylesheet" href="/assets/css/main.css" />
 	</head>
 	<body class="is-preload">
 		<div id="page-wrapper">
@@ -18,12 +18,12 @@
 				<div id="header">
 
 					<!-- Logo -->
-						<a href="../index.php" id="logo"><img src="../images/logo-alceo.png" width="9%"></a>
+						<a href="/index.php" id="logo"><img src="/images/logo-alceo.png" width="9%"></a>
 
 					<!-- Nav -->
 						<nav id="nav">
 							<ul>
-								<li><a href="../index.php">Home</a></li>
+								<li><a href="/index.php">Home</a></li>
 								<li><a href="#">Comunidad</a></li></li>
 								<li  class="current"><a href="/paginas/area-usuario.php">Área de usuario</a></li>
 								<li><a href="#">Contacto</a></li>
@@ -43,7 +43,7 @@
             <!-- Formulario Signin -->
                 <div id="sigin">
                     <h2 class="tituloForm">¡Crea tu cuenta!</h2>
-                    <form id="signinForm" action="../controllers/signinController.php" method="POST" >
+                    <form id="signinForm" action="/controllers/signinController.php" method="POST" >
                     <label for="nombre" >Nombre Completo: </label>
                         <input type="text" id="nombre" name="nombre" required>
                         <?php if (!empty($nombreError)) {echo '<p class="error">'.$nombreError.'</p>';} ?>
@@ -144,12 +144,12 @@
             </div>
         </div>
 		<!-- Scripts -->
-			<script src="../assets/js/jquery.min.js"></script>
-			<script src="../assets/js/jquery.dropotron.min.js"></script>
-			<script src="../assets/js/browser.min.js"></script>
-			<script src="../assets/js/breakpoints.min.js"></script>
-			<script src="../assets/js/util.js"></script>
-			<script src="../assets/js/main.js"></script>
-            <script src="../js/signin.js"></script>
+			<script src="/assets/js/jquery.min.js"></script>
+			<script src="/assets/js/jquery.dropotron.min.js"></script>
+			<script src="/assets/js/browser.min.js"></script>
+			<script src="/assets/js/breakpoints.min.js"></script>
+			<script src="/assets/js/util.js"></script>
+			<script src="/assets/js/main.js"></script>
+            <script src="/js/signin.js"></script>
 	</body>
 </html>

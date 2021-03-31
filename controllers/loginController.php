@@ -48,17 +48,17 @@ function iniciarSesion($usuario) {
         $sessionTTL = time() - $_SESSION["timeout"];
         if($sessionTTL > $inactividad){
             session_destroy();
-            header("Location: ../paginas/area-usuario.php");
+            header("Location: /paginas/area-usuario.php");
         }
     }
     $_SESSION["timeout"] = time();
-    header("Location: ../paginas/area-usuario.php");
+    header("Location: /paginas/area-usuario.php");
 }
 
 function cerrarSesion() {
     session_start();
     session_destroy();
-    header("Location: ../paginas/area-usuario.php");
+    header("Location: /paginas/area-usuario.php");
 
 }
 

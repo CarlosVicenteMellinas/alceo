@@ -23,16 +23,16 @@
 				<div id="header">
 
 					<!-- Logo -->
-						<a href="../index.php" id="logo"><img src="../images/logo-alceo.png" width="9%"></a>
+						<a href="/index.php" id="logo"><img src="/images/logo-alceo.png" width="9%"></a>
 
 					<!-- Nav -->
 						<nav id="nav">
 							<ul>
-								<li><a href="../index.php">Home</a></li>
-                                <li><a href="../admin/index.php">Admin Home</a></li>
+								<li><a href="/index.php">Home</a></li>
+                                <li><a href="/admin/index.php">Admin Home</a></li>
 								<li><a href="#">Comunidad</a></li></li>
-								<li class="current"><a href="../controllers/ejercicioController.php">Ejercicios</a></li>
-								<li><a href="../controllers/grupoM/grupoMController.php">Grupos Musculares</a></li>
+								<li class="current"><a href="/controllers/ejercicioController.php">Ejercicios</a></li>
+								<li><a href="/controllers/grupoM/grupoMController.php">Grupos Musculares</a></li>
 							</ul>
 						</nav>
 				</div>
@@ -41,7 +41,7 @@
                 <div>
                     <h2 class="tituloForm">Ejercicios</h2>
                     <div id="alter">
-                        <form id="selectForm" action="../controllers/ejercicioController.php" method="POST">
+                        <form id="selectForm" action="/controllers/ejercicioController.php" method="POST">
                             <label for="">Selecciona un ejercicio:</label>
                             <select id="ejercicio" onchange='<?php echo 'setID('.json_encode($ejercicios).')'; ?>'>
                                 <option disabled selected>No seleccionado</option>
@@ -60,13 +60,13 @@
         </div>
 
          <!-- Scripts -->
-        <script src="../assets/js/jquery.min.js"></script>
-        <script src="../assets/js/jquery.dropotron.min.js"></script>
-        <script src="../assets/js/browser.min.js"></script>
-        <script src="../assets/js/breakpoints.min.js"></script>
-        <script src="../assets/js/util.js"></script>
-        <script src="../assets/js/main.js"></script>
-        <script src="../js/ejercicios/ejercicio.js"></script>
+        <script src="/assets/js/jquery.min.js"></script>
+        <script src="/assets/js/jquery.dropotron.min.js"></script>
+        <script src="/assets/js/browser.min.js"></script>
+        <script src="/assets/js/breakpoints.min.js"></script>
+        <script src="/assets/js/util.js"></script>
+        <script src="/assets/js/main.js"></script>
+        <script src="/js/ejercicios/ejercicio.js"></script>
 
         <?php 
             } else {
@@ -74,7 +74,7 @@
         ?>
             <div>
                 <h2 class="error">Acceso no autorizado</h2>
-                <a href="../index.php">Vuelta a la pagina principal</a>
+                <a href="/index.php">Vuelta a la pagina principal</a>
             </div>
         <?php 
             }
@@ -82,7 +82,7 @@
         ?>
         <div>
                 <h2 class="error">Tienes que iniciar sesion para acceder</h2>
-                <a href="../index.php">Vuelta a la pagina principal</a>
+                <a href="/index.php">Vuelta a la pagina principal</a>
             </div>
 
         <?php } ?>

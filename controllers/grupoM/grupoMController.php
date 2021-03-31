@@ -19,7 +19,7 @@ function cargarEdicion() {
     }
     mysqli_free_result($query);
     mysqli_close($link);
-    include '../admin/grupoM/EditgrupoM.php';
+    include '../../admin/grupoM/EditgrupoM.php';
 }
 
 function comprobarDatosEdit() {
@@ -50,7 +50,11 @@ function cargarIndex() {
     mysqli_close($link);
 }
 
-if (!empty($_POST['editForm'])) {
+if (!empty($_POST['addForm'])) {
+    include '../../admin/grupoM/AddgrupoM.php';
+} else if (!empty($_POST['crearGrupoM']) && !empty($_POST['nombre'])) {
+    comprobarDatosInsert();
+} else if (!empty($_POST['editForm'])) {
     cargarEdicion();
 } else if (!empty($_POST['editarGrupoM']) && !empty($_POST['nombre'])) {
     comprobarDatosEdit();

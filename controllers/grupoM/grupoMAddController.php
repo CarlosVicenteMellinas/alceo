@@ -40,7 +40,7 @@ function insertar() {
 }
 
 if (!empty($_POST['addForm'])) {
-    header("Location: ../../admin/grupoM/AddgrupoM.php");
+    header("Location: /admin/grupoM/AddgrupoM.php");
 } else if (!empty($_POST['crearGrupoM']) && !empty($_POST['nombre'])) {
     comprobarDatosInsert();
 }

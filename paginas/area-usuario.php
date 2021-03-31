@@ -9,7 +9,7 @@
 		<title>Alceo - Deporte y Salud en tu mano</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="../assets/css/main.css" />
+		<link rel="stylesheet" href="/assets/css/main.css" />
 	</head>
 	<body class="is-preload">
 		<div id="page-wrapper">
@@ -18,7 +18,7 @@
 				<div id="header">
 
 					<!-- Logo -->
-						<a href="../index.php" id="logo"><img src="../images/logo-alceo.png" width="9%"></a>
+						<a href="../index.php" id="logo"><img src="/images/logo-alceo.png" width="9%"></a>
 
 					<!-- Nav -->
 						<nav id="nav">
@@ -44,7 +44,7 @@
             session_start();
             if(!empty($_SESSION['usuario'])) { 
                 echo '<h1>Tamoh logueado: '.$_SESSION['usuario'].'</h1>'; ?>
-                    <form id="cerrarSesion" action="../controllers/loginController.php" method="POST">
+                    <form id="cerrarSesion" action="/controllers/loginController.php" method="POST">
                         <input type="submit" name="cerrarSesion" id="cerrarSesion" value="Cerrar Sesion">
                     </form>
             <?php }  
@@ -52,7 +52,7 @@
             <!-- Formulario Inicio Sesion -->
                 <div id="loginSignin">
                     <div id="login">
-                        <form id="loginForm" action="../controllers/loginController.php" method="POST">
+                        <form id="loginForm" action="/controllers/loginController.php" method="POST">
                             <label for="loginNombre">Usuario: </label>
                             <input type="text" id="loginNombre" name="loginNombre" required>
                             <?php if (!empty($usuarioError)) {echo '<p class="error">'.$usuarioError.'</p>';}?>
@@ -66,7 +66,7 @@
                     </div>
                     <p><em>¿Has olvidado tu contraseña?</em> Pues haber estudiado porque aún no tenemos esta función disponible :)</p>
                     <div id="signin">
-                        <form id="signin" action="../controllers/signinController.php" method="POST">
+                        <form id="signin" action="/controllers/signinController.php" method="POST">
                             <input type="submit" id="signinButton" value="Crear cuenta">
                         </form>
                     </div>
@@ -138,12 +138,12 @@
             </div>
         </div>
 		<!-- Scripts -->
-			<script src="../assets/js/jquery.min.js"></script>
-			<script src="../assets/js/jquery.dropotron.min.js"></script>
-			<script src="../assets/js/browser.min.js"></script>
-			<script src="../assets/js/breakpoints.min.js"></script>
-			<script src="../assets/js/util.js"></script>
-			<script src="../assets/js/main.js"></script>
+			<script src="/assets/js/jquery.min.js"></script>
+			<script src="/assets/js/jquery.dropotron.min.js"></script>
+			<script src="/assets/js/browser.min.js"></script>
+			<script src="/assets/js/breakpoints.min.js"></script>
+			<script src="/assets/js/util.js"></script>
+			<script src="/assets/js/main.js"></script>
 
 	</body>
 </html>
