@@ -41,7 +41,7 @@
                 <div>
                     <h2 class="tituloForm">Grupos Musculares</h2>
                     <div id="insert">
-                        <form id="insertForm" action="../controllers/ejercicioController.php" method="POST">
+                        <form id="insertForm" action="../controllers/grupoMController.php" method="POST">
                             <label for="nombre">Nombre: </label>
                             <input type="text" id="nombre" name="nombre" required>
                             <?php if (!empty($nombreError)) {echo '<p class="error">'.$nombreError.'</p>';}?>
