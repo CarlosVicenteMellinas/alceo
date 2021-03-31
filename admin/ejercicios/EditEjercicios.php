@@ -32,7 +32,7 @@
                                 <li><a href="../admin/index.php">Admin Home</a></li>
 								<li><a href="#">Comunidad</a></li></li>
 								<li class="current"><a href="../controllers/ejercicioController.php">Ejercicios</a></li>
-								<li><a href="#">Grupos Musculares</a></li>
+								<li><a href="../controllers/grupoMController.php">Grupos Musculares</a></li>
 							</ul>
 						</nav>
 				</div>
@@ -62,11 +62,11 @@
                             
                             <label for="foto">Foto: </label>
                             <input type="file" id="foto" name="foto">
-                            <?php if (!empty($fotoError)) {echo '<p class="error">'.$nombreError.'</p>';}?>
+                            <?php if (!empty($fotoError)) {echo '<p class="error">'.$fotoError.'</p>';}?>
 
                             <label for="video">Video: </label>
                             <input type="file" id="video" name="video">
-                            <?php if (!empty($videoError)) {echo '<p class="error">'.$nombreError.'</p>';}?>
+                            <?php if (!empty($videoError)) {echo '<p class="error">'.$videoError.'</p>';}?>
                             <br><br>
                             <input type="hidden" id="id" name="id" value="">
                             <input type="submit" id="editarEjercicio" name="editarEjercicio" value="Editar Ejercicio">

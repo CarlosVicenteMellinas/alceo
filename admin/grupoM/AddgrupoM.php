@@ -23,7 +23,7 @@
 				<div id="header">
 
 					<!-- Logo -->
-						<a href="../index.php" id="logo"><img src="..//images/logo-alceo.png" width="9%"></a>
+						<a href="../index.php" id="logo"><img src="../images/logo-alceo.png" width="9%"></a>
 
 					<!-- Nav -->
 						<nav id="nav">
@@ -31,40 +31,24 @@
 								<li><a href="../index.php">Home</a></li>
                                 <li><a href="../admin/index.php">Admin Home</a></li>
 								<li><a href="#">Comunidad</a></li></li>
-								<li class="current"><a href="../controllers/ejercicioController.php">Ejercicios</a></li>
-								<li><a href="../controllers/grupoMController.php">Grupos Musculares</a></li>
+								<li><a href="../controllers/ejercicioController.php">Ejercicios</a></li>
+								<li class="current"><a href="#"><a href="../controllers/grupoMController.php">Grupos Musculares</a></li>
 							</ul>
 						</nav>
 				</div>
 
             <!-- Creacion -->
                 <div>
-                    <h2 class="tituloForm">Ejercicios</h2>
-                    <div id="forms">
-                        <form id="addForm" action="../controllers/ejercicioController.php" method="POST">
-                            <input type="submit" id="addForm" name="addForm" value="Crear Ejercicio">
-                            <label for="addForm">Añade un nuevo ejercicio</label>
-                        </form>
-                        <form id="editForm" action="../controllers/ejercicioController.php" method="POST">
-                            <input type="submit" name="editForm" id="editForm" value="Editar Ejercicio">
-                            <label for="editForm">Edita un ejercicio ya existente</label>
-                        </form>
-                        <form id="deleteForm" action="../controllers/ejercicioController.php" method="POST">
-                            <input type="submit" name="deleteForm" id="deleteForm" value="Borrar Ejercicio">
-                            <label for="deleteForm">Elimina un ejercicio</label>
+                    <h2 class="tituloForm">Grupos Musculares</h2>
+                    <div id="insert">
+                        <form id="insertForm" action="../controllers/ejercicioController.php" method="POST">
+                            <label for="nombre">Nombre: </label>
+                            <input type="text" id="nombre" name="nombre" required>
+                            <?php if (!empty($nombreError)) {echo '<p class="error">'.$nombreError.'</p>';}?>
+                            <br><br>
+                            <input type="submit" id="crearGrupoM" name="crearGrupoM" value="Crear GrupoM">
                         </form>
                     </div>
-                </div>
-                <div>
-                    <h3>Ejercicios disponibles:</h3>
-                    <table id="ejercicios">
-                        <tr><td>Cod</td><td>Nombre</td><td>Dificultad</td><td>Foto</td><td>Video</td></tr>
-                        <?php
-                        foreach ($ejercicios as $ejercicio) {
-                            echo $ejercicio;
-                        }
-                        ?>
-                    </table>
                 </div>
         </div>
 

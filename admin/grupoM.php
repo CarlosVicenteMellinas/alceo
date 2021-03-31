@@ -31,37 +31,37 @@
 								<li><a href="../index.php">Home</a></li>
                                 <li><a href="../admin/index.php">Admin Home</a></li>
 								<li><a href="#">Comunidad</a></li></li>
-								<li class="current"><a href="../controllers/ejercicioController.php">Ejercicios</a></li>
-								<li><a href="../controllers/grupoMController.php">Grupos Musculares</a></li>
+								<li><a href="../controllers/ejercicioController.php">Ejercicios</a></li>
+								<li class="current"><a href="../controllers/grupoMController.php">Grupos Musculares</a></li>
 							</ul>
 						</nav>
 				</div>
 
             <!-- Creacion -->
                 <div>
-                    <h2 class="tituloForm">Ejercicios</h2>
+                    <h2 class="tituloForm">Grupos Musculares</h2>
                     <div id="forms">
-                        <form id="addForm" action="../controllers/ejercicioController.php" method="POST">
-                            <input type="submit" id="addForm" name="addForm" value="Crear Ejercicio">
-                            <label for="addForm">Añade un nuevo ejercicio</label>
+                        <form id="addForm" action="../controllers/grupoMController.php" method="POST">
+                            <input type="submit" id="addForm" name="addForm" value="Crear GrupoM">
+                            <label for="addForm">Añade un nuevo grupo muscular</label>
                         </form>
-                        <form id="editForm" action="../controllers/ejercicioController.php" method="POST">
-                            <input type="submit" name="editForm" id="editForm" value="Editar Ejercicio">
-                            <label for="editForm">Edita un ejercicio ya existente</label>
+                        <form id="editForm" action="../controllers/grupoMController.php" method="POST">
+                            <input type="submit" name="editForm" id="editForm" value="Editar GrupoM">
+                            <label for="editForm">Edita un grupo muscular ya existente</label>
                         </form>
-                        <form id="deleteForm" action="../controllers/ejercicioController.php" method="POST">
-                            <input type="submit" name="deleteForm" id="deleteForm" value="Borrar Ejercicio">
-                            <label for="deleteForm">Elimina un ejercicio</label>
+                        <form id="deleteForm" action="../controllers/grupoMController.php" method="POST">
+                            <input type="submit" name="deleteForm" id="deleteForm" value="Borrar GrupoM">
+                            <label for="deleteForm">Elimina un grupo muscular</label>
                         </form>
                     </div>
                 </div>
                 <div>
-                    <h3>Ejercicios disponibles:</h3>
-                    <table id="ejercicios">
-                        <tr><td>Cod</td><td>Nombre</td><td>Dificultad</td><td>Foto</td><td>Video</td></tr>
+                    <h3>Grupos Musculares disponibles:</h3>
+                    <table id="grupoM">
+                        <tr><td>Cod</td><td>Nombre</td></tr>
                         <?php
-                        foreach ($ejercicios as $ejercicio) {
-                            echo $ejercicio;
+                        foreach ($gruposM as $grupoM) {
+                            echo $grupoM;
                         }
                         ?>
                     </table>
