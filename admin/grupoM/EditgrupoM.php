@@ -52,7 +52,7 @@
                                 ?>
                             </select>
                         </form>
-                        <form id="alterForm" action="/controllers/grupoMController.php" method="POST">
+                        <form id="alterForm" action="/controllers/grupoM/grupoMEditController.php" method="POST">
                             <label for="nombre">Nombre: </label>
                             <input type="text" id="nombre" name="nombre" required>
                             <?php if (!empty($nombreError)) {echo '<p class="error">'.$nombreError.'</p>';}?>

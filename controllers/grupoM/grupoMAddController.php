@@ -36,7 +36,7 @@ function insertar() {
     $link = Conectar::conexion();
     $query = mysqli_query($link, 'INSERT INTO GRUPO_MUSCULAR (nombre) VALUES ("'.limpiarDatos($_POST["nombre"]).'")');
     mysqli_close($link);
-    header("Location: ./grupoMController.php");
+    header("Location: /controllers/grupoM/grupoMController.php");
 }
 
 if (!empty($_POST['addForm'])) {

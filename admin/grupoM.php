@@ -45,7 +45,7 @@
                             <input type="submit" id="addForm" name="addForm" value="Crear GrupoM">
                             <label for="addForm">Añade un nuevo grupo muscular</label>
                         </form>
-                        <form id="editForm" action="/controllers/grupoMController.php" method="POST">
+                        <form id="editForm" action="/controllers/grupoM/grupoMEditController.php" method="POST">
                             <input type="submit" name="editForm" id="editForm" value="Editar GrupoM">
                             <label for="editForm">Edita un grupo muscular ya existente</label>
                         </form>
