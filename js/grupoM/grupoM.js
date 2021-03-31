@@ -11,7 +11,7 @@ function changeValues(data) {
 
 function setID(data) {
     let cod = select.value;
-    let grupoM = getEjercicio(cod, data);
+    let grupoM = getGrupoM(cod, data);
     id.value = grupoM[0];
    
 }

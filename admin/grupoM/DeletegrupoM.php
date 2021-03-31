@@ -31,8 +31,8 @@
 								<li><a href="/index.php">Home</a></li>
                                 <li><a href="/admin/index.php">Admin Home</a></li>
 								<li><a href="#">Comunidad</a></li></li>
-								<li class="current"><a href="/controllers/ejercicioController.php">Ejercicios</a></li>
-								<li><a href="/controllers/grupoM/grupoMController.php">Grupos Musculares</a></li>
+								<li><a href="/controllers/ejercicioController.php">Ejercicios</a></li>
+								<li class="current"><a href="/controllers/grupoM/grupoMController.php">Grupos Musculares</a></li>
 							</ul>
 						</nav>
 				</div>
@@ -66,7 +66,7 @@
         <script src="/assets/js/breakpoints.min.js"></script>
         <script src="/assets/js/util.js"></script>
         <script src="/assets/js/main.js"></script>
-        <script src="/js/ejercicios/ejercicio.js"></script>
+        <script src="/js/grupoM/grupoM.js"></script>
 
         <?php 
             } else {

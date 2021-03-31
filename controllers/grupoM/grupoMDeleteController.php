@@ -24,7 +24,7 @@ function cargarEliminacion() {
 
 function eliminar($cod) {
     $link = Conectar::conexion();
-    $query = mysqli_query($link, 'DELETE FROM EJERCICIO WHERE cod='.$cod.';');
+    $query = mysqli_query($link, 'DELETE FROM GRUPO_MUSCULAR WHERE cod='.$cod.';');
     mysqli_close($link);
     header("Location: /controllers/grupoM/grupoMController.php");
 }
