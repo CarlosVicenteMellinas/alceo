@@ -15,7 +15,7 @@
     <?php 
 		session_start();
         if (!empty($_SESSION['usuario'])) {
-			$inactividad = 600;
+			$inactividad = 3600;
 			if(isset($_SESSION["timeout"])){
 				$sessionTTL = time() - $_SESSION["timeout"];
 				if($sessionTTL > $inactividad){
@@ -47,6 +47,11 @@
             <!-- Creacion -->
                 <div>
                     <h2 class="tituloForm">Grupos Musculares</h2>
+                    <?php 
+                    if (!empty($mensaje)) {
+                        echo $mensaje;
+                    }
+                    ?>
                     <div id="forms">
                         <form id="addForm" action="/controllers/grupoM/grupoMAddController.php" method="POST">
                             <input type="submit" id="addForm" name="addForm" value="Crear GrupoM">

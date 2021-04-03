@@ -14,7 +14,7 @@
 	<body class="is-preload">
         <?php
         session_start();
-        $inactividad = 600;
+        $inactividad = 3600;
         if(!empty($_SESSION["timeout"])){
             $sessionTTL = time() - $_SESSION["timeout"];
             if($sessionTTL > $inactividad){

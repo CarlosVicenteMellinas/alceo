@@ -50,7 +50,13 @@ function editar() {
     $link = Conectar::conexion();
     $query = mysqli_query($link, 'UPDATE GRUPO_MUSCULAR SET nombre="'.limpiarDatos($_POST["nombre"]).'" WHERE cod='.limpiarDatos($_POST["id"]).';');
     mysqli_close($link);
-    header("Location: /controllers/grupoM/grupoMController.php");
+    if ($query) {
+        $mensaje = "<p class='correcto'>El dato ha sido editado correctamente</p>";
+        include "grupoMController.php";
+    } else {
+        $mensaje = "<p class='incorrecto'>¡Error! El dato no se ha editado</p>";
+        include "grupoMController.php";
+    }
 }
 if (!empty($_POST['editForm'])) {
     cargarEdicion();

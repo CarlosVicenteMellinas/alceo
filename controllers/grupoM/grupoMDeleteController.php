@@ -26,7 +26,13 @@ function eliminar($cod) {
     $link = Conectar::conexion();
     $query = mysqli_query($link, 'DELETE FROM GRUPO_MUSCULAR WHERE cod='.$cod.';');
     mysqli_close($link);
-    header("Location: /controllers/grupoM/grupoMController.php");
+    if ($query) {
+        $mensaje = "<p class='correcto'>El dato ha sido eliminado correctamente</p>";
+        include "grupoMController.php";
+    } else {
+        $mensaje = "<p class='incorrecto'>¡Error! El dato no se ha eliminado</p>";
+        include "grupoMController.php";
+    }
 }
 
 if (!empty($_POST["deleteForm"])) {

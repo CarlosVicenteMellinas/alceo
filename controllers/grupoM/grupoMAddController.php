@@ -36,7 +36,13 @@ function insertar() {
     $link = Conectar::conexion();
     $query = mysqli_query($link, 'INSERT INTO GRUPO_MUSCULAR (nombre) VALUES ("'.limpiarDatos($_POST["nombre"]).'")');
     mysqli_close($link);
-    header("Location: /controllers/grupoM/grupoMController.php");
+    if ($query) {
+        $mensaje = "<p class='correcto'>El dato ha sido creado correctamente</p>";
+        include "grupoMController.php";
+    } else {
+        $mensaje = "<p class='incorrecto'>¡Error! El dato no se ha insertado</p>";
+        include "grupoMController.php";
+    }
 }
 
 if (!empty($_POST['addForm'])) {

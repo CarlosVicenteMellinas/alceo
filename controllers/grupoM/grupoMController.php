@@ -1,14 +1,7 @@
 <?php
 require_once "../../model/db.php";
 
-function limpiarDatos($data) {
-    $data = trim($data);
-    $data = stripslashes($data);
-    $data = htmlspecialchars($data);
-    return $data;
-}
-
-function cargarIndex() {
+function cargarIndex($mensaje = '') {
     $link = Conectar::conexion();
     $query = mysqli_query($link, 'SELECT * FROM GRUPO_MUSCULAR');
     $gruposM = array();
@@ -19,8 +12,8 @@ function cargarIndex() {
     mysqli_close($link);
 }
 
-if (false) {
-   
+if (!empty($mensaje)) {
+    cargarIndex($mensaje);
 } else {
     cargarIndex();
 }
