@@ -231,7 +231,7 @@ input, select, textarea {
 		font-size: 22px !important;
 		width: 80%;
 		border: 1px solid #007255;
-		padding: 5px;
+		padding: 5px !important;
 	}
 /* Container */
 
