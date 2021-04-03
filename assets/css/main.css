@@ -3422,7 +3422,7 @@ input, select, textarea {
 		#forms {
 			display: inherit;
 			width: 80%;
-			margin: auto;
+			margin: auto !important;
 			padding-top: 20px;
 		}
 
