@@ -3423,7 +3423,11 @@ input, select, textarea {
 			display: inherit;
 			width: 80%;
 			margin: auto !important;
-			padding-top: 20px !important;
+			padding-top: 30px !important;
+		}
+
+		#forms form {
+			padding-top: 30px;
 		}
 
 		/* Banner */
