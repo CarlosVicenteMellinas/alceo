@@ -216,6 +216,14 @@ input, select, textarea {
 	#forms form {
 		text-align: center;
 	}
+
+	table {
+		width: 80%;
+	}
+
+	tr {
+		border: 1px solid #007255;
+	}
 /* Container */
 
 	.container {
