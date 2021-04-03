@@ -2433,6 +2433,7 @@ input, select, textarea {
 }
 
 tr {
+	width: 90%;
 	border: 1px solid #007255;
 }
 
