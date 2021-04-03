@@ -222,6 +222,10 @@ input, select, textarea {
 		margin: auto;
 	}
 
+	.tabla > h3 {
+		text-align: center;
+	}
+
 	table {
 		width: 90% !important;
 		margin: auto;
