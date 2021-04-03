@@ -217,7 +217,15 @@ input, select, textarea {
 		text-align: center;
 	}
 
-	
+	.tabla {
+		width: 90%;
+		margin: auto;
+	}
+
+	tr {
+		width: 80%;
+		border: 1px solid #007255;
+	}
 /* Container */
 
 	.container {
@@ -2424,19 +2432,6 @@ input, select, textarea {
 						}
 
 		}
-
-/* Tables */
-
-.tabla {
-	margin-top: 20px;
-	width: 90%;
-	margin: auto;
-}
-
-tr {
-	width: 90%;
-	border: 1px solid #007255;
-}
 
 /* Button */
 
