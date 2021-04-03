@@ -3430,6 +3430,10 @@ input, select, textarea {
 			padding-top: 30px;
 		}
 
+		.tabla h3 {
+			font-size: 30px;
+		}
+
 		/* Banner */
 
 			#banner {
