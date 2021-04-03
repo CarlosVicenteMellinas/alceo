@@ -219,6 +219,7 @@ input, select, textarea {
 
 	.tabla {
 		width: 80%;
+		margin: auto;
 	}
 
 	tr {
