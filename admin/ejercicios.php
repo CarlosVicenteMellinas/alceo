@@ -46,7 +46,7 @@
 				</div>
 
             <!-- Creacion -->
-                <div>
+                <div class="botones_creacion">
                     <h2 class="tituloForm">Ejercicios</h2>
                     <div id="forms">
                         <form id="addForm" action="/controllers/ejercicioController.php" method="POST">
