@@ -3422,6 +3422,8 @@ input, select, textarea {
 		#forms {
 			display: inherit;
 			width: 80%;
+			margin: auto;
+			padding-top: 20px;
 		}
 
 		/* Banner */
