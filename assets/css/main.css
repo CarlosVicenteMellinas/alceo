@@ -3420,7 +3420,7 @@ input, select, textarea {
 
 		/* Botones */
 		#forms {
-			display: block;
+			display: inherit;
 			width: 80%;
 		}
 
