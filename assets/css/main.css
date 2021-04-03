@@ -2427,35 +2427,14 @@ input, select, textarea {
 
 /* Tables */
 
-	table {
-		width: 90%;
-	}
+.tabla {
+	width: 90%;
+	margin: auto;
+}
 
-		table.default {
-			width: 90%;
-		}
-
-			table.default tbody tr {
-				border-bottom: solid 1px #007255;
-			}
-
-			table.default td {
-				padding: 0.5em 1em 0.5em 1em;
-			}
-
-			table.default th {
-				font-weight: 600;
-				padding: 0.5em 1em 0.5em 1em;
-				text-align: left;
-			}
-
-			table.default thead {
-				background-image: -moz-linear-gradient(top, rgba(0,0,0,0), rgba(0,0,0,0.15)), url("images/bg01.png");
-				background-image: -webkit-linear-gradient(top, rgba(0,0,0,0), rgba(0,0,0,0.15)), url("images/bg01.png");
-				background-image: -ms-linear-gradient(top, rgba(0,0,0,0), rgba(0,0,0,0.15)), url("images/bg01.png");
-				background-image: linear-gradient(top, rgba(0,0,0,0), rgba(0,0,0,0.15)), url("images/bg01.png");
-				color: #fff;
-			}
+tr {
+	border: 1px solid #007255;
+}
 
 /* Button */
 
