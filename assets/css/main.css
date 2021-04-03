@@ -218,6 +218,7 @@ input, select, textarea {
 	}
 
 	.tabla {
+		margin-top: 20px;
 		margin: auto;
 	}
 
@@ -227,6 +228,7 @@ input, select, textarea {
 	}
 
 	tr {
+		font-size: 22px !important;
 		width: 80%;
 		border: 1px solid #007255;
 	}
