@@ -241,6 +241,8 @@ input, select, textarea {
 	td {
 		padding: 5px !important;
 	}
+
+
 /* Container */
 
 	.container {
@@ -3430,6 +3432,10 @@ input, select, textarea {
 
 			.wrapper {
 				padding: 2em 20px 1px 20px;
+			}
+
+			.botones_creacion {
+				display: block;
 			}
 
 		/* CTA */
