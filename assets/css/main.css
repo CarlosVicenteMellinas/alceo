@@ -3418,6 +3418,12 @@ input, select, textarea {
 				width: 30%;
 			}
 
+		/* Botones */
+		#forms {
+			display: block;
+			width: 80%;
+		}
+
 		/* Banner */
 
 			#banner {
