@@ -62,7 +62,7 @@
                         </form>
                     </div>
                 </div>
-                <div>
+                <div class="tabla">
                     <h3>Grupos Musculares disponibles:</h3>
                     <table id="grupoM">
                         <tr><td>Cod</td><td>Nombre</td></tr>
