@@ -3431,7 +3431,7 @@ input, select, textarea {
 		}
 
 		.tabla > h3 {
-			font-size: 30px;
+			font-size: 30px !important;
 		}
 
 		/* Banner */
