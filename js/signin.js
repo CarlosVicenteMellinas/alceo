@@ -8,7 +8,33 @@ var plan;
 var telf;
 var boton;
 
-function inicializarVar() {
+function insertarError(input, texto) {
+    let error = document.createElement('p');
+    error.className = 'error';
+    error.textContent = texto;
+    input.insertAdjacentElement('afterend',error);
+}
+
+function eliminarError(input) {
+    let error = document.querySelector(`#${input.id} + .error`);
+    if (error) {
+        console.log(error);
+        error.parentNode.removeChild(error);
+    } 
+}
+
+function comprobarNick(nick) {
+    if (nick.value.length < 20) {
+        nick.setCustomValidity('');
+        eliminarError(nick);
+    } else {
+        let texto = 'El nombre de usuario no puede tener una longitud superior a 20 caracteres'
+        nick.setCustomValidity(texto);
+        insertarError(nick, texto);
+    }
+}
+
+function main() {
     form = document.getElementById("signinForm");
     nombre = document.getElementById("nombre");
     nick = document.getElementById("nick");
@@ -18,57 +44,9 @@ function inicializarVar() {
     plan = document.getElementById("plan");
     telf = document.getElementById("telefono");
     boton = document.getElementById("enviar");
+
+    nick.onchange = (ev) => comprobarNick(ev.target);
+    
 }
 
-function validarNombre(nombreUsuario) {
-    return nombreUsuario.lenght =! 0;
-}
-
-function validarNick(nick) {
-    return nick.lenght =! 0;
-}
-
-function validarContrasena(pass) {
-    return pass.lenght =! 0;
-}
-
-function validarContrasenas(pass1, pass2) {
-    return pass1 === pass2;
-}  
-
-function comprobar() {
-    if (validarNombre(nombre.textContent)) {
-        nombre.setCustomValidity('');
-    } else {
-        nombre.setCustomValidity('El nombre no es correcto');
-    }
-    if (validarNick(nick.textContent)) {
-        nick.setCustomValidity('');
-    } else {
-        nick.setCustomValidity('El nickname no es correcto');
-    }
-    if (validarContrasena(contrasena.textContent)) {
-        contrasena.setCustomValidity('');
-    } else {
-        contrasena.setCustomValidity('La contaseña no es válida');
-    }
-    if (validarContrasenas(contrasena.textContent, contrasena2.textContent)) {
-        contrasena2.setCustomValidity('');
-    } else {
-        contrasena2.setCustomValidity('Las contraseñas no coinciden');
-    }
-}
-//Tremendo coladero
-function enviar() {
-    comprobar();
-    form.checkValidity()
-    if (form.checkValidity()) {
-        form.submit();
-    }
-}
-
-$(document).ready(() => {
-    inicializarVar();
-    boton.onclick = enviar;
-
-});
+main();

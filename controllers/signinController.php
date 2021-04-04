@@ -1,7 +1,14 @@
 <?php
 require_once "../model/db.php";
 
+$nombreError = ''; 
+$nickError = '';
+$contasenaError = ''; 
+$emailError = '';
+
 function validarNombre($link) {
+    global $nombreError;
+
     $nombre = limpiarDatos($_POST['nombre']);
     $valido = true;
 
@@ -16,6 +23,8 @@ function validarNombre($link) {
 }
 
 function validarNick($link) {
+    global $nickError;
+
     $nick = limpiarDatos($_POST['nick']);
     $valido = true;
 
@@ -37,6 +46,8 @@ function validarNick($link) {
 }
 
 function validarContrasena($link) {
+    global $contasenaError;
+
     $contrasena1 = limpiarDatos($_POST['contrasena']);
     $contrasena2 = limpiarDatos($_POST['contrasena2']);
     $valido = true;
@@ -48,35 +59,35 @@ function validarContrasena($link) {
         cargarPaginaSignin();
     }
 
-    if (strlen($contrasena1) > 200) {
+    else if (strlen($contrasena1) > 200) {
         mysqli_close($link);
         $valido = false;
         $contasenaError = 'La contraseña no puede tener una longitud superior a 200 caracteres';
         cargarPaginaSignin();
     }
 
-    if (!preg_match('`[a-z]`', $contrasena1)) {
+    else if (!preg_match('`[a-z]`', $contrasena1)) {
         mysqli_close($link);
         $valido = false;
         $contasenaError = 'La contraseña debe de tener al menos una letra minúscula';
         cargarPaginaSignin();
     }
 
-    if (!preg_match('`[A-Z]`', $contrasena1)) {
+    else if (!preg_match('`[A-Z]`', $contrasena1)) {
         mysqli_close($link);
         $valido = false;
         $contasenaError = 'La contraseña debe de tener al menos una letra mayúscula';
         cargarPaginaSignin();
     }
 
-    if (!preg_match('`[0-9]`',$contrasena1)){
+    else if (!preg_match('`[0-9]`',$contrasena1)){
         mysqli_close($link);
         $valido = false;
         $contasenaError = 'La contraseña debe de tener al menos un caracter numérico';
         cargarPaginaSignin();
     }
 
-    if ($contrasena2 !== $contrasena1) {
+    else if ($contrasena2 !== $contrasena1) {
         mysqli_close($link);
         $valido = false;
         $contasenaError = 'Las contraseñas no coinciden';
@@ -87,6 +98,8 @@ function validarContrasena($link) {
 }
 
 function validarCorreo($link) {
+    global $emailError;
+
     $correo = limpiarDatos($_POST['correo']);
     $valido = true;
 
@@ -122,7 +135,6 @@ function comprobarDatos() {
         mysqli_close($link);
         crearUsuario();
     }
-    mysqli_close($link);
 }
 
 function crearUsuario() {
@@ -134,6 +146,11 @@ function crearUsuario() {
 }
 
 function cargarPaginaSignin() {
+    global $nombreError;
+    global $nickError;
+    global $contasenaError;
+    global $emailError;
+
     $link =Conectar::conexion();
     $query = mysqli_query($link, 'SELECT * FROM PLANES');
     $options = array();
