@@ -249,7 +249,7 @@ input, select, textarea {
 		text-align: center;
 		font-size: 30px;
 		line-height: 90px;
-		padding-bottom: 20px;
+		padding: 20px 0px 20px 0px;
 	}
 
 	p.incorrecto {
@@ -259,7 +259,7 @@ input, select, textarea {
 		text-align: center;
 		font-size: 30px;
 		line-height: 90px;
-		padding-bottom: 20px;
+		padding: 20px 0px 20px 0px;
 	}
 
 
