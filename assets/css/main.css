@@ -242,6 +242,26 @@ input, select, textarea {
 		padding: 5px !important;
 	}
 
+	p.correcto {
+		background: #007255;
+		color: white;
+		font-weight: bold;
+		text-align: center;
+		font-size: 30px;
+		line-height: 90px;
+		padding: 20px 0px 20px 0px;
+	}
+
+	p.incorrecto {
+		background-color: red;
+		color: white;
+		font-weight: bold;
+		text-align: center;
+		font-size: 30px;
+		line-height: 90px;
+		padding: 20px 0px 20px 0px;
+	}
+
 
 /* Container */
 
@@ -3433,6 +3453,28 @@ input, select, textarea {
 		.tabla > h3 {
 			font-size: 30px !important;
 			padding-bottom: 30px !important;
+		}
+
+		/* Mensajes error */
+
+		p.correcto {
+			background: #007255;
+			color: white;
+			font-weight: bold;
+			text-align: center;
+			font-size: 25px;
+			line-height: 30px;
+			padding: 20px 0px 20px 0px;
+		}
+	
+		p.incorrecto {
+			background-color: red;
+			color: white;
+			font-weight: bold;
+			text-align: center;
+			font-size: 25px;
+			line-height: 30px;
+			padding: 20px 0px 20px 0px;
 		}
 
 		/* Banner */
