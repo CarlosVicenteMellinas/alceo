@@ -242,7 +242,7 @@ input, select, textarea {
 		padding: 5px !important;
 	}
 
-	.correcto {
+	p .correcto {
 		background-color: #007255;
 		color: white;
 		font-weight: bold;
@@ -250,7 +250,7 @@ input, select, textarea {
 		font-size: 30px;
 	}
 
-	.incorrecto {
+	p .incorrecto {
 		background-color: red;
 		color: white;
 		font-weight: bold;
