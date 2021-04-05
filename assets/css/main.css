@@ -248,9 +248,10 @@ input, select, textarea {
 		font-weight: bold;
 		text-align: center;
 		font-size: 30px;
+		line-height: 10px;
 	}
 
-	p .incorrecto {
+	p.incorrecto {
 		background-color: red;
 		color: white;
 		font-weight: bold;
