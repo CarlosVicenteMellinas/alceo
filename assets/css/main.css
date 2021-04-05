@@ -247,6 +247,7 @@ input, select, textarea {
 		color: white;
 		font-weight: bold;
 		text-align: center;
+		font-size: 30px;
 	}
 
 	.incorrecto {
@@ -254,6 +255,7 @@ input, select, textarea {
 		color: white;
 		font-weight: bold;
 		text-align: center;
+		font-size: 30px;
 	}
 
 
