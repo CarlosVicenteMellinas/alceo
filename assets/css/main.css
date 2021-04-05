@@ -248,7 +248,8 @@ input, select, textarea {
 		font-weight: bold;
 		text-align: center;
 		font-size: 30px;
-		line-height: 110px;
+		line-height: 90px;
+		padding: 20px 0px 20px 0px;
 	}
 
 	p.incorrecto {
