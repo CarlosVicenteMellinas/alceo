@@ -242,7 +242,7 @@ input, select, textarea {
 		padding: 5px !important;
 	}
 
-	p > .correcto {
+	p.correcto {
 		background-color: #007255;
 		color: white;
 		font-weight: bold;
