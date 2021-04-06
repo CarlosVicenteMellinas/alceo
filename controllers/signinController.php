@@ -33,6 +33,11 @@ function validarNick($link) {
         $valido = false;
         $nickError = 'El nick no puede tener una longitud superior a 20 caracteres';
         cargarPaginaSignin();
+    } else if (preg_match('`\s`', $nick)) {
+        mysqli_close($link);
+        $valido = false;
+        $nickError = 'El nick no puede contener espacios';
+        cargarPaginaSignin();
     }
     $query = mysqli_query($link, 'SELECT * FROM USUARIO WHERE nickname="'.$nick.'" ');
     $results = mysqli_fetch_array($query);

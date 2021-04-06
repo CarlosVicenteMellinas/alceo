@@ -75,7 +75,7 @@
                         <?php if (!empty($emailError)) {echo '<p class="error">'.$emailError.'</p>';} ?>
 
                         <label for="telefono">Telefono: </label>                        
-                        <input type="tel" id="telefono" name="telefono" required>
+                        <input type="tel" id="telefono" name="telefono" pattern="[0-9]{9}">
                         <label for="plan">Plan</label>
                         <select id="plan" name="plan" required>
                             <option selected disabled>No seleccionado</option>
