@@ -1,6 +1,9 @@
 <?php
 require_once "../../model/db.php";
 
+$nombreError = "";
+$precioError = "";
+
 function limpiarDatos($data) {
     $data = trim($data);
     $data = stripslashes($data);
@@ -8,14 +11,17 @@ function limpiarDatos($data) {
     return $data;
 }
 
-function cargarEdicion($nombreError = '') {
+function cargarEdicion() {
+    global $nombreError;
+    global $precioError;
+
     $link = Conectar::conexion();
     $query = mysqli_query($link, 'SELECT * FROM PLANES');
     $options = array();
     $planes = array();
     while ($results = mysqli_fetch_array($query)) {
         array_push($options,'<option value="'.$results["cod"].'">'.$results["nombre"].'</option>');
-        array_push($planes, array($results["cod"], $results["nombre"]));
+        array_push($planes, array($results["cod"], $results["nombre"], $results["precio"]));
     }
     mysqli_free_result($query);
     mysqli_close($link);
@@ -23,6 +29,8 @@ function cargarEdicion($nombreError = '') {
 }
 
 function validarNombre($link) {
+    global $nombreError;
+
     $nombre = limpiarDatos($_POST['nombre']);
     $valido = true;
 
@@ -38,6 +46,8 @@ function validarNombre($link) {
 }
 
 function validarPrecio($link) {
+    global $precioError;
+
     $precio = limpiarDatos($_POST['precio']);
     $valido = true;
 
@@ -53,7 +63,7 @@ function validarPrecio($link) {
 function comprobarDatosEdit() {
     $link = Conectar::conexion();
 
-    if (validarNombre($link)) {
+    if (validarNombre($link) && validarPrecio($link)) {
         mysqli_close($link);
         editar();
     }
