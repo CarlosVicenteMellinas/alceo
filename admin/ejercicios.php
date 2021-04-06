@@ -51,8 +51,13 @@
             <!-- Creacion -->
                 <div class="botones_creacion">
                     <h2 class="tituloForm">Ejercicios</h2>
+                    <?php 
+                    if (!empty($mensaje)) {
+                        echo $mensaje;
+                    }
+                    ?>
                     <div id="forms">
-                        <form id="addForm" action="/controllers/ejercicio/ejercicioController.php" method="POST">
+                        <form id="addForm" action="/controllers/ejercicio/ejercicioAddController.php" method="POST">
                             <input type="submit" id="addForm" name="addForm" value="Crear Ejercicio">
                             <label for="addForm">Añade un nuevo ejercicio</label>
                         </form>
