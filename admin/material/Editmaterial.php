@@ -51,7 +51,7 @@
                     <h2 class="tituloForm">Material</h2>
                     <div id="alter">
                         <form id="selectForm">
-                            <label for="">Selecciona un Material:</label>
+                            <label for="">Selecciona un material:</label>
                             <select id="material" onchange='<?php echo 'changeValues('.json_encode($material).')'; ?>'>
                                 <option disabled selected>No seleccionado</option>
                                 <?php 
