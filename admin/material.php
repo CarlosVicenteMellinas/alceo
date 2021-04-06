@@ -41,7 +41,7 @@
 								<li><a href="/controllers/ejercicioController.php">Ejercicios</a></li>
 								<li><a href="/controllers/grupoM/grupoMController.php">Grupos Musculares</a></li>
                                 <li class="current"><a href="/controllers/material/materialController.php">Material</a></li>
-                                <li><a href="/controllers/material/materialController.php">Objetivo</a></li>
+                                <li><a href="/controllers/objetivo/objetivoController.php">Objetivo</a></li>
 
 							</ul>
 						</nav>
