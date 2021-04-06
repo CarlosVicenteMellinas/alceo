@@ -12,7 +12,7 @@
 		<link rel="stylesheet" href="/assets/css/main.css" />
 	</head>
 	<body class="is-preload">
-        <?php 
+    <?php 
 		session_start();
         if (!empty($_SESSION['usuario'])) {
 			$inactividad = 3600;
@@ -37,22 +37,49 @@
 						<nav id="nav">
 							<ul>
 								<li><a href="/index.php">Home</a></li>
-                                <li class="current"><a href="/admin/index.php">Admin Home</a></li>
+                                <li><a href="/admin/index.php">Admin Home</a></li>
 								<li><a href="/controllers/ejercicioController.php">Ejercicios</a></li>
 								<li><a href="/controllers/grupoM/grupoMController.php">Grupos Musculares</a></li>
-								<li><a href="/controllers/material/materialController.php">Material</a></li>
-								<li><a href="/controllers/material/materialController.php">Objetivo</a></li>
+                                <li><a href="/controllers/material/materialController.php">Material</a></li>
+                                <li class="current"><a href="/controllers/material/materialController.php">Objetivo</a></li>
 							</ul>
 						</nav>
 				</div>
 
-			<!-- Banner -->
-				<section id="banner">
-					<header>
-						<h2>Alceo: <em>Tu sitio de confianza para guardar tus rutinas y ejercicios favoritos</em></h2>
-						<a href="#" class="button">Ir al generador</a>
-					</header>
-				</section>
+            <!-- Creacion -->
+                <div>
+                    <h2 class="tituloForm">Objetivos</h2>
+                    <?php 
+                    if (!empty($mensaje)) {
+                        echo $mensaje;
+                    }
+                    ?>
+                    <div id="forms">
+                        <form id="addForm" action="/controllers/objetivo/objetivoAddController.php" method="POST">
+                            <input type="submit" id="addForm" name="addForm" value="Crear Objetivo">
+                            <label for="addForm">Añade un nuevo objetivo</label>
+                        </form>
+                        <form id="editForm" action="/controllers/objetivo/objetivoEditController.php" method="POST">
+                            <input type="submit" name="editForm" id="editForm" value="Editar Objetivo">
+                            <label for="editForm">Edita un objetivo ya existente</label>
+                        </form>
+                        <form id="deleteForm" action="/controllers/objetivo/objetivoDeleteController.php" method="POST">
+                            <input type="submit" name="deleteForm" id="deleteForm" value="Borrar Objetivo">
+                            <label for="deleteForm">Elimina un objetivo</label>
+                        </form>
+                    </div>
+                </div>
+                <div class="tabla">
+                    <h3>Objetivos disponibles:</h3>
+                    <table id="material">
+                        <tr><td>Cod</td><td>Nombre</td></tr>
+                        <?php
+                        foreach ($objetivos as $objetivo) {
+                            echo $objetivo;
+                        }
+                        ?>
+                    </table>
+                </div>
         </div>
 
          <!-- Scripts -->
@@ -81,6 +108,6 @@
             </div>
 
         <?php } ?>
-       
+
 	</body>
 </html>
