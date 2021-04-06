@@ -40,6 +40,7 @@
                                 <li class="current"><a href="/admin/index.php">Admin Home</a></li>
 								<li><a href="/controllers/ejercicioController.php">Ejercicios</a></li>
 								<li><a href="/controllers/grupoM/grupoMController.php">Grupos Musculares</a></li>
+								<li><a href="/controllers/material/materialController.php">Material</a></li>
 							</ul>
 						</nav>
 				</div>

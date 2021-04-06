@@ -9,7 +9,7 @@
 		<title>Alceo - Deporte y Salud en tu mano</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="../assets/css/main.css" />
+		<link rel="stylesheet" href="/assets/css/main.css" />
 	</head>
 	<body class="is-preload">
     <?php 
@@ -38,36 +38,46 @@
 							<ul>
 								<li><a href="/index.php">Home</a></li>
                                 <li><a href="/admin/index.php">Admin Home</a></li>
-								<li class="current"><a href="/controllers/ejercicioController.php">Ejercicios</a></li>
+								<li><a href="/controllers/ejercicioController.php">Ejercicios</a></li>
 								<li><a href="/controllers/grupoM/grupoMController.php">Grupos Musculares</a></li>
-                                <li><a href="/controllers/material/materialController.php">Material</a></li>
+                                <li class="current"><a href="/controllers/material/materialController.php">Material</a></li>
 							</ul>
 						</nav>
 				</div>
 
             <!-- Creacion -->
                 <div>
-                    <h2 class="tituloForm">Ejercicios</h2>
-                    <div id="insert">
-                        <form id="insertForm" action="/controllers/ejercicioController.php" method="POST">
-                            <label for="nombre">Nombre: </label>
-                            <input type="text" id="nombre" name="nombre" required>
-                            <?php if (!empty($nombreError)) {echo '<p class="error">'.$nombreError.'</p>';}?>
-
-                            <label for="dificultad">Dificultad: </label>
-                            <input type="number" min="1" max="5" id="dificultad" name="dificultad" required>
-                            
-                            <label for="foto">Foto: </label>
-                            <input type="file" id="foto" name="foto">
-                            <?php if (!empty($fotoError)) {echo '<p class="error">'.$fotoError.'</p>';}?>
-
-                            <label for="video">Video: </label>
-                            <input type="file" id="video" name="video">
-                            <?php if (!empty($videoError)) {echo '<p class="error">'.$videoError.'</p>';}?>
-                            <br><br>
-                            <input type="submit" id="crearEjercicio" name="crearEjercicio" value="Crear Ejercicio">
+                    <h2 class="tituloForm">Materiales</h2>
+                    <?php 
+                    if (!empty($mensaje)) {
+                        echo $mensaje;
+                    }
+                    ?>
+                    <div id="forms">
+                        <form id="addForm" action="/controllers/material/materialAddController.php" method="POST">
+                            <input type="submit" id="addForm" name="addForm" value="Crear Material">
+                            <label for="addForm">Añade un nuevo material</label>
+                        </form>
+                        <form id="editForm" action="/controllers/material/materialEditController.php" method="POST">
+                            <input type="submit" name="editForm" id="editForm" value="Editar Material">
+                            <label for="editForm">Edita un material ya existente</label>
+                        </form>
+                        <form id="deleteForm" action="/controllers/material/materialDeleteController.php" method="POST">
+                            <input type="submit" name="deleteForm" id="deleteForm" value="Borrar Material">
+                            <label for="deleteForm">Elimina un material</label>
                         </form>
                     </div>
+                </div>
+                <div class="tabla">
+                    <h3>Materiales disponibles:</h3>
+                    <table id="material">
+                        <tr><td>Cod</td><td>Nombre</td></tr>
+                        <?php
+                        foreach ($materiales as $material) {
+                            echo $material;
+                        }
+                        ?>
+                    </table>
                 </div>
         </div>
 
