@@ -52,12 +52,59 @@
 				</section>
             <!-- Area Usuario -->
             <?php 
-            if(!empty($_SESSION['usuario'])) { 
-                echo '<h1>Tamoh logueado: '.$_SESSION['usuario'].'</h1>'; ?>
+            if(!empty($_SESSION['usuario'])) { ?> 
+            <div style="text-align:center; margin:auto; padding: 30px 0px 30px 0px">
+            <p>Aqui va la foto xD --></p>
+                <?php echo '<h1>Estas logueado como: '.$_SESSION['usuario'].'</h1>'; ?>
                     <form id="cerrarSesion" action="/controllers/loginController.php" method="POST">
                         <input type="submit" name="cerrarSesion" id="cerrarSesion" value="Cerrar Sesion">
                     </form>
+                    </div>
+                    <section class="wrapper style1">
+					<div class="container">
+						<div class="row gtr-200">
+							<section class="col-6 col-12-narrower">
+								<div class="box highlight">
+									<h3>NICK</h3>
+								</div>
+							</section>
+							<section class="col-6 col-12-narrower">
+								<div class="box highlight">							
+									<h3>PUTO NOMBRE COMPLETO</h3>
+								</div>
+							</section>
+						</div>
+					</div>
+				</section>
+                <section class="wrapper style1">
+					<div class="container">
+						<div class="row gtr-200">
+							<section class="col-4 col-12-narrower">
+								<div class="box highlight">
+									<h3>EMAIL</h3>
+								</div>
+							</section>
+							<section class="col-4 col-12-narrower">
+								<div class="box highlight">							
+									<h3>TELEFONO</h3>
+								</div>
+							</section>
+							<section class="col-4 col-12-narrower">
+								<div class="box highlight">							
+									<h3>PLAN</h3>
+								</div>
+							</section>
+						</div>
+					</div>
+                    <div style="text-align:center; margin:auto; padding: 30px 0px 30px 0px">
+                    <button type="submit" name="editarPerfil" id="editarPerfil">
+                        <span><i class="far fa-edit"></i> Editar Perfil</span>
+            </button>
+                    </div>
+				</section>
             <?php }  
+            
+            
             else { ?>
             <!-- Formulario Inicio Sesion -->
                 <div id="loginSignin">
