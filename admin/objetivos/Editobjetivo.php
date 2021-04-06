@@ -38,10 +38,12 @@
 							<ul>
 								<li><a href="/index.php">Home</a></li>
                                 <li><a href="/admin/index.php">Admin Home</a></li>
-								<li><a href="/controllers/ejercicioController.php">Ejercicios</a></li>
+								<li><a href="/controllers/ejercicio/ejercicioController.php">Ejercicios</a></li>
 								<li><a href="/controllers/grupoM/grupoMController.php">Grupos Musculares</a></li>
                                 <li><a href="/controllers/material/materialController.php">Material</a></li>
                                 <li class="current"><a href="/controllers/objetivo/objetivoController.php">Objetivo</a></li>
+                                <li><a href="/controllers/planes/planController.php">Planes</a></li>
+
 							</ul>
 						</nav>
 				</div>

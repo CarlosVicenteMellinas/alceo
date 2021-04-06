@@ -1,5 +1,5 @@
 <?php
-require_once "../model/db.php";
+require_once "../../model/db.php";
 
 function limpiarDatos($data) {
     $data = trim($data);
@@ -71,7 +71,7 @@ function cargarEdicion() {
     }
     mysqli_free_result($query);
     mysqli_close($link);
-    include '../admin/ejercicios/EditEjercicios.php';
+    include '../../admin/ejercicios/EditEjercicios.php';
 }
 
 function comprobarDatosEdit() {
@@ -121,7 +121,7 @@ function cargarEliminacion() {
     }
     mysqli_free_result($query);
     mysqli_close($link);
-    include '../admin/ejercicios/DeleteEjercicios.php';
+    include '../../admin/ejercicios/DeleteEjercicios.php';
 }
 
 function eliminar($cod) {
@@ -138,12 +138,12 @@ function cargarIndex() {
     while ($results = mysqli_fetch_array($query)) {
         array_push($ejercicios,'<tr><td>'.$results["cod"].'</td><td>'.$results["nombre"].'</td><td>'.$results["dificultad"].'</td><td>'.$results["foto"].'</td><td>'.$results["video"].'</td></tr>');
     }
-    include '../admin/ejercicios.php';
+    include '../../admin/ejercicios.php';
     mysqli_close($link);
 }
 
 if (!empty($_POST['addForm'])) {
-    include '../admin/ejercicios/AddEjercicios.php';
+    include '../../admin/ejercicios/AddEjercicios.php';
 } else if (!empty($_POST['crearEjercicio']) && !empty($_POST['nombre']) && !empty($_POST['dificultad'])) {
     comprobarDatosInsert();
 } else if (!empty($_POST['editForm'])) {

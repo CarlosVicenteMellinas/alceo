@@ -38,10 +38,12 @@
 							<ul>
 								<li><a href="/index.php">Home</a></li>
                                 <li><a href="/admin/index.php">Admin Home</a></li>
-								<li class="current"><a href="/controllers/ejercicioController.php">Ejercicios</a></li>
+								<li class="current"><a href="/controllers/ejercicio/ejercicioController.php">Ejercicios</a></li>
 								<li><a href="/controllers/grupoM/grupoMController.php">Grupos Musculares</a></li>
                                 <li><a href="/controllers/material/materialController.php">Material</a></li>
                                 <li><a href="/controllers/objetivo/objetivoController.php">Objetivo</a></li>
+                                <li><a href="/controllers/planes/planController.php">Planes</a></li>
+
 							</ul>
 						</nav>
 				</div>
@@ -50,15 +52,15 @@
                 <div class="botones_creacion">
                     <h2 class="tituloForm">Ejercicios</h2>
                     <div id="forms">
-                        <form id="addForm" action="/controllers/ejercicioController.php" method="POST">
+                        <form id="addForm" action="/controllers/ejercicio/ejercicioController.php" method="POST">
                             <input type="submit" id="addForm" name="addForm" value="Crear Ejercicio">
                             <label for="addForm">Añade un nuevo ejercicio</label>
                         </form>
-                        <form id="editForm" action="/controllers/ejercicioController.php" method="POST">
+                        <form id="editForm" action="/controllers/ejercicio/ejercicioController.php" method="POST">
                             <input type="submit" name="editForm" id="editForm" value="Editar Ejercicio">
                             <label for="editForm">Edita un ejercicio ya existente</label>
                         </form>
-                        <form id="deleteForm" action="/controllers/ejercicioController.php" method="POST">
+                        <form id="deleteForm" action="/controllers/ejercicio/ejercicioController.php" method="POST">
                             <input type="submit" name="deleteForm" id="deleteForm" value="Borrar Ejercicio">
                             <label for="deleteForm">Elimina un ejercicio</label>
                         </form>

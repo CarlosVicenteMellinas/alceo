@@ -12,7 +12,7 @@
 		<link rel="stylesheet" href="/assets/css/main.css" />
 	</head>
 	<body class="is-preload">
-        <?php 
+    <?php 
 		session_start();
         if (!empty($_SESSION['usuario'])) {
 			$inactividad = 3600;
@@ -40,26 +40,46 @@
                                 <li><a href="/admin/index.php">Admin Home</a></li>
 								<li><a href="/controllers/ejercicio/ejercicioController.php">Ejercicios</a></li>
 								<li><a href="/controllers/grupoM/grupoMController.php">Grupos Musculares</a></li>
-                                <li class="current"><a href="/controllers/material/materialController.php">Material</a></li>
+                                <li><a href="/controllers/material/materialController.php">Material</a></li>
                                 <li><a href="/controllers/objetivo/objetivoController.php">Objetivo</a></li>
-                                <li><a href="/controllers/planes/planController.php">Planes</a></li>
-
+                                <li class="current"><a href="/controllers/planes/planController.php">Planes</a></li>
 							</ul>
 						</nav>
 				</div>
 
             <!-- Creacion -->
                 <div>
-                    <h2 class="tituloForm">Material</h2>
-                    <div id="insert">
-                        <form id="insertForm" action="/controllers/material/materialAddController.php" method="POST">
-                            <label for="nombre">Nombre: </label>
-                            <input type="text" id="nombre" name="nombre" required>
-                            <?php if (!empty($nombreError)) {echo '<p class="error">'.$nombreError.'</p>';}?>
-                            <br><br>
-                            <input type="submit" id="crearMaterial" name="crearMaterial" value="Crear Material">
+                    <h2 class="tituloForm">Planes</h2>
+                    <?php 
+                    if (!empty($mensaje)) {
+                        echo $mensaje;
+                    }
+                    ?>
+                    <div id="forms">
+                        <form id="addForm" action="/controllers/planes/planAddController.php" method="POST">
+                            <input type="submit" id="addForm" name="addForm" value="Crear Plan">
+                            <label for="addForm">Añade un nuevo plan</label>
+                        </form>
+                        <form id="editForm" action="/controllers/planes/planEditController.php" method="POST">
+                            <input type="submit" name="editForm" id="editForm" value="Editar Plan">
+                            <label for="editForm">Edita un plan ya existente</label>
+                        </form>
+                        <form id="deleteForm" action="/controllers/planes/planDeleteController.php" method="POST">
+                            <input type="submit" name="deleteForm" id="deleteForm" value="Borrar Plan">
+                            <label for="deleteForm">Elimina un plan</label>
                         </form>
                     </div>
+                </div>
+                <div class="tabla">
+                    <h3>Planes disponibles:</h3>
+                    <table id="material">
+                        <tr><td>Cod</td><td>Nombre</td><td>Precio</td></tr>
+                        <?php
+                        foreach ($planes as $plan) {
+                            echo $plan;
+                        }
+                        ?>
+                    </table>
                 </div>
         </div>
 
