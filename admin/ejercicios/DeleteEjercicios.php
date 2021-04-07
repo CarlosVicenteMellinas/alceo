@@ -52,7 +52,7 @@
                 <div>
                     <h2 class="tituloForm">Ejercicios</h2>
                     <div id="alter">
-                        <form id="selectForm" action="/controllers/ejercicioController.php" method="POST">
+                        <form id="selectForm" action="/controllers/ejercicio/ejercicioDeleteController.php" method="POST">
                             <label for="">Selecciona un ejercicio:</label>
                             <select id="ejercicio" onchange='<?php echo 'setID('.json_encode($ejercicios).')'; ?>'>
                                 <option disabled selected>No seleccionado</option>

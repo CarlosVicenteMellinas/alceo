@@ -65,7 +65,7 @@
                             <input type="submit" name="editForm" id="editForm" value="Editar Ejercicio">
                             <label for="editForm">Edita un ejercicio ya existente</label>
                         </form>
-                        <form id="deleteForm" action="/controllers/ejercicio/ejercicioController.php" method="POST">
+                        <form id="deleteForm" action="/controllers/ejercicio/ejercicioDeleteController.php" method="POST">
                             <input type="submit" name="deleteForm" id="deleteForm" value="Borrar Ejercicio">
                             <label for="deleteForm">Elimina un ejercicio</label>
                         </form>
