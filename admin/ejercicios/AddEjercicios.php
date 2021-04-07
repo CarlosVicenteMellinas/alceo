@@ -70,11 +70,12 @@
                             <input type="file" id="video" name="video">
                             <?php if (!empty($videoError)) {echo '<p class="error">'.$videoError.'</p>';}?>
 
-                            <br>
-                            <label for="grupoM">Grupos Musculares: </label>
                             <br><br>
-                            <input type="text" id="grupoM" name="grupoM" onkeyup=buscar()>
-                            <div id="ddgrupoM"><?php foreach($gruposM as $grupoM) { echo $grupoM; }?></div>
+                            <label for="grupoM">Grupos Musculares: </label>
+                            <div id="gm"></div>
+                            <br>
+                            <input type="text" id="grupoM" name="grupoM" onkeyup=buscarGM()>
+                            <div id="ddgrupoM" style="display: none;"><?php foreach($gruposM as $grupoM) { echo $grupoM; }?></div>
 
                             <br><br>
                             <input type="submit" id="crearEjercicio" name="crearEjercicio" value="Crear Ejercicio">

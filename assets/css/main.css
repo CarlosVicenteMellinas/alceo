@@ -262,6 +262,20 @@ input, select, textarea {
 		padding: 20px 0px 20px 0px;
 	}
 
+	#gm {
+		display: flex;
+		margin-right: 1.5em;
+	}
+
+	input[type='text'].selectGM {
+		background-color: white;
+		width: auto;
+	}
+
+	#ddgrupoM div {
+		background-color: white;
+	}
+
 
 /* Container */
 

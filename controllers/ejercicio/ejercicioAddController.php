@@ -180,7 +180,7 @@ function cargarInserccion() {
     $query = mysqli_query($link, 'SELECT * FROM GRUPO_MUSCULAR');
     $gruposM = array();
     while ($results = mysqli_fetch_array($query)) {
-        array_push($gruposM,'<div class="gruposM" style="display:none" data-value="'.$results["cod"].'">'.$results["nombre"].'</div>');
+        array_push($gruposM,'<div class="gruposM" data-value="'.$results["cod"].'">'.$results["nombre"].'</div>');
     }
     mysqli_free_result($query);
     mysqli_close($link);
