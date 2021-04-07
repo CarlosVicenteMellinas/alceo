@@ -6,6 +6,7 @@ $video = '';
 $nombreError = '';
 $fotoError = '';
 $videoError = '';
+$grupoMError = '';
 
 function limpiarDatos($data) {
     $data = trim($data);
@@ -25,7 +26,7 @@ function validarNombre($link) {
         mysqli_close($link);
         $valido = false;
         $nombreError = 'El nombre no esta disponible';
-        include '../../admin/ejercicios/AddEjercicios.php';
+        cargarInserccion();
     }
     return $valido;
 }
@@ -45,7 +46,7 @@ function validarFoto($link) {
             mysqli_close($link);
             $valido = false;
             $fotoError = 'La extensión o el tamaño de los archivos no es correcto';
-            include '../../admin/ejercicios/AddEjercicios.php';
+            cargarInserccion();
         }
         else {
             if (move_uploaded_file($temp, '../../images/'.$foto)) {
@@ -55,7 +56,7 @@ function validarFoto($link) {
                 mysqli_close($link);
                 $valido = false;
                 $fotoError = 'Ocurrió algún error al subir el fichero. No pudo guardarse';
-                include '../../admin/ejercicios/AddEjercicios.php';
+                cargarInserccion();
             }
        }
     }
@@ -78,7 +79,7 @@ function validarVideo($link) {
             mysqli_close($link);
             $valido = false;
             $videoError = 'La extensión o el tamaño de los archivos no es correcto';
-            include '../../admin/ejercicios/AddEjercicios.php';
+            cargarInserccion();
         }
         else {
             if (move_uploaded_file($temp, '../../video/'.$video)) {
@@ -88,9 +89,28 @@ function validarVideo($link) {
                 mysqli_close($link);
                 $valido = false;
                 $videoError = 'Ocurrió algún error al subir el fichero. No pudo guardarse';
-                include '../../admin/ejercicios/AddEjercicios.php';
+                cargarInserccion();
             }
-       }
+        }
+    }
+
+    return $valido;
+}
+
+function comprobarGrupoM($link) {
+    global $grupoMError;
+    $valido = false;
+
+    foreach (array_keys($_POST) as $var) {
+        if (substr($var, 0, 6) == "grupoM") {
+            $valido = true;
+        }
+    }
+
+    if(!$valido) {
+        mysqli_close($link);
+        $grupoMError = "Debes introducir un grupo muscular como mínimo";
+        cargarInserccion();
     }
 
     return $valido;
@@ -99,7 +119,7 @@ function validarVideo($link) {
 function comprobarDatosInsert1() {
     $link = Conectar::conexion();
 
-    if (validarNombre($link)) {
+    if (validarNombre($link) && comprobarGrupoM($link)) {
         mysqli_close($link);
         insertar();
     } else {
@@ -109,7 +129,7 @@ function comprobarDatosInsert1() {
 
 function comprobarDatosInsert2() {
     $link = Conectar::conexion();
-    if (validarNombre($link) && validarFoto($link)) {
+    if (validarNombre($link) && validarFoto($link) && comprobarGrupoM($link)) {
         mysqli_close($link);
         insertar();
     } else {
@@ -119,7 +139,7 @@ function comprobarDatosInsert2() {
 
 function comprobarDatosInsert3() {
     $link = Conectar::conexion();
-    if (validarNombre($link) && validarVideo($link)) {
+    if (validarNombre($link) && validarVideo($link) && comprobarGrupoM($link)) {
         mysqli_close($link);
         insertar();
     } else {
@@ -130,7 +150,7 @@ function comprobarDatosInsert3() {
 
 function comprobarDatosInsert4() {
     $link = Conectar::conexion();
-    if (validarNombre($link) && validarFoto($link) && validarVideo($link)) {
+    if (validarNombre($link) && validarFoto($link) && validarVideo($link) && comprobarGrupoM($link)) {
         mysqli_close($link);
         insertar();
     } else {
@@ -163,10 +183,39 @@ function insertar() {
     }
 
     if ($query) {
+        insertarGrupoM();
+    } else {
+        $mensaje = "<p class='incorrecto'>¡Error! El dato no se ha insertado</p>";
+        include "ejercicioController.php";
+    }
+}
+
+function insertarGrupoM() {
+    $link = Conectar::conexion();
+    $query = mysqli_query($link, 'SELECT * FROM EJERCICIO WHERE nombre="'.limpiarDatos($_POST['nombre']).'"');
+    $cod = mysqli_fetch_array($query)['cod'];
+    mysqli_free_result($query);
+
+    $gruposM = array();
+    foreach (array_keys($_POST) as $var) {
+        if (substr($var, 0, 6) == "grupoM") {
+            array_push($gruposM, $_POST[$var]);
+        }
+    }
+
+    foreach ($gruposM as $grupoM) {
+        $cod2 = explode(":", $grupoM)[0];
+        $query = mysqli_query($link, "INSERT INTO GRUPOM_EJERCICIO (ejercicio, grupo_m) VALUES ($cod, $cod2)");
+    }
+
+    if ($query) {
         $mensaje = "<p class='correcto'>El dato ha sido creado correctamente</p>";
+        mysqli_close($link);
         include "ejercicioController.php";
     } else {
         $mensaje = "<p class='incorrecto'>¡Error! El dato no se ha insertado</p>";
+        mysqli_query($link,'DELETE FROM EJERCICIO WHERE cod='.$cod.';');
+        mysqli_close($link);
         include "ejercicioController.php";
     }
 }
@@ -175,6 +224,7 @@ function cargarInserccion() {
     global $nombreError;
     global $fotoError;
     global $videoError;
+    global $grupoMError;
 
     $link = Conectar::conexion();
     $query = mysqli_query($link, 'SELECT * FROM GRUPO_MUSCULAR');

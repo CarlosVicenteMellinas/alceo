@@ -2,7 +2,8 @@ var Gbar, ddgrupoM;
 
 function anyadirGM(gm) {
     let htmlGM = `<input type="text" class="selectGM" readonly 
-    value="${gm.dataset.value}:${gm.textContent}"</div>`;
+    value="${gm.dataset.value}:${gm.textContent}"
+    name="grupoM-${gm.dataset.value}"</div>`;
     $("#gm").append(htmlGM);
     $(".selectGM").click(function () { $(this).remove()});
 }

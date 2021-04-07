@@ -74,8 +74,9 @@
                             <label for="grupoM">Grupos Musculares: </label>
                             <div id="gm"></div>
                             <br>
-                            <input type="text" id="grupoM" name="grupoM" onkeyup=buscarGM()>
+                            <input type="text" id="grupoM" onkeyup=buscarGM()>
                             <div id="ddgrupoM" style="display: none;"><?php foreach($gruposM as $grupoM) { echo $grupoM; }?></div>
+                            <?php if (!empty($grupoMError)) {echo '<p class="error">'.$grupoMError.'</p>';}?>
 
                             <br><br>
                             <input type="submit" id="crearEjercicio" name="crearEjercicio" value="Crear Ejercicio">
