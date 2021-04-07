@@ -122,9 +122,7 @@ function comprobarDatosInsert1() {
     if (validarNombre($link) && comprobarGrupoM($link)) {
         mysqli_close($link);
         insertar();
-    } else {
-        mysqli_close($link);
-    }
+    } 
 }
 
 function comprobarDatosInsert2() {
@@ -132,9 +130,7 @@ function comprobarDatosInsert2() {
     if (validarNombre($link) && validarFoto($link) && comprobarGrupoM($link)) {
         mysqli_close($link);
         insertar();
-    } else {
-        mysqli_close($link);
-    }
+    } 
 }
 
 function comprobarDatosInsert3() {
@@ -142,9 +138,7 @@ function comprobarDatosInsert3() {
     if (validarNombre($link) && validarVideo($link) && comprobarGrupoM($link)) {
         mysqli_close($link);
         insertar();
-    } else {
-        mysqli_close($link);
-    }
+    } 
 
 }
 
@@ -153,9 +147,7 @@ function comprobarDatosInsert4() {
     if (validarNombre($link) && validarFoto($link) && validarVideo($link) && comprobarGrupoM($link)) {
         mysqli_close($link);
         insertar();
-    } else {
-        mysqli_close($link);
-    }
+    } 
 
 }
 

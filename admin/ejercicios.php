@@ -61,7 +61,7 @@
                             <input type="submit" id="addForm" name="addForm" value="Crear Ejercicio">
                             <label for="addForm">Añade un nuevo ejercicio</label>
                         </form>
-                        <form id="editForm" action="/controllers/ejercicio/ejercicioController.php" method="POST">
+                        <form id="editForm" action="/controllers/ejercicio/ejercicioEditController.php" method="POST">
                             <input type="submit" name="editForm" id="editForm" value="Editar Ejercicio">
                             <label for="editForm">Edita un ejercicio ya existente</label>
                         </form>
