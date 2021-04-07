@@ -60,13 +60,22 @@
                             <label for="dificultad">Dificultad: </label>
                             <input type="number" min="1" max="5" id="dificultad" name="dificultad" required>
                             
+                            <br>
                             <label for="foto">Foto: </label>
                             <input type="file" id="foto" name="foto">
                             <?php if (!empty($fotoError)) {echo '<p class="error">'.$fotoError.'</p>';}?>
 
+                            <br>
                             <label for="video">Video: </label>
                             <input type="file" id="video" name="video">
                             <?php if (!empty($videoError)) {echo '<p class="error">'.$videoError.'</p>';}?>
+
+                            <br>
+                            <label for="grupoM">Grupos Musculares: </label>
+                            <br><br>
+                            <input type="text" id="grupoM" name="grupoM" onkeyup=buscar()>
+                            <div id="ddgrupoM"><?php foreach($gruposM as $grupoM) { echo $grupoM; }?></div>
+
                             <br><br>
                             <input type="submit" id="crearEjercicio" name="crearEjercicio" value="Crear Ejercicio">
                         </form>
@@ -81,6 +90,7 @@
         <script src="/assets/js/breakpoints.min.js"></script>
         <script src="/assets/js/util.js"></script>
         <script src="/assets/js/main.js"></script>
+        <script src="/js/ejercicios/addEjercicio.js"></script>
 
         <?php 
             } else {

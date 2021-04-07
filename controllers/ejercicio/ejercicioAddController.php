@@ -3,6 +3,9 @@ require_once "../../model/db.php";
 
 $foto = '';
 $video = '';
+$nombreError = '';
+$fotoError = '';
+$videoError = '';
 
 function limpiarDatos($data) {
     $data = trim($data);
@@ -12,6 +15,7 @@ function limpiarDatos($data) {
 }
 
 function validarNombre($link) {
+    global $nombreError;
     $nombre = limpiarDatos($_POST['nombre']);
     $valido = true;
 
@@ -28,6 +32,7 @@ function validarNombre($link) {
 
 function validarFoto($link) {
     global $foto;
+    global $fotoError;
     $foto = $_FILES['foto']['name'];
     $valido = true;
     if (isset($foto) && $foto != "") {
@@ -60,6 +65,7 @@ function validarFoto($link) {
 
 function validarVideo($link) {
     global $video;
+    global $videoError;
     $video = $_FILES['video']['name'];
     $valido = true;
     if (isset($video) && $video != "") {
@@ -165,8 +171,24 @@ function insertar() {
     }
 }
 
+function cargarInserccion() {
+    global $nombreError;
+    global $fotoError;
+    global $videoError;
+
+    $link = Conectar::conexion();
+    $query = mysqli_query($link, 'SELECT * FROM GRUPO_MUSCULAR');
+    $gruposM = array();
+    while ($results = mysqli_fetch_array($query)) {
+        array_push($gruposM,'<div class="gruposM" style="display:none" data-value="'.$results["cod"].'">'.$results["nombre"].'</div>');
+    }
+    mysqli_free_result($query);
+    mysqli_close($link);
+    include '../../admin/ejercicios/AddEjercicios.php';
+}
+
 if (!empty($_POST['addForm'])) {
-    header("Location: /admin/ejercicios/AddEjercicios.php");
+    cargarInserccion();
 } else if (!empty($_POST['crearEjercicio']) && !empty($_POST['nombre']) && !empty($_POST['dificultad']) && !empty($_FILES['foto']['name']) && !empty($_FILES['video']['name'])) {
     comprobarDatosInsert4();
 } else if (!empty($_POST['crearEjercicio']) && !empty($_POST['nombre']) && !empty($_POST['dificultad']) && !empty($_FILES['video']['name'])) {
