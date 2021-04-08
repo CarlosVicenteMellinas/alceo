@@ -175,20 +175,15 @@ function editar() {
     }
 
     if ($query) {
-        //editarGrupoM();
-        $mensaje = "<p class='correcto'>El dato ha sido creado correctamente</p>";
-        include "ejercicioController.php";
+        editarGrupoM();
     } else {
-        $mensaje = "<p class='incorrecto'>¡Error! El dato no se ha insertado</p>";
+        $mensaje = "<p class='incorrecto'>¡Error! El dato no se ha editado</p>";
         include "ejercicioController.php";
     }
 }
 
 function editarGrupoM() {
     $link = Conectar::conexion();
-    $query = mysqli_query($link, 'SELECT * FROM EJERCICIO WHERE nombre="'.limpiarDatos($_POST['nombre']).'"');
-    $cod = mysqli_fetch_array($query)['cod'];
-    mysqli_free_result($query);
 
     $gruposM = array();
     foreach (array_keys($_POST) as $var) {
@@ -197,18 +192,19 @@ function editarGrupoM() {
         }
     }
 
+    $query = mysqli_query($link, 'DELETE FROM GRUPOM_EJERCICIO WHERE ejercicio='.$_POST["id"].';');
+
     foreach ($gruposM as $grupoM) {
         $cod2 = explode(":", $grupoM)[0];
-        $query = mysqli_query($link, "INSERT INTO GRUPOM_EJERCICIO (ejercicio, grupo_m) VALUES ($cod, $cod2)");
+        $query = mysqli_query($link, 'INSERT INTO GRUPOM_EJERCICIO (ejercicio, grupo_m) VALUES ('.$_POST["id"].', '.$cod2.')');
     }
 
     if ($query) {
-        $mensaje = "<p class='correcto'>El dato ha sido creado correctamente</p>";
+        $mensaje = "<p class='correcto'>El dato ha sido editado correctamente</p>";
         mysqli_close($link);
         include "ejercicioController.php";
     } else {
-        $mensaje = "<p class='incorrecto'>¡Error! El dato no se ha insertado</p>";
-        mysqli_query($link,'DELETE FROM EJERCICIO WHERE cod='.$cod.';');
+        $mensaje = "<p class='incorrecto'>¡Error! El dato no se ha editado</p>";
         mysqli_close($link);
         include "ejercicioController.php";
     }
