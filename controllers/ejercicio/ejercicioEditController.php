@@ -221,6 +221,7 @@ function cargarEdicion() {
     global $grupoMError;
 
     $link = Conectar::conexion();
+
     $query = mysqli_query($link, 'SELECT * FROM EJERCICIO');
     $options = array();
     $ejercicios = array();
@@ -229,7 +230,25 @@ function cargarEdicion() {
         array_push($ejercicios, array($results["cod"], $results["nombre"], $results["dificultad"]));
     }
     mysqli_free_result($query);
+
+    $query = mysqli_query($link, 'SELECT * FROM GRUPO_MUSCULAR');
+    $gruposM = array();
+    $gruposM2 = array();
+    while ($results = mysqli_fetch_array($query)) {
+        array_push($gruposM,'<div class="gruposM" data-value="'.$results["cod"].'">'.$results["nombre"].'</div>');
+        array_push($gruposM2, array($results["cod"], $results["nombre"]));
+    }
+    mysqli_free_result($query);
+
+    $query = mysqli_query($link, 'SELECT * FROM GRUPOM_EJERCICIO');
+    $gruposMEjercicios = array();
+    while ($results = mysqli_fetch_array($query)) {
+        array_push($gruposMEjercicios, array($results["ejercicio"], $results["grupo_m"]));
+    }
+    mysqli_free_result($query);
+
     mysqli_close($link);
+
     include '../../admin/ejercicios/EditEjercicios.php';
 }
 

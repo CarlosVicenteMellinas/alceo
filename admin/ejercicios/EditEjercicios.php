@@ -54,7 +54,7 @@
                     <div id="alter">
                         <form id="selectForm">
                             <label for="">Selecciona un ejercicio:</label>
-                            <select id="ejercicio" onchange='<?php echo 'changeValues('.json_encode($ejercicios).')'; ?>'>
+                            <select id="ejercicio" onchange='<?php echo 'changeValues('.json_encode($ejercicios).','.json_encode($gruposM2).','.json_encode($gruposMEjercicios).')'; ?>'>
                                 <option disabled selected>No seleccionado</option>
                                 <?php 
                                     foreach ($options as $option) {
@@ -78,6 +78,15 @@
                             <label for="video">Video: </label>
                             <input type="file" id="video" name="video">
                             <?php if (!empty($videoError)) {echo '<p class="error">'.$videoError.'</p>';}?>
+
+                            <br><br>
+                            <label for="grupoM">Grupos Musculares: </label>
+                            <div id="gm"></div>
+                            <br>
+                            <input type="text" id="grupoM" onkeyup=buscarGM()>
+                            <div id="ddgrupoM" style="display: none;"><?php foreach($gruposM as $grupoM) { echo $grupoM; }?></div>
+                            <?php if (!empty($grupoMError)) {echo '<p class="error">'.$grupoMError.'</p>';}?>
+
                             <br><br>
                             <input type="hidden" id="id" name="id" value="">
                             <input type="submit" id="editarEjercicio" name="editarEjercicio" value="Editar Ejercicio">
@@ -93,7 +102,7 @@
         <script src="/assets/js/breakpoints.min.js"></script>
         <script src="/assets/js/util.js"></script>
         <script src="/assets/js/main.js"></script>
-        <script src="/js/ejercicios/ejercicio.js"></script>
+        <script src="/js/ejercicios/editEjercicio.js"></script>
 
         <?php 
             } else {
