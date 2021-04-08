@@ -66,6 +66,7 @@
                         <form id="alterForm" action="/controllers/ejercicio/ejercicioEditController.php" method="POST">
                             <label for="nombre">Nombre: </label>
                             <input type="text" id="nombre" name="nombre" required>
+                            <input type="hidden" id="nombre2" name="nombre2" value="">
                             <?php if (!empty($nombreError)) {echo '<p class="error">'.$nombreError.'</p>';}?>
 
                             <label for="dificultad">Dificultad: </label>

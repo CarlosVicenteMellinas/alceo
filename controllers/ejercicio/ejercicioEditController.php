@@ -119,7 +119,7 @@ function comprobarGrupoM($link) {
 function comprobarDatosEdit1() {
     $link = Conectar::conexion();
 
-    if (validarNombre($link) && comprobarGrupoM($link)) {
+    if (($_POST['nombre'] === $_POST['nombre2'] || validarNombre($link)) && comprobarGrupoM($link)) {
         mysqli_close($link);
         editar();
     }

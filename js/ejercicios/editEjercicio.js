@@ -2,6 +2,7 @@ const select = document.getElementById("ejercicio");
 const nombre = document.getElementById("nombre");
 const dificultad = document.getElementById("dificultad");
 const id = document.getElementById("id");
+const nombre2 = document.getElementById("nombre2");
 
 var Gbar, ddgrupoM;
 
@@ -10,6 +11,7 @@ function changeValues(data, data2 ,data3) {
     let ejercicio = getEjercicio(cod, data);
     id.value = ejercicio[0];
     nombre.value = ejercicio[1];
+    nombre2.value = ejercicio[1];
     dificultad.value = ejercicio[2];
 
     $("#gm").empty();
