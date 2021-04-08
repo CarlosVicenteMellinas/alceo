@@ -7,6 +7,7 @@ $nombreError = '';
 $fotoError = '';
 $videoError = '';
 $grupoMError = '';
+$materialError = '';
 
 function limpiarDatos($data) {
     $data = trim($data);
@@ -217,6 +218,7 @@ function cargarInserccion() {
     global $fotoError;
     global $videoError;
     global $grupoMError;
+    global $materialError;
 
     $link = Conectar::conexion();
     $query = mysqli_query($link, 'SELECT * FROM GRUPO_MUSCULAR');
@@ -225,6 +227,14 @@ function cargarInserccion() {
         array_push($gruposM,'<div class="gruposM" data-value="'.$results["cod"].'">'.$results["nombre"].'</div>');
     }
     mysqli_free_result($query);
+
+    $query = mysqli_query($link, 'SELECT * FROM material');
+    $materiales = array();
+    while ($results = mysqli_fetch_array($query)) {
+        array_push($materiales,'<div class="materiales" data-value="'.$results["cod"].'">'.$results["nombre"].'</div>');
+    }
+    mysqli_free_result($query);
+
     mysqli_close($link);
     include '../../admin/ejercicios/AddEjercicios.php';
 }

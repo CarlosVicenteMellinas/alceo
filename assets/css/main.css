@@ -267,12 +267,12 @@ input, select, textarea {
 		margin-right: 1.5em;
 	}
 
-	input[type='text'].selectGM {
+	input[type='text'].selectGM, input[type='text'].selectMaterial {
 		background-color: white;
 		width: auto;
 	}
 
-	#ddgrupoM div {
+	#ddgrupoM div, #ddmaterial div {
 		background-color: white;
 	}
 

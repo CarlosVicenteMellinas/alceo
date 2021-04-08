@@ -79,6 +79,14 @@
                             <?php if (!empty($grupoMError)) {echo '<p class="error">'.$grupoMError.'</p>';}?>
 
                             <br><br>
+                            <label for="material">Materiales: </label>
+                            <div id="mat"></div>
+                            <br>
+                            <input type="text" id="material" onkeyup=buscarMaterial()>
+                            <div id="ddmaterial" style="display: none;"><?php foreach($materiales as $material) { echo $material; }?></div>
+                            <?php if (!empty($materialError)) {echo '<p class="error">'.$materialError.'</p>';}?>
+
+                            <br><br>
                             <input type="submit" id="crearEjercicio" name="crearEjercicio" value="Crear Ejercicio">
                         </form>
                     </div>
