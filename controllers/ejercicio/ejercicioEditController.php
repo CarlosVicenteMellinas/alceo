@@ -7,6 +7,7 @@ $nombreError = '';
 $fotoError = '';
 $videoError = '';
 $grupoMError = '';
+$materialError = '';
 
 function limpiarDatos($data) {
     $data = trim($data);
@@ -116,10 +117,29 @@ function comprobarGrupoM($link) {
     return $valido;
 }
 
+function comprobarMaterial($link) {
+    global $materialError;
+    $valido = false;
+
+    foreach (array_keys($_POST) as $var) {
+        if (substr($var, 0, 8) == "material") {
+            $valido = true;
+        }
+    }
+
+    if(!$valido) {
+        mysqli_close($link);
+        $materialError = "Debes introducir un material como mínimo";
+        cargarInserccion();
+    }
+
+    return $valido;
+}
+
 function comprobarDatosEdit1() {
     $link = Conectar::conexion();
 
-    if (($_POST['nombre'] === $_POST['nombre2'] || validarNombre($link)) && comprobarGrupoM($link)) {
+    if (($_POST['nombre'] === $_POST['nombre2'] || validarNombre($link)) && comprobarGrupoM($link) && comprobarMaterial($link)) {
         mysqli_close($link);
         editar();
     }
@@ -128,7 +148,7 @@ function comprobarDatosEdit1() {
 function comprobarDatosEdit2() {
     $link = Conectar::conexion();
 
-    if (($_POST['nombre'] === $_POST['nombre2'] || validarNombre($link)) && validarFoto($link) && comprobarGrupoM($link)) {
+    if (($_POST['nombre'] === $_POST['nombre2'] || validarNombre($link)) && validarFoto($link) && comprobarGrupoM($link) && comprobarMaterial($link)) {
         mysqli_close($link);
         editar();
     }
@@ -137,7 +157,7 @@ function comprobarDatosEdit2() {
 function comprobarDatosEdit3() {
     $link = Conectar::conexion();
 
-    if (($_POST['nombre'] === $_POST['nombre2'] || validarNombre($link)) && validarVideo($link) && comprobarGrupoM($link)) {
+    if (($_POST['nombre'] === $_POST['nombre2'] || validarNombre($link)) && validarVideo($link) && comprobarGrupoM($link) && comprobarMaterial($link)) {
         mysqli_close($link);
         editar();
     }
@@ -146,7 +166,7 @@ function comprobarDatosEdit3() {
 function comprobarDatosEdit4() {
     $link = Conectar::conexion();
 
-    if (($_POST['nombre'] === $_POST['nombre2'] || validarNombre($link)) && validarFoto($link) && validarVideo($link) && comprobarGrupoM($link)) {
+    if (($_POST['nombre'] === $_POST['nombre2'] || validarNombre($link)) && validarFoto($link) && validarVideo($link) && comprobarGrupoM($link) && comprobarMaterial($link)) {
         mysqli_close($link);
         editar();
     }
@@ -177,7 +197,7 @@ function editar() {
     if ($query) {
         editarGrupoM();
     } else {
-        $mensaje = "<p class='incorrecto'>¡Error! El dato no se ha editado</p>";
+        $mensaje = "<p class='incorrecto'>¡Error! El dato no se ha editado (Ejercicio)</p>";
         include "ejercicioController.php";
     }
 }
@@ -200,11 +220,37 @@ function editarGrupoM() {
     }
 
     if ($query) {
+        editarMaterial();
+    } else {
+        $mensaje = "<p class='incorrecto'>¡Error! El dato no se ha editado (GM)</p>";
+        mysqli_close($link);
+        include "ejercicioController.php";
+    }
+}
+
+function editarMaterial() {
+    $link = Conectar::conexion();
+
+    $materiales = array();
+    foreach (array_keys($_POST) as $var) {
+        if (substr($var, 0, 8) == "material") {
+            array_push($materiales, $_POST[$var]);
+        }
+    }
+
+    $query = mysqli_query($link, 'DELETE FROM MATERIAL_EJERCICIO WHERE ejercicio='.$_POST["id"].';');
+
+    foreach ($materiales as $material) {
+        $cod2 = explode(":", $material)[0];
+        $query = mysqli_query($link, 'INSERT INTO MATERIAL_EJERCICIO (ejercicio, material) VALUES ('.$_POST["id"].', '.$cod2.')');
+    }
+
+    if ($query) {
         $mensaje = "<p class='correcto'>El dato ha sido editado correctamente</p>";
         mysqli_close($link);
         include "ejercicioController.php";
     } else {
-        $mensaje = "<p class='incorrecto'>¡Error! El dato no se ha editado</p>";
+        $mensaje = "<p class='incorrecto'>¡Error! El dato no se ha editado (Material)</p>";
         mysqli_close($link);
         include "ejercicioController.php";
     }
@@ -215,6 +261,7 @@ function cargarEdicion() {
     global $fotoError;
     global $videoError;
     global $grupoMError;
+    global $materialError;
 
     $link = Conectar::conexion();
 
