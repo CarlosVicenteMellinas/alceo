@@ -275,7 +275,7 @@ function cargarInserccion() {
     }
     mysqli_free_result($query);
 
-    $query = mysqli_query($link, 'SELECT * FROM material');
+    $query = mysqli_query($link, 'SELECT * FROM MATERIAL');
     $materiales = array();
     while ($results = mysqli_fetch_array($query)) {
         array_push($materiales,'<div class="materiales" data-value="'.$results["cod"].'">'.$results["nombre"].'</div>');
