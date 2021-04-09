@@ -1,4 +1,4 @@
-var Gbar, ddgrupoM;
+var Gbar, Mbar;
 
 function anyadirGM(gm) {
     let htmlGM = `<input type="text" class="selectGM" readonly 

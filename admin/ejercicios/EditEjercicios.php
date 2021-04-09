@@ -54,7 +54,7 @@
                     <div id="alter">
                         <form id="selectForm">
                             <label for="">Selecciona un ejercicio:</label>
-                            <select id="ejercicio" onchange='<?php echo 'changeValues('.json_encode($ejercicios).','.json_encode($gruposM2).','.json_encode($gruposMEjercicios).')'; ?>'>
+                            <select id="ejercicio" onchange='<?php echo 'changeValues('.json_encode($ejercicios).','.json_encode($gruposM2).','.json_encode($gruposMEjercicios).','.json_encode($materiales2).','.json_encode($materialEjercicio).')'; ?>'>
                                 <option disabled selected>No seleccionado</option>
                                 <?php 
                                     foreach ($options as $option) {
@@ -87,6 +87,14 @@
                             <input type="text" id="grupoM" onkeyup=buscarGM()>
                             <div id="ddgrupoM" style="display: none;"><?php foreach($gruposM as $grupoM) { echo $grupoM; }?></div>
                             <?php if (!empty($grupoMError)) {echo '<p class="error">'.$grupoMError.'</p>';}?>
+
+                            <br><br>
+                            <label for="material">Materiales: </label>
+                            <div id="mat"></div>
+                            <br>
+                            <input type="text" id="material" onkeyup=buscarMaterial()>
+                            <div id="ddmaterial" style="display: none;"><?php foreach($materiales as $material) { echo $material; }?></div>
+                            <?php if (!empty($materialError)) {echo '<p class="error">'.$materialError.'</p>';}?>
 
                             <br><br>
                             <input type="hidden" id="id" name="id" value="">

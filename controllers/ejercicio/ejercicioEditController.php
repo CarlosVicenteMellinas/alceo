@@ -243,6 +243,23 @@ function cargarEdicion() {
     }
     mysqli_free_result($query);
 
+    $query = mysqli_query($link, 'SELECT * FROM material');
+    $materiales = array();
+    $materiales2 = array();
+    while ($results = mysqli_fetch_array($query)) {
+        array_push($materiales,'<div class="materiales" data-value="'.$results["cod"].'">'.$results["nombre"].'</div>');
+        array_push($materiales2, array($results["cod"], $results["nombre"]));
+
+    }
+    mysqli_free_result($query);
+
+    $query = mysqli_query($link, 'SELECT * FROM MATERIAL_EJERCICIO');
+    $materialEjercicio = array();
+    while ($results = mysqli_fetch_array($query)) {
+        array_push($materialEjercicio, array($results["ejercicio"], $results["material"]));
+    }
+    mysqli_free_result($query);
+
     mysqli_close($link);
 
     include '../../admin/ejercicios/EditEjercicios.php';
