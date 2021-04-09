@@ -117,10 +117,29 @@ function comprobarGrupoM($link) {
     return $valido;
 }
 
+function comprobarMaterial($link) {
+    global $materialError;
+    $valido = false;
+
+    foreach (array_keys($_POST) as $var) {
+        if (substr($var, 0, 8) == "material") {
+            $valido = true;
+        }
+    }
+
+    if(!$valido) {
+        mysqli_close($link);
+        $materialError = "Debes introducir un material como mínimo";
+        cargarInserccion();
+    }
+
+    return $valido;
+}
+
 function comprobarDatosInsert1() {
     $link = Conectar::conexion();
 
-    if (validarNombre($link) && comprobarGrupoM($link)) {
+    if (validarNombre($link) && comprobarGrupoM($link) && comprobarMaterial($link)) {
         mysqli_close($link);
         insertar();
     } 
@@ -128,7 +147,7 @@ function comprobarDatosInsert1() {
 
 function comprobarDatosInsert2() {
     $link = Conectar::conexion();
-    if (validarNombre($link) && validarFoto($link) && comprobarGrupoM($link)) {
+    if (validarNombre($link) && validarFoto($link) && comprobarGrupoM($link) && comprobarMaterial($link)) {
         mysqli_close($link);
         insertar();
     } 
@@ -136,7 +155,7 @@ function comprobarDatosInsert2() {
 
 function comprobarDatosInsert3() {
     $link = Conectar::conexion();
-    if (validarNombre($link) && validarVideo($link) && comprobarGrupoM($link)) {
+    if (validarNombre($link) && validarVideo($link) && comprobarGrupoM($link) && comprobarMaterial($link)) {
         mysqli_close($link);
         insertar();
     } 
@@ -145,7 +164,7 @@ function comprobarDatosInsert3() {
 
 function comprobarDatosInsert4() {
     $link = Conectar::conexion();
-    if (validarNombre($link) && validarFoto($link) && validarVideo($link) && comprobarGrupoM($link)) {
+    if (validarNombre($link) && validarFoto($link) && validarVideo($link) && comprobarGrupoM($link) && comprobarMaterial($link)) {
         mysqli_close($link);
         insertar();
     } 
@@ -178,7 +197,7 @@ function insertar() {
     if ($query) {
         insertarGrupoM();
     } else {
-        $mensaje = "<p class='incorrecto'>¡Error! El dato no se ha insertado</p>";
+        $mensaje = "<p class='incorrecto'>¡Error! El dato no se ha insertado (Ejercicio)</p>";
         include "ejercicioController.php";
     }
 }
@@ -202,11 +221,39 @@ function insertarGrupoM() {
     }
 
     if ($query) {
+        insertarMaterial();
+    } else {
+        $mensaje = "<p class='incorrecto'>¡Error! El dato no se ha insertado (GM)</p>";
+        mysqli_query($link,'DELETE FROM EJERCICIO WHERE cod='.$cod.';');
+        mysqli_close($link);
+        include "ejercicioController.php";
+    }
+}
+
+function insertarMaterial() {
+    $link = Conectar::conexion();
+    $query = mysqli_query($link, 'SELECT * FROM EJERCICIO WHERE nombre="'.limpiarDatos($_POST['nombre']).'"');
+    $cod = mysqli_fetch_array($query)['cod'];
+    mysqli_free_result($query);
+
+    $materiales = array();
+    foreach (array_keys($_POST) as $var) {
+        if (substr($var, 0, 8) == "material") {
+            array_push($materiales, $_POST[$var]);
+        }
+    }
+
+    foreach ($materiales as $material) {
+        $cod2 = explode(":", $material)[0];
+        $query = mysqli_query($link, "INSERT INTO MATERIAL_EJERCICIO (ejercicio, material) VALUES ($cod, $cod2)");
+    }
+
+    if ($query) {
         $mensaje = "<p class='correcto'>El dato ha sido creado correctamente</p>";
         mysqli_close($link);
         include "ejercicioController.php";
     } else {
-        $mensaje = "<p class='incorrecto'>¡Error! El dato no se ha insertado</p>";
+        $mensaje = "<p class='incorrecto'>¡Error! El dato no se ha insertado (Material)</p>";
         mysqli_query($link,'DELETE FROM EJERCICIO WHERE cod='.$cod.';');
         mysqli_close($link);
         include "ejercicioController.php";

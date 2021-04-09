@@ -262,7 +262,7 @@ input, select, textarea {
 		padding: 20px 0px 20px 0px;
 	}
 
-	#gm {
+	#gm, #mat {
 		display: flex;
 		margin-right: 1.5em;
 	}
