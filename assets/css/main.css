@@ -279,7 +279,24 @@ input, select, textarea {
 	.pagina_error {
 		font-size: 120px;
 		color: red;
-		padding-top: 60px;
+		padding-top: 160px;
+	}
+
+	.foto_perfil {
+		border-radius: 50%;
+		border: 2px solid #007255;
+	}
+
+	.foto_perfil:hover {
+		border-radius: 50%;
+		border: 2px solid #007255;
+		margin-bottom: 10px;
+		margin-top: 10px;
+		transform: scale(1.2);
+	}
+
+	.nombre_perfil, .fa-male:before {
+		font-size: 30px;
 	}
 
 
@@ -2960,6 +2977,12 @@ input, select, textarea {
 					padding: 0 0 1.75em 0;
 				}
 
+				.pagina_error {
+					font-size: 80px;
+					color: red;
+					padding-top: 80px;
+				}
+
 		/* Banner */
 
 			#banner {
@@ -3090,6 +3113,12 @@ input, select, textarea {
 
 				#banner header .button {
 					margin: 1em 0 0 0;
+				}
+
+				.pagina_error {
+					font-size: 80px;
+					color: red;
+					padding-top: 80px;
 				}
 
 		/* CTA */
@@ -3408,6 +3437,12 @@ input, select, textarea {
 				height: 18em;
 			}
 
+			.pagina_error {
+				font-size: 60px;
+				color: red;
+				padding-top: 60px;
+			}
+
 		/* Wrapper */
 
 			.wrapper {
@@ -3495,6 +3530,13 @@ input, select, textarea {
 			font-size: 25px;
 			line-height: 30px;
 			padding: 20px 0px 20px 0px;
+		}
+
+		/* Pagina error */
+		.pagina_error {
+			font-size: 60px;
+			color: red;
+			padding-top: 60px;
 		}
 
 		/* Banner */

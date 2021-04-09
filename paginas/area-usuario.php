@@ -54,8 +54,8 @@
             <?php 
             if(!empty($_SESSION['usuario'])) { ?> 
             <div style="text-align:center; margin:auto; padding: 30px 0px 30px 0px">
-            <p>Foto de perfil --></p>
-                <?php echo '<h1>Estas logueado como: '.$_SESSION['usuario'].'</h1>'; ?>
+            <img class="foto_perfil" width="150" src="/images/logo-alceo.png">
+                <?php echo '<h1>Nick: '.$_SESSION['usuario'].'</h1>'; ?>
                     <form id="cerrarSesion" action="/controllers/loginController.php" method="POST">
                         <input type="submit" name="cerrarSesion" id="cerrarSesion" value="Cerrar Sesion">
                     </form>
@@ -63,14 +63,10 @@
                     <section class="wrapper style1">
 					<div class="container">
 						<div class="row gtr-200">
-							<section class="col-6 col-12-narrower">
+							<section class="col-12 col-12-narrower">
 								<div class="box highlight">
-									<h3>NICK</h3>
-								</div>
-							</section>
-							<section class="col-6 col-12-narrower">
-								<div class="box highlight">							
-									<h3>NOMBRE COMPLETO</h3>
+                                <i class="fas fa-male"></i>							
+                                    <h3 class="nombre_perfil">Pascual Vicedo</h3>
 								</div>
 							</section>
 						</div>
@@ -81,17 +77,23 @@
 						<div class="row gtr-200">
 							<section class="col-4 col-12-narrower">
 								<div class="box highlight">
-									<h3>EMAIL</h3>
+                                <i class="far fa-envelope"></i>
+									<h3>Email:</h3>
+                                    <h3>pascualvicedo.alu@iespacomolla.es</h3>
 								</div>
 							</section>
 							<section class="col-4 col-12-narrower">
-								<div class="box highlight">							
-									<h3>TELEFONO</h3>
+								<div class="box highlight">	
+                                <i class="fas fa-mobile-alt"></i>						
+									<h3>Teléfono:</h3>
+                                    <h3>666 666 666</h3>
 								</div>
 							</section>
 							<section class="col-4 col-12-narrower">
-								<div class="box highlight">							
-									<h3>PLAN</h3>
+								<div class="box highlight">	
+                                <i class="fas fa-ruler"></i>						
+									<h3>Plan:</h3>
+                                    <h3>Plan Básico</h3>
 								</div>
 							</section>
 						</div>

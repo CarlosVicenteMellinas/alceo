@@ -94,7 +94,7 @@
 						<div class="row">
 							<section class="col-6 col-12-narrower">
 								<div class="box post">
-									<a href="#" class="image left"><img src="images/pic01.png" alt="" /></a>
+									<a href="#" class="image left"><img src="images/gratuito.png" alt="" /></a>
 									<div class="inner">
 									<?php
 										echo "<h3>".$plan1["nombre"]."</h3>";
@@ -106,7 +106,7 @@
 							</section>
 							<section class="col-6 col-12-narrower">
 								<div class="box post">
-									<a href="#" class="image left"><img src="images/pic01.png" alt="" /></a>
+									<a href="#" class="image left"><img src="images/estandar.png" alt="" /></a>
 									<div class="inner">
 									<?php
 										echo "<h3>".$plan2["nombre"]."</h3>";
@@ -120,7 +120,7 @@
 						<div class="row">
 							<section class="col-6 col-12-narrower">
 								<div class="box post">
-									<a href="#" class="image left"><img src="images/pic01.png" alt="" /></a>
+									<a href="#" class="image left"><img src="images/premium.png" alt="" /></a>
 									<div class="inner">
 									<?php
 										echo "<h3>".$plan3["nombre"]."</h3>";
@@ -132,7 +132,7 @@
 							</section>
 							<section class="col-6 col-12-narrower">
 								<div class="box post">
-									<a href="#" class="image left"><img src="images/pic01.png" alt="" /></a>
+									<a href="#" class="image left"><img src="images/personal_trainer.png" alt="" /></a>
 									<div class="inner">
 									<?php
 										echo "<h3>".$plan4["nombre"]."</h3>";
