@@ -2841,7 +2841,7 @@ input, select, textarea {
 		.wrapper.style2 {
 			background-image: url("images/banner2.jpg"), url("images/banner2.jpg"), url("images/banner2.jpg");
 			background-position: top left,						bottom left,					top left;
-			background-size: auto,						auto,						auto;
+			background-size: 100%,						100%,						100%;
 			background-repeat: no-repeat,						no-repeat,						no-repeat;
 		}
 
