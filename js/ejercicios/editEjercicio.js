@@ -3,6 +3,8 @@ const nombre = document.getElementById("nombre");
 const dificultad = document.getElementById("dificultad");
 const id = document.getElementById("id");
 const nombre2 = document.getElementById("nombre2");
+const foto2 = document.getElementById("foto2");
+const video2 = document.getElementById("video2");
 
 var Gbar, Mbar;
 
@@ -13,6 +15,8 @@ function changeValues(data, data2 ,data3 ,data4, data5) {
     nombre.value = ejercicio[1];
     nombre2.value = ejercicio[1];
     dificultad.value = ejercicio[2];
+    foto2.value = ejercicio[3];
+    video2.value = ejercicio[4];
 
     $("#gm").empty();
     $("#mat").empty();

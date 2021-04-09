@@ -172,20 +172,40 @@ function comprobarDatosEdit4() {
     }
 }
 
+function limpiarFotos() {
+    unlink('../../images/'.$_POST["foto2"]);
+}
+
+function limpiarVideos() {
+    unlink("../../video/".$_POST["video2"]);
+}
+
 function editar() {
     global $foto;
     global $video;
     $link = Conectar::conexion();
 
-    if (!empty($_POST['foto']) && !empty($_POST['video'])) {
+    if (!empty($foto) && !empty($video)) {
+        if (!empty($_POST['foto2'])) {
+            limpiarFotos();
+        }
+        if (!empty($_POST['video2'])) {
+            limpiarVideos();
+        }
         $query = mysqli_query($link, 'UPDATE EJERCICIO SET nombre="'.limpiarDatos($_POST["nombre"]).'", dificultad='.limpiarDatos($_POST["dificultad"]).', 
         foto="'.$foto.'", video="'.$video.'" WHERE cod='.limpiarDatos($_POST["id"]).';');
         mysqli_close($link);
-    } else if (!empty($_POST['foto'])) {
+    } else if (!empty($foto)) {
+        if (!empty($_POST['foto2'])) {
+            limpiarFotos();
+        }
         $query = mysqli_query($link, 'UPDATE EJERCICIO SET nombre="'.limpiarDatos($_POST["nombre"]).'", dificultad='.limpiarDatos($_POST["dificultad"]).', 
         foto="'.$foto.'" WHERE cod='.limpiarDatos($_POST["id"]).';');
         mysqli_close($link);
-    } else if (!empty($_POST['video'])) { 
+    } else if (!empty($video)) { 
+        if (!empty($_POST['video2'])) {
+            limpiarVideos();
+        }
         $query = mysqli_query($link, 'UPDATE EJERCICIO SET nombre="'.limpiarDatos($_POST["nombre"]).'", dificultad='.limpiarDatos($_POST["dificultad"]).', 
         video="'.$video.'" WHERE cod='.limpiarDatos($_POST["id"]).';');
         mysqli_close($link);
@@ -270,7 +290,7 @@ function cargarEdicion() {
     $ejercicios = array();
     while ($results = mysqli_fetch_array($query)) {
         array_push($options,'<option value="'.$results["cod"].'">'.$results["nombre"].'</option>');
-        array_push($ejercicios, array($results["cod"], $results["nombre"], $results["dificultad"]));
+        array_push($ejercicios, array($results["cod"], $results["nombre"], $results["dificultad"], $results["foto"], $results["video"]));
     }
     mysqli_free_result($query);
 
