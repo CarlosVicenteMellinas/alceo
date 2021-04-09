@@ -63,7 +63,7 @@ function validarPrecio($link) {
 function comprobarDatosEdit() {
     $link = Conectar::conexion();
 
-    if (validarNombre($link) && validarPrecio($link)) {
+    if (($_POST['nombre'] === $_POST['nombre2'] || validarNombre($link)) && validarPrecio($link)) {
         mysqli_close($link);
         editar();
     }

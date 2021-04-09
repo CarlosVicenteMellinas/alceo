@@ -128,7 +128,7 @@ function comprobarDatosEdit1() {
 function comprobarDatosEdit2() {
     $link = Conectar::conexion();
 
-    if (validarNombre($link) && validarFoto($link) && comprobarGrupoM($link)) {
+    if (($_POST['nombre'] === $_POST['nombre2'] || validarNombre($link)) && validarFoto($link) && comprobarGrupoM($link)) {
         mysqli_close($link);
         editar();
     }
@@ -137,7 +137,7 @@ function comprobarDatosEdit2() {
 function comprobarDatosEdit3() {
     $link = Conectar::conexion();
 
-    if (validarNombre($link) && validarVideo($link) && comprobarGrupoM($link)) {
+    if (($_POST['nombre'] === $_POST['nombre2'] || validarNombre($link)) && validarVideo($link) && comprobarGrupoM($link)) {
         mysqli_close($link);
         editar();
     }
@@ -146,7 +146,7 @@ function comprobarDatosEdit3() {
 function comprobarDatosEdit4() {
     $link = Conectar::conexion();
 
-    if (validarNombre($link) && validarFoto($link) && validarVideo($link) && comprobarGrupoM($link)) {
+    if (($_POST['nombre'] === $_POST['nombre2'] || validarNombre($link)) && validarFoto($link) && validarVideo($link) && comprobarGrupoM($link)) {
         mysqli_close($link);
         editar();
     }
