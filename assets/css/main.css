@@ -276,6 +276,12 @@ input, select, textarea {
 		background-color: white;
 	}
 
+	.pagina_error {
+		font-size: 120px;
+		color: red;
+		padding-top: 60px;
+	}
+
 
 /* Container */
 
