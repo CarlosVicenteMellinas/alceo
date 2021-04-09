@@ -290,7 +290,7 @@ function cargarEdicion() {
     }
     mysqli_free_result($query);
 
-    $query = mysqli_query($link, 'SELECT * FROM material');
+    $query = mysqli_query($link, 'SELECT * FROM MATERIAL');
     $materiales = array();
     $materiales2 = array();
     while ($results = mysqli_fetch_array($query)) {
