@@ -54,7 +54,7 @@
             <?php 
             if(!empty($_SESSION['usuario'])) { ?> 
             <div style="text-align:center; margin:auto; padding: 30px 0px 30px 0px">
-            <p>Aqui va la foto xD --></p>
+            <p>Foto de perfil --></p>
                 <?php echo '<h1>Estas logueado como: '.$_SESSION['usuario'].'</h1>'; ?>
                     <form id="cerrarSesion" action="/controllers/loginController.php" method="POST">
                         <input type="submit" name="cerrarSesion" id="cerrarSesion" value="Cerrar Sesion">
@@ -70,7 +70,7 @@
 							</section>
 							<section class="col-6 col-12-narrower">
 								<div class="box highlight">							
-									<h3>PUTO NOMBRE COMPLETO</h3>
+									<h3>NOMBRE COMPLETO</h3>
 								</div>
 							</section>
 						</div>
