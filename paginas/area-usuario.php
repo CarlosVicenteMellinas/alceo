@@ -63,9 +63,17 @@
                     <section class="wrapper style1">
 					<div class="container">
 						<div class="row gtr-200">
-							<section class="col-12 col-12-narrower">
+                        <section class="col-6 col-12-narrower">
 								<div class="box highlight">
-                                <i class="fas fa-male"></i>							
+                                <i class="fas fa-male"></i>
+									<h3>Nick:</h3>
+                                    <h3 class="nombre_perfil"><?php echo '<h1 class="nombre_perfil">'.$_SESSION['usuario'].'</h1>'; ?></h3>
+								</div>
+							</section>
+                        <section class="col-6 col-12-narrower">
+								<div class="box highlight">
+                                <i class="fas fa-male"></i>
+									<h3>Nombre Completo:</h3>
                                     <h3 class="nombre_perfil">Pascual Vicedo</h3>
 								</div>
 							</section>
