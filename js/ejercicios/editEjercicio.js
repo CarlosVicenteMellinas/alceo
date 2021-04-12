@@ -15,8 +15,8 @@ function changeValues(data, data2 ,data3 ,data4, data5) {
     nombre.value = ejercicio[1];
     nombre2.value = ejercicio[1];
     dificultad.value = ejercicio[2];
-    foto2.value = ejercicio[3];
-    video2.value = ejercicio[4];
+    !ejercicio[3] ? foto2.value = 'Ninguna' :  foto2.value = ejercicio[3];
+    !ejercicio[4] ? video2.value = 'Ninguno' :  video2.value = ejercicio[4];
 
     $("#gm").empty();
     $("#mat").empty();

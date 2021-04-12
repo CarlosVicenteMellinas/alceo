@@ -73,12 +73,17 @@
                             <input type="number" min="1" max="5" id="dificultad" name="dificultad" required>
                             
                             <label for="foto">Foto: </label>
-                            <p>Foto actual:</p><input type="text" id="foto2" name="foto2" value="" readonly>
+                            <div id="multimedia">
+                                <p class="multimediaLabel">Foto actual:</p><input type="text" id="foto2" name="foto2" value="" readonly>
+                            </div>
                             <input type="file" id="foto" name="foto">
                             <?php if (!empty($fotoError)) {echo '<p class="error">'.$fotoError.'</p>';}?>
-
+                            <br><br>
+                            
                             <label for="video">Video: </label>
-                            <p>Video actual:</p><input type="text" id="video2" name="video2" value="" readonly>
+                            <div id="multimedia">
+                                <p class="multimediaLabel">Video actual:</p><input type="text" id="video2" name="video2" value="" readonly>
+                            </div>
                             <input type="file" id="video" name="video">
                             <?php if (!empty($videoError)) {echo '<p class="error">'.$videoError.'</p>';}?>
 

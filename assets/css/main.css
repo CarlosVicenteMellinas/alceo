@@ -305,6 +305,16 @@ input, select, textarea {
 		width: auto;
 	}
 
+	.multimediaLabel {
+		width: fit-content;
+		margin:0;
+	}
+
+	#multimedia {
+		display: flex;
+		align-items: center;
+	}
+
 
 /* Container */
 
