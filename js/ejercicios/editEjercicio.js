@@ -5,6 +5,10 @@ const id = document.getElementById("id");
 const nombre2 = document.getElementById("nombre2");
 const foto2 = document.getElementById("foto2");
 const video2 = document.getElementById("video2");
+const botonFoto = document.getElementById("borrarFoto");
+const botoVideo = document.getElementById("borrarVideo");
+const eraseFoto = document.getElementById("eraseFoto");
+const eraseVideo = document.getElementById("eraseVideo");
 
 var Gbar, Mbar;
 
@@ -15,8 +19,22 @@ function changeValues(data, data2 ,data3 ,data4, data5) {
     nombre.value = ejercicio[1];
     nombre2.value = ejercicio[1];
     dificultad.value = ejercicio[2];
-    !ejercicio[3] ? foto2.value = 'Ninguna' :  foto2.value = ejercicio[3];
-    !ejercicio[4] ? video2.value = 'Ninguno' :  video2.value = ejercicio[4];
+    
+    if(!ejercicio[3]) {
+        foto2.value = 'Ninguna';
+        botonFoto.style.display = "none";
+    } else {
+        foto2.value = ejercicio[3];
+        botonFoto.style.display = "flex";
+    }
+
+    if(!ejercicio[4]) {
+        video2.value = 'Ninguno';
+        botoVideo.style.display = "none";
+    } else {
+        video2.value = ejercicio[4];
+        botoVideo.style.display = "flex";
+    }
 
     $("#gm").empty();
     $("#mat").empty();
@@ -180,6 +198,10 @@ function mostrarMaterial() {
     }
 }
 
+function deleteFoto () {
+    foto2.value = '';
+}
+
 $(document).ready(function() {
     Gbar = document.getElementById("grupoM");
     Mbar = document.getElementById("material");
@@ -196,6 +218,8 @@ $(document).ready(function() {
             $("#ddmaterial").css("display", "none");
         }
     });
+    $("button").css("display", "none");
+    $("borrarFoto").click(deleteFoto);
 
     $(document).on(
         {
