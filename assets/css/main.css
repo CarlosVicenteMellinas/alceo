@@ -299,6 +299,12 @@ input, select, textarea {
 		font-size: 30px;
 	}
 
+	input[type='text']#foto2, input[type='text']#video2 {
+		background: none;
+		border:none;
+		width: auto;
+	}
+
 
 /* Container */
 
