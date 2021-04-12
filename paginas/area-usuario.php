@@ -34,7 +34,7 @@
 					<!-- Nav -->
 						<nav id="nav">
 							<ul>
-								<li><a href="../index.php">Home</a></li>
+								<li><a href="/index.php">Home</a></li>
 								<li><a href="#">Comunidad</a></li></li>
 								<li  class="current"><a href="/paginas/area-usuario.php">Área de usuario</a></li>
 								<li><a href="#">Contacto</a></li>
