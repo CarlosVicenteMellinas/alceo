@@ -76,8 +76,8 @@
                             <div id="multimedia">
                                 <p class="multimediaLabel">Foto actual:</p>
                                 <input type="text" id="foto2" name="foto2" value="" readonly>
-                                <input type="hidden" id="eraseFoto" name="eraseFoto">
-                                <button id="borrarFoto">Borrar Foto</button>
+                                <input type="hidden" id="eraseFoto" name="eraseFoto" value="false">
+                                <div id="borrarFoto">Borrar Foto</div>
                             </div>
                             <input type="file" id="foto" name="foto">
                             <?php if (!empty($fotoError)) {echo '<p class="error">'.$fotoError.'</p>';}?>
@@ -87,8 +87,8 @@
                             <div id="multimedia">
                                 <p class="multimediaLabel">Video actual:</p>
                                 <input type="text" id="video2" name="video2" value="" readonly>
-                                <input type="hidden" id="eraseVideo" name="eraseVideo">
-                                <button id="borrarVideo">Borrar Video</button>
+                                <input type="hidden" id="eraseVideo" name="eraseVideo" value="false">
+                                <div id="borrarVideo">Borrar Video</div>
                             </div>
                             <input type="file" id="video" name="video">
                             <?php if (!empty($videoError)) {echo '<p class="error">'.$videoError.'</p>';}?>

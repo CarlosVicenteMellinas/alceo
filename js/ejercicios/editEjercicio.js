@@ -199,7 +199,13 @@ function mostrarMaterial() {
 }
 
 function deleteFoto () {
-    foto2.value = '';
+    foto2.value = 'Ninguna';
+    eraseFoto.value = "true";
+}
+
+function deleteVideo () {
+    video2.value = "Ninguno";
+    eraseVideo.value = "true";
 }
 
 $(document).ready(function() {
@@ -219,7 +225,8 @@ $(document).ready(function() {
         }
     });
     $("button").css("display", "none");
-    $("borrarFoto").click(deleteFoto);
+    $("#borrarFoto").click(deleteFoto);
+    $("#borrarVideo").click(deleteVideo);
 
     $(document).on(
         {

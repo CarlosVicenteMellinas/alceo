@@ -299,6 +299,8 @@ input, select, textarea {
 		font-size: 30px;
 	}
 
+	/*Holaaa, he insertado todo esto por aqúi :) */
+	/*Bueno y lo de arriba del dropdown, pero eso ya lo habrás visto*/
 	input[type='text']#foto2, input[type='text']#video2 {
 		background: none;
 		border:none;
@@ -313,6 +315,14 @@ input, select, textarea {
 	#multimedia {
 		display: flex;
 		align-items: center;
+	}
+
+	#borrarFoto, #borrarVideo {
+		background-color:  #007255;
+		border-radius: 5%;
+		color: white;
+		cursor: pointer;
+		padding: 0.3em;
 	}
 
 
