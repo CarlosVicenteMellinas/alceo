@@ -35,16 +35,17 @@ function comprobarCredenciales() {
 
     mysqli_close($link);
     if ($valido) {
-        iniciarSesion($usuario);
+        iniciarSesion($usuario, $results['cod']);
     }
 }
 
-function iniciarSesion($usuario) {
+function iniciarSesion($usuario, $cod) {
     session_start();
     session_regenerate_id();
     $_SESSION['usuario'] = $usuario;
+    $_SESSION['id'] = $cod;
     $_SESSION["timeout"] = time();
-    header("Location: /paginas/area-usuario.php");
+    header("Location: /controllers/areaUsuarioController.php");
 }
 
 function cerrarSesion() {

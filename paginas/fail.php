@@ -35,7 +35,7 @@
 						<ul>
 							<li class="current"><a href="/index.php">Home</a></li>
 							<li><a href="#">Comunidad</a></li></li>
-							<li><a href="/paginas/area-usuario.php">Área de usuario</a></li>
+							<li><a href="/controllers/areaUsuarioController.php">Área de usuario</a></li>
 							<li><a href="#">Contacto</a></li>
 						</ul>
 					</nav>

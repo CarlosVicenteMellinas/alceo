@@ -13,7 +13,9 @@
 	</head>
 	<body class="is-preload">
         <?php
-	    session_start();
+        if (session_status() === PHP_SESSION_NONE) {
+            session_start();
+        }
         $inactividad = 3600;
         if(!empty($_SESSION["timeout"])){
             $sessionTTL = time() - $_SESSION["timeout"];
@@ -36,7 +38,7 @@
 							<ul>
 								<li><a href="/index.php">Home</a></li>
 								<li><a href="#">Comunidad</a></li></li>
-								<li  class="current"><a href="/paginas/area-usuario.php">Área de usuario</a></li>
+								<li  class="current"><a href="/controllers/areaUsuarioController.php">Área de usuario</a></li>
 								<li><a href="#">Contacto</a></li>
 							</ul>
 						</nav>
@@ -74,7 +76,7 @@
 								<div class="box highlight">
                                 <i class="fas fa-male"></i>
 									<h3>Nombre Completo:</h3>
-                                    <h3 class="nombre_perfil">Pascual Vicedo</h3>
+                                    <h3 class="nombre_perfil"><?php if(!empty($usuario['nombre'])) {echo $usuario['nombre'];} else {echo "Error al cargar la pagina";} ?></h3>
 								</div>
 							</section>
 						</div>
@@ -87,21 +89,21 @@
 								<div class="box highlight">
                                 <i class="far fa-envelope"></i>
 									<h3>Email:</h3>
-                                    <h3>pascualvicedo.alu@iespacomolla.es</h3>
+                                    <h3><?php if(!empty($usuario['correo'])) {echo $usuario['correo'];} else {echo "Error al cargar la pagina";} ?></h3>
 								</div>
 							</section>
 							<section class="col-4 col-12-narrower">
 								<div class="box highlight">	
                                 <i class="fas fa-mobile-alt"></i>						
 									<h3>Teléfono:</h3>
-                                    <h3>666 666 666</h3>
+                                    <h3><?php if(!empty($usuario['telefono'])) {echo $usuario['telefono'];} else {echo "Error al cargar la pagina";} ?></h3>
 								</div>
 							</section>
 							<section class="col-4 col-12-narrower">
 								<div class="box highlight">	
                                 <i class="fas fa-ruler"></i>						
 									<h3>Plan:</h3>
-                                    <h3>Plan Básico</h3>
+                                    <h3><?php if(!empty($plan['nombre'])) {echo $plan['nombre'];} else {echo "Error al cargar la pagina";} ?></h3>
 								</div>
 							</section>
 						</div>
