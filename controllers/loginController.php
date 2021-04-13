@@ -45,7 +45,11 @@ function iniciarSesion($usuario, $cod) {
     $_SESSION['usuario'] = $usuario;
     $_SESSION['id'] = $cod;
     $_SESSION["timeout"] = time();
-    header("Location: /controllers/areaUsuarioController.php");
+    if ($usuario === 'admin') {
+        header("Location: /admin/index.php");
+    } else {
+        header("Location: /controllers/areaUsuarioController.php");
+    }
 }
 
 function cerrarSesion() {
