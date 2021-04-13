@@ -191,11 +191,35 @@ function comprobarDatosEdit4() {
 }
 
 function limpiarFotos($foto) {
-    unlink("../../images/ejercicio/$foto");
+    $link = Conectar::conexion();
+    $vacio = true;
+    $query = mysqli_query($link, "SELECT * FROM EJERCICIO WHERE foto IS NOT NULL AND cod != ".$_POST["id"] );
+    while ($results = mysqli_fetch_array($query))  {
+        
+        if ($results['foto'] === $foto) {
+            $vacio = false;
+        }
+    }
+
+    if ($vacio) {
+        unlink("../../images/ejercicio/".$foto);
+    }
 }
 
 function limpiarVideos($video) {
-    unlink("../../video/ejercicio/$video");
+    $link = Conectar::conexion();
+    $vacio = true;
+
+    $query = mysqli_query($link, "SELECT video FROM EJERCICIO WHERE video IS NOT NULL AND cod != ".$_POST["id"]);
+    while ($results = mysqli_fetch_array($query))  {
+        if ($results[0] === $video) {
+            $vacio = false;
+        }
+    }
+
+    if ($vacio) {
+        unlink("../../video/ejercicio/".$video);
+    }
 }
 
 function editar() {

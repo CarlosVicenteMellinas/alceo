@@ -15,11 +15,47 @@ function cargarEliminacion() {
     $ejercicios = array();
     while ($results = mysqli_fetch_array($query)) {
         array_push($options,'<option value="'.$results["cod"].'">'.$results["nombre"].'</option>');
-        array_push($ejercicios, array($results["cod"], $results["nombre"], $results["dificultad"]));
+        array_push($ejercicios, array($results["cod"], $results["nombre"], $results["dificultad"], $results["foto"], $results["video"]));
     }
     mysqli_free_result($query);
     mysqli_close($link);
     include '../../admin/ejercicios/DeleteEjercicios.php';
+}
+
+function borrarFoto() {
+    if (!empty($_POST['foto'])) {
+        $link = Conectar::conexion();
+        $vacio = true;
+        $query = mysqli_query($link, "SELECT * FROM EJERCICIO WHERE foto IS NOT NULL AND cod != ".$_POST["id"] );
+        while ($results = mysqli_fetch_array($query))  {
+            
+            if ($results['foto'] === $_POST['foto']) {
+                $vacio = false;
+            }
+        }
+
+        if ($vacio) {
+            unlink("../../images/ejercicio/".$_POST['foto']);
+        }
+    }
+}
+
+function borrarVideo() {
+    if (!empty($_POST['video'])) {
+        $link = Conectar::conexion();
+        $vacio = true;
+
+        $query = mysqli_query($link, "SELECT video FROM EJERCICIO WHERE video IS NOT NULL AND cod != ".$_POST["id"]);
+        while ($results = mysqli_fetch_array($query))  {
+            if ($results[0] === $_POST['video']) {
+                $vacio = false;
+            }
+        }
+
+        if ($vacio) {
+            unlink("../../video/ejercicio/".$_POST['video']);
+        }
+    }
 }
 
 function eliminar($cod) {
@@ -28,6 +64,8 @@ function eliminar($cod) {
     mysqli_close($link);
     if ($query) {
         $mensaje = "<p class='correcto'>El dato ha sido eliminado correctamente</p>";
+        borrarFoto();
+        borrarVideo();
         include "ejercicioController.php";
     } else {
         $mensaje = "<p class='incorrecto'>¡Error! El dato no se ha eliminado</p>";

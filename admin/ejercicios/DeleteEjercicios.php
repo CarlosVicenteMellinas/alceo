@@ -63,6 +63,8 @@
                                 ?>
                             </select>
                             <br><br>
+                            <input type="hidden" id="foto" name="foto" value="">
+                            <input type="hidden" id="video" name="video" value="">
                             <input type="hidden" id="id" name="id" value="">
                             <input type="submit" id="eliminarEjercicio" name="eliminarEjercicio" value="Eliminar Ejercicio">
                         </form>
