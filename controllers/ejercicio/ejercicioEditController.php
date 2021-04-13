@@ -50,8 +50,8 @@ function validarFoto($link) {
             cargarEdicion();
         }
         else {
-            if (move_uploaded_file($temp, '../../images/'.$foto)) {
-                chmod('../../images/'.$foto, 0777);
+            if (move_uploaded_file($temp, '../../images/ejercicio/'.$foto)) {
+                chmod('../../images/ejercicio/'.$foto, 0777);
             }
             else {
                 mysqli_close($link);
@@ -83,8 +83,8 @@ function validarVideo($link) {
             cargarEdicion();
         }
         else {
-            if (move_uploaded_file($temp, '../../video/'.$video)) {
-                chmod('../../video/'.$video, 0777);
+            if (move_uploaded_file($temp, '../../video/ejercicio/'.$video)) {
+                chmod('../../video/ejercicio/'.$video, 0777);
             }
             else {
                 mysqli_close($link);
@@ -136,10 +136,26 @@ function comprobarMaterial($link) {
     return $valido;
 }
 
+function borrarFoto($link) {
+    if ($_POST['eraseFoto'] === 'true') {
+        limpiarFotos($_POST["foto3"]);
+        $query = mysqli_query($link, 'UPDATE EJERCICIO SET foto=NULL WHERE cod='.limpiarDatos($_POST["id"]).';');
+    }
+}
+
+function borrarVideo($link) {
+    if ($_POST['eraseVideo'] === 'true') {
+        limpiarVideos($_POST["video3"]);
+        $query = mysqli_query($link, 'UPDATE EJERCICIO SET video=NULL WHERE cod='.limpiarDatos($_POST["id"]).';');
+    }
+}
+
 function comprobarDatosEdit1() {
     $link = Conectar::conexion();
 
     if (($_POST['nombre'] === $_POST['nombre2'] || validarNombre($link)) && comprobarGrupoM($link) && comprobarMaterial($link)) {
+        borrarFoto($link);
+        borrarVideo($link);
         mysqli_close($link);
         editar();
     }
@@ -148,7 +164,8 @@ function comprobarDatosEdit1() {
 function comprobarDatosEdit2() {
     $link = Conectar::conexion();
 
-    if (($_POST['nombre'] === $_POST['nombre2'] || validarNombre($link)) && validarFoto($link) && comprobarGrupoM($link) && comprobarMaterial($link)) {
+    if (($_POST['nombre'] === $_POST['nombre2'] || validarNombre($link)) && comprobarGrupoM($link) && comprobarMaterial($link) && validarFoto($link)) {
+        borrarVideo($link);
         mysqli_close($link);
         editar();
     }
@@ -157,7 +174,8 @@ function comprobarDatosEdit2() {
 function comprobarDatosEdit3() {
     $link = Conectar::conexion();
 
-    if (($_POST['nombre'] === $_POST['nombre2'] || validarNombre($link)) && validarVideo($link) && comprobarGrupoM($link) && comprobarMaterial($link)) {
+    if (($_POST['nombre'] === $_POST['nombre2'] || validarNombre($link)) && comprobarGrupoM($link) && comprobarMaterial($link) && validarVideo($link)) {
+        borrarFoto($link);
         mysqli_close($link);
         editar();
     }
@@ -166,18 +184,18 @@ function comprobarDatosEdit3() {
 function comprobarDatosEdit4() {
     $link = Conectar::conexion();
 
-    if (($_POST['nombre'] === $_POST['nombre2'] || validarNombre($link)) && validarFoto($link) && validarVideo($link) && comprobarGrupoM($link) && comprobarMaterial($link)) {
+    if (($_POST['nombre'] === $_POST['nombre2'] || validarNombre($link)) && comprobarGrupoM($link) && comprobarMaterial($link) && validarFoto($link) && validarVideo($link)) {
         mysqli_close($link);
         editar();
     }
 }
 
-function limpiarFotos() {
-    unlink('../../images/'.$_POST["foto2"]);
+function limpiarFotos($foto) {
+    unlink("../../images/ejercicio/$foto");
 }
 
-function limpiarVideos() {
-    unlink("../../video/".$_POST["video2"]);
+function limpiarVideos($video) {
+    unlink("../../video/ejercicio/$video");
 }
 
 function editar() {
@@ -186,25 +204,25 @@ function editar() {
     $link = Conectar::conexion();
 
     if (!empty($foto) && !empty($video)) {
-        if (!empty($_POST['foto2'])) {
-            limpiarFotos();
+        if (!empty($_POST['foto3']) && $_POST['foto3'] !== $_FILES['foto']['name']) {
+            limpiarFotos($_POST["foto3"]);
         }
-        if (!empty($_POST['video2'])) {
-            limpiarVideos();
+        if (!empty($_POST['video3']) && $_POST['video3'] !== $_FILES['video']['name']) {
+            limpiarVideos($_POST["video3"]);
         }
         $query = mysqli_query($link, 'UPDATE EJERCICIO SET nombre="'.limpiarDatos($_POST["nombre"]).'", dificultad='.limpiarDatos($_POST["dificultad"]).', 
         foto="'.$foto.'", video="'.$video.'" WHERE cod='.limpiarDatos($_POST["id"]).';');
         mysqli_close($link);
     } else if (!empty($foto)) {
-        if (!empty($_POST['foto2'])) {
-            limpiarFotos();
+        if (!empty($_POST['foto3']) && $_POST['foto3'] !== $_FILES['foto']['name']) {
+            limpiarFotos($_POST["foto3"]);
         }
         $query = mysqli_query($link, 'UPDATE EJERCICIO SET nombre="'.limpiarDatos($_POST["nombre"]).'", dificultad='.limpiarDatos($_POST["dificultad"]).', 
         foto="'.$foto.'" WHERE cod='.limpiarDatos($_POST["id"]).';');
         mysqli_close($link);
     } else if (!empty($video)) { 
-        if (!empty($_POST['video2'])) {
-            limpiarVideos();
+        if (!empty($_POST['video3']) && $_POST['video3'] !== $_FILES['video']['name']) {
+            limpiarVideos($_POST["video3"]);
         }
         $query = mysqli_query($link, 'UPDATE EJERCICIO SET nombre="'.limpiarDatos($_POST["nombre"]).'", dificultad='.limpiarDatos($_POST["dificultad"]).', 
         video="'.$video.'" WHERE cod='.limpiarDatos($_POST["id"]).';');
@@ -335,11 +353,11 @@ function cargarEdicion() {
 if (!empty($_POST['editForm'])) {
     cargarEdicion();
 }  else if (!empty($_POST['editarEjercicio']) && !empty($_POST['nombre']) && !empty($_POST['dificultad']) && !empty($_FILES['foto']['name']) && !empty($_FILES['video']['name'])) {
-    comprobarDatosInsert4();
+    comprobarDatosEdit4();
 } else if (!empty($_POST['editarEjercicio']) && !empty($_POST['nombre']) && !empty($_POST['dificultad']) && !empty($_FILES['video']['name'])) {
-    comprobarDatosInsert3();
+    comprobarDatosEdit3();
 } else if (!empty($_POST['editarEjercicio']) && !empty($_POST['nombre']) && !empty($_POST['dificultad']) && !empty($_FILES['foto']['name'])) {
-    comprobarDatosInsert2();
+    comprobarDatosEdit2();
 } else if (!empty($_POST['editarEjercicio']) && !empty($_POST['nombre']) && !empty($_POST['dificultad'])) {
     comprobarDatosEdit1();
 }

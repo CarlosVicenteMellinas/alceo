@@ -9,6 +9,8 @@ const botonFoto = document.getElementById("borrarFoto");
 const botoVideo = document.getElementById("borrarVideo");
 const eraseFoto = document.getElementById("eraseFoto");
 const eraseVideo = document.getElementById("eraseVideo");
+const foto3 = document.getElementById("foto3");
+const video3 = document.getElementById("video3");
 
 var Gbar, Mbar;
 
@@ -22,17 +24,21 @@ function changeValues(data, data2 ,data3 ,data4, data5) {
     
     if(!ejercicio[3]) {
         foto2.value = 'Ninguna';
+        foto3.value = '';
         botonFoto.style.display = "none";
     } else {
         foto2.value = ejercicio[3];
+        foto3.value = ejercicio[3];
         botonFoto.style.display = "flex";
     }
 
     if(!ejercicio[4]) {
         video2.value = 'Ninguno';
+        video3.value = '';
         botoVideo.style.display = "none";
     } else {
         video2.value = ejercicio[4];
+        video3.value = ejercicio[4];
         botoVideo.style.display = "flex";
     }
 
@@ -224,7 +230,6 @@ $(document).ready(function() {
             $("#ddmaterial").css("display", "none");
         }
     });
-    $("button").css("display", "none");
     $("#borrarFoto").click(deleteFoto);
     $("#borrarVideo").click(deleteVideo);
 
