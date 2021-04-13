@@ -52,10 +52,10 @@
 							<section class="col-3 col-6-narrower col-12-mobilep">
 								<h3>MENÚ</h3>
 								<ul class="links">
-									<li><a href="#">HOME</a></li>
+									<li><a href="/index.php">HOME</a></li>
 									<li><a href="#">COMUNIDAD</a></li>
-									<li><a href="#">ÁREA DE USUARIO</a></li>
-									<li><a href="#">CONTACTO</a></li>
+									<li><a href="/controllers/areaUsuarioController.php">ÁREA DE USUARIO</a></li>
+									<li><a href="/contacto.php">>CONTACTO</a></li>
 								</ul>
 							</section>
 							<section class="col-3 col-6-narrower col-12-mobilep">
