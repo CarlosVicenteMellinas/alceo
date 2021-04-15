@@ -33,7 +33,7 @@
 				<!-- Nav -->
 					<nav id="nav">
 						<ul>
-							<li class="current"><a href="../index.php">Home</a></li>
+							<li><a href="../index.php">Home</a></li>
 							<li><a href="#">Comunidad</a></li></li>
 							<li><a href="../controllers/areaUsuarioController.php">Área de usuario</a></li>
 							<li class="current"><a href="/paginas/contacto.php">Contacto</a></li>
