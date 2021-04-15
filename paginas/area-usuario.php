@@ -109,8 +109,10 @@
 						</div>
 					</div>
                     <div style="text-align:center; margin:auto; padding: 30px 0px 30px 0px">
-                    <button type="submit" name="editarPerfil" id="editarPerfil">
+                    <form method="POST" action="/controllers/editarUsuarioController.php">
+                        <input type="submit" name="editarPerfil" id="editarPerfil">
                         <span><i class="far fa-edit"></i> Editar Perfil</span>
+                    </form>
             </button>
                     </div>
 				</section>

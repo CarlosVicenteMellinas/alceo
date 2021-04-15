@@ -64,7 +64,7 @@ if (!empty($_POST['loginNombre']) && !empty($_POST['loginContrasena'])) {
 } else if (!empty($_POST['cerrarSesion'])) {
     cerrarSesion();
 } else {
-    echo 'Pagina de error';
+    header("Location: /paginas/fail.php");
 }
 
 ?>

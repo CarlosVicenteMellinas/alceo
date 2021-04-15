@@ -40,5 +40,5 @@ if (!empty($_POST["deleteForm"])) {
 } else if (!empty($_POST["eliminarObjetivo"]) && !empty($_POST['id'])) {
     eliminar(limpiarDatos($_POST['id']));
 } else {
-    echo 'Pagina de error';
+    header("Location: /paginas/fail.php");
 }

@@ -78,5 +78,5 @@ if (!empty($_POST["deleteForm"])) {
 } else if (!empty($_POST["eliminarEjercicio"]) && !empty($_POST['id'])) {
     eliminar(limpiarDatos($_POST['id']));
 } else {
-    echo 'Pagina de error';
+    header("Location: /paginas/fail.php");
 }
