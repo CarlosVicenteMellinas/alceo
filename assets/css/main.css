@@ -190,7 +190,7 @@ input, select, textarea {
 		padding: 1em 0 1em 2em;
 	}
 
-	#loginSignin, #signinForm, #insertForm, #alterForm, #selectForm {
+	#loginSignin, #signinForm, #insertForm, #alterForm, #selectForm, #editForm {
 		padding: 30px 0px 30px 0px;
 		width: 80% !important;
 		text-align: left;
