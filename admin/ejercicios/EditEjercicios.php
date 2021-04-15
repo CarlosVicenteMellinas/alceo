@@ -63,7 +63,7 @@
                                 ?>
                             </select>
                         </form>
-                        <form id="alterForm" action="/controllers/ejercicio/ejercicioEditController.php" method="POST">
+                        <form id="alterForm" action="/controllers/ejercicio/ejercicioEditController.php" method="POST" enctype="multipart/form-data">
                             <label for="nombre">Nombre: </label>
                             <input type="text" id="nombre" name="nombre" required>
                             <input type="hidden" id="nombre2" name="nombre2" value="">
@@ -73,12 +73,25 @@
                             <input type="number" min="1" max="5" id="dificultad" name="dificultad" required>
                             
                             <label for="foto">Foto: </label>
-                            <p>Foto actual:</p><input type="text" id="foto2" name="foto2" value="" readonly>
+                            <div id="multimedia">
+                                <p class="multimediaLabel">Foto actual:</p>
+                                <input type="text" id="foto2" name="foto2" value="" readonly>
+                                <input type="hidden" id="foto3" name="foto3" value="">
+                                <input type="hidden" id="eraseFoto" name="eraseFoto" value="false">
+                                <div id="borrarFoto" style="display: none;">Borrar Foto</div>
+                            </div>
                             <input type="file" id="foto" name="foto">
                             <?php if (!empty($fotoError)) {echo '<p class="error">'.$fotoError.'</p>';}?>
+                            <br><br>
 
                             <label for="video">Video: </label>
-                            <p>Video actual:</p><input type="text" id="video2" name="video2" value="" readonly>
+                            <div id="multimedia">
+                                <p class="multimediaLabel">Video actual:</p>
+                                <input type="text" id="video2" name="video2" value="" readonly>
+                                <input type="hidden" id="video3" name="video3" value="">
+                                <input type="hidden" id="eraseVideo" name="eraseVideo" value="false">
+                                <div id="borrarVideo" style="display: none;">Borrar Video</div>
+                            </div>
                             <input type="file" id="video" name="video">
                             <?php if (!empty($videoError)) {echo '<p class="error">'.$videoError.'</p>';}?>
 

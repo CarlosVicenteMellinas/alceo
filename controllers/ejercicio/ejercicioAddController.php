@@ -50,8 +50,8 @@ function validarFoto($link) {
             cargarInserccion();
         }
         else {
-            if (move_uploaded_file($temp, '../../images/'.$foto)) {
-                chmod('../../images/'.$foto, 0777);
+            if (move_uploaded_file($temp, '../../images/ejercicio/'.$foto)) {
+                chmod('../../images/ejercicio/'.$foto, 0777);
             }
             else {
                 mysqli_close($link);
@@ -83,8 +83,8 @@ function validarVideo($link) {
             cargarInserccion();
         }
         else {
-            if (move_uploaded_file($temp, '../../video/'.$video)) {
-                chmod('../../video/'.$video, 0777);
+            if (move_uploaded_file($temp, '../../video/ejercicio/'.$video)) {
+                chmod('../../video/ejercicio/'.$video, 0777);
             }
             else {
                 mysqli_close($link);
@@ -147,7 +147,7 @@ function comprobarDatosInsert1() {
 
 function comprobarDatosInsert2() {
     $link = Conectar::conexion();
-    if (validarNombre($link) && validarFoto($link) && comprobarGrupoM($link) && comprobarMaterial($link)) {
+    if (validarNombre($link) && comprobarGrupoM($link) && comprobarMaterial($link) && validarFoto($link)) {
         mysqli_close($link);
         insertar();
     } 
@@ -155,7 +155,7 @@ function comprobarDatosInsert2() {
 
 function comprobarDatosInsert3() {
     $link = Conectar::conexion();
-    if (validarNombre($link) && validarVideo($link) && comprobarGrupoM($link) && comprobarMaterial($link)) {
+    if (validarNombre($link) && comprobarGrupoM($link) && comprobarMaterial($link) && validarVideo($link)) {
         mysqli_close($link);
         insertar();
     } 
@@ -164,7 +164,7 @@ function comprobarDatosInsert3() {
 
 function comprobarDatosInsert4() {
     $link = Conectar::conexion();
-    if (validarNombre($link) && validarFoto($link) && validarVideo($link) && comprobarGrupoM($link) && comprobarMaterial($link)) {
+    if (validarNombre($link) && comprobarGrupoM($link) && comprobarMaterial($link) && validarFoto($link) && validarVideo($link)) {
         mysqli_close($link);
         insertar();
     } 

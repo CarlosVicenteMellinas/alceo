@@ -1,27 +1,31 @@
 const select = document.getElementById("ejercicio");
-const nombre = document.getElementById("nombre");
-const dificultad = document.getElementById("dificultad");
 const id = document.getElementById("id");
-
-function changeValues(data) {
-    let cod = select.value;
-    let ejercicio = getEjercicio(cod, data);
-    id.value = ejercicio[0];
-    nombre.value = ejercicio[1];
-    dificultad.value = ejercicio[2];
-}
+const foto = document.getElementById("foto");
+const video = document.getElementById("video");
 
 function setID(data) {
     let cod = select.value;
     let ejercicio = getEjercicio(cod, data);
     id.value = ejercicio[0];
-   
+    
+    if(!ejercicio[3]) {
+        foto.value = '';
+    } else {
+        foto.value = ejercicio[3];
+    }
+
+    if(!ejercicio[4]) {
+        video.value = '';
+    } else {
+        video.value = ejercicio[4];
+    }
 }
 
 function getEjercicio(cod, data) {
     let ejercicio;
     for (let dato of data) {
         if (dato[0] === cod) {
+            console.log(dato);
             ejercicio = dato;
         }
     }

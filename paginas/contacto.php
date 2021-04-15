@@ -33,18 +33,68 @@
 				<!-- Nav -->
 					<nav id="nav">
 						<ul>
-							<li class="current"><a href="/index.php">Home</a></li>
+							<li class="current"><a href="../index.php">Home</a></li>
 							<li><a href="#">Comunidad</a></li></li>
-							<li><a href="/controllers/areaUsuarioController.php">Área de usuario</a></li>
-							<li><a href="#">Contacto</a></li>
+							<li><a href="../controllers/areaUsuarioController.php">Área de usuario</a></li>
+							<li class="current"><a href="#">Contacto</a></li>
 						</ul>
 					</nav>
 				</div>
 
 			<!-- Banner -->
 				<section id="banner">
-					<h2 class="pagina_error">Error inesperado</h2>
+					<header>
+						<h2>Alceo: <em>Tu sitio de confianza para guardar tus rutinas y ejercicios favoritos</em></h2>
+						<a href="#" class="button">Ir al generador</a>
+					</header>
 				</section>
+
+			<!-- Highlights -->
+				<section class="wrapper style1">
+					<div class="container">
+						<div class="row gtr-200">
+							<section class="col-4 col-12-narrower">
+							<h3>Teléfono:</h3>
+								<p><a href="#">+34 656 698 565</a></p>
+								<h3>Horario:</h3>
+								<p><a href="#">De 08:00 a 14:00 y de 16:00 a 18:00</a></p>
+								<h3>Email:</h3>
+								<p><a href="#">info@alceo.com</a></p>
+							</section>
+							<section class="col-8 col-12-narrower">
+							<form>
+									<div class="row gtr-50">
+										<div class="col-6 col-12-mobilep">
+											<input type="text" name="Nombre" id="Nombre" placeholder="Nombre" />
+										</div>
+										<div class="col-6 col-12-mobilep">
+											<input type="email" name="email" id="email" placeholder="Email" />
+										</div>
+										<div class="col-6 col-12-mobilep">
+											<input type="text" name="telefono" id="telefono" placeholder="Teléfono" />
+										</div>
+										<div class="col-6 col-12-mobilep">
+											<input type="text" name="asunto" id="asunto" placeholder="Asunto" />
+										</div>
+										<div class="col-12">
+											<textarea name="Mensaje" id="Mensaje" placeholder="Mensaje" rows="5"></textarea>
+										</div>
+										<div class="col-12">
+												<input type="submit" id="submit_contacto" value="ENVIAR" />
+										</div>
+									</div>
+								</form>
+							</section>
+						</div>
+					</div>
+				</section>
+				<section class="col-1 col-12-narrower">
+							<h2 class="cabecera_mapa">Contáctanos:</h2>
+							<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12493.5133750654!2d-0.7795171!3d38.4789109!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x157a37c112acbc6a!2sI.E.S.%20Poeta%20Paco%20Moll%C3%A0!5e0!3m2!1ses!2ses!4v1618332409301!5m2!1ses!2ses" 
+								width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+						</div>
+				</section>
+
 			<!-- Footer -->
 				<div id="footer">
 					<div class="container">
@@ -52,10 +102,10 @@
 							<section class="col-3 col-6-narrower col-12-mobilep">
 								<h3>MENÚ</h3>
 								<ul class="links">
-									<li><a href="/index.php">HOME</a></li>
+									<li><a href="#">HOME</a></li>
 									<li><a href="#">COMUNIDAD</a></li>
-									<li><a href="/controllers/areaUsuarioController.php">ÁREA DE USUARIO</a></li>
-									<li><a href="/contacto.php">>CONTACTO</a></li>
+									<li><a href="#">ÁREA DE USUARIO</a></li>
+									<li><a href="#">CONTACTO</a></li>
 								</ul>
 							</section>
 							<section class="col-3 col-6-narrower col-12-mobilep">
