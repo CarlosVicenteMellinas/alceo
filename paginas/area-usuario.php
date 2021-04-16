@@ -37,7 +37,7 @@
 						<nav id="nav">
 							<ul>
 								<li><a href="/index.php">Home</a></li>
-								<li><a href="#">Comunidad</a></li></li>
+								<li><a href="#">Comunidad</a></li>
 								<li class="current"><a href="/controllers/areaUsuarioController.php">Área de usuario</a></li>
 								<li><a href="/paginas/contacto.php">Contacto</a></li>
 							</ul>

@@ -30,20 +30,18 @@
 
 			<!-- Header -->
 				<div id="header">
+                <!-- Logo -->
+                    <a href="../index.php" id="logo"><img src="/images/logo-alceo.png" width="9%"></a>
 
-					<!-- Logo -->
-						<a href="../index.php" id="logo"><img src="/images/logo-alceo.png" width="9%"></a>
-
-					<!-- Nav -->
-						<nav id="nav">
-							<ul>
-								<li><a href="/index.php">Home</a></li>
-								<li><a href="#">Comunidad</a></li></li>
-								<li class="current"><a href="/controllers/areaUsuarioController.php">Área de usuario</a></li>
-								<li><a href="/paginas/contacto.php">Contacto</a></li>
-							</ul>
-						</nav>
-
+                <!-- Nav -->
+                    <nav id="nav">
+                        <ul>
+                            <li><a href="/index.php">Home</a></li>
+                            <li><a href="#">Comunidad</a></li>
+                            <li class="current"><a href="/controllers/areaUsuarioController.php">Área de usuario</a></li>
+                            <li><a href="/paginas/contacto.php">Contacto</a></li>
+                        </ul>
+                    </nav>
 				</div>
 
 			<!-- Banner -->
@@ -142,7 +140,7 @@
                     </section>
                 </div>
             </div>
-                
+        </div>
 
         <!-- Icons -->
             <ul class="icons">
