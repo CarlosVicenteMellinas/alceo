@@ -59,11 +59,13 @@
             <div id="editPerfil">
                 <form id="editUserForm" method="POST" action="/controllers/editarUsuarioController.php">
                     <label for="nombre" >Nombre Completo: </label>
-                    <input type="text" id="nombre" name="nombre" required>
+                    <input type="text" id="nombre" name="nombre" value=<?php echo '"'.$usuario['nombre'].'"' ?> required>
+                    <input type="hidden" id="nombre2" name="nombre2" value=<?php echo '"'.$usuario['nombre'].'"' ?>>
                     <?php if (!empty($nombreError)) {echo '<p class="error">'.$nombreError.'</p>';} ?>
 
                     <label for="nick" >Nombre de Usuario: </label>
-                    <input type="text" id="nick" name="nick" required>
+                    <input type="text" id="nick" name="nick" value=<?php echo '"'.$usuario['nickname'].'"' ?> required>
+                    <input type="hidden" id="nick2" name="nick2" value=<?php echo '"'.$usuario['nickname'].'"' ?>>
                     <?php if (!empty($nickError)) {echo '<p class="error">'.$nickError.'</p>';} ?>
                     
                     <label for="contrasena">Contraseña Actual: </label>
@@ -71,21 +73,21 @@
                     <?php if (!empty($contasenaError)) {echo '<p class="error">'.$contasenaError.'</p>';} ?>
 
                     <label for="Ncontrasena">Nueva Contraseña: </label>
-                    <input type="password" id="Ncontrasena" name="Ncontrasena" required>
+                    <input type="password" id="Ncontrasena" name="Ncontrasena">
                     <?php if (!empty($NcontasenaError)) {echo '<p class="error">'.$NcontasenaError.'</p>';} ?>
                     
                     <label for="Ncontrasena2">Vuelve a introducir la nueva contraseña: </label>
-                    <input type="password" id="Ncontrasena2" name="Ncontrasena2" required>
+                    <input type="password" id="Ncontrasena2" name="Ncontrasena2">
                     
                     <label for="correo">Correo Electronico: </label>
-                    <input type="email" id="correo" name="correo" required>
+                    <input type="email" id="correo" name="correo" value=<?php echo '"'.$usuario['correo'].'"' ?> required>
+                    <input type="hidden" id="correo2" name="correo2" value=<?php echo '"'.$usuario['correo'].'"' ?>>
                     <?php if (!empty($emailError)) {echo '<p class="error">'.$emailError.'</p>';} ?>
 
                     <label for="telefono">Telefono: </label>                        
-                    <input type="tel" id="telefono" name="telefono" pattern="[0-9]{9}">
+                    <input type="tel" id="telefono" name="telefono" pattern="[0-9]{9}" value=<?php echo '"'.$usuario['telefono'].'"' ?>>
                     <label for="plan">Plan</label>
                     <select id="plan" name="plan" required>
-                        <option selected disabled>No seleccionado</option>
                         <?php 
                             foreach ($options as $option) {
                                 echo $option;
@@ -93,7 +95,8 @@
                         ?>
                     </select>
                     <br><br>
-                    <input type="submit" id="editar" value="Editar perfil">
+                    <input type="hidden" id="id" name="id" value=<?php echo $usuario['cod'] ?>>
+                    <input type="submit" id="editar" name='editar' value="Editar perfil">
                 </form>
             </div>
             <div id="footer">
