@@ -59,7 +59,7 @@
                 <?php echo '<h1>Nick: '.$_SESSION['usuario'].'</h1>'; ?>
             </div>
             <div id="editPerfil">
-                <form id="editForm" method="POST" action="/controllers/editarUsuarioController.php">
+                <form id="editUserForm" method="POST" action="/controllers/editarUsuarioController.php">
                     <label for="nombre" >Nombre Completo: </label>
                     <input type="text" id="nombre" name="nombre" required>
                     <?php if (!empty($nombreError)) {echo '<p class="error">'.$nombreError.'</p>';} ?>
