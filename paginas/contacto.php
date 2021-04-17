@@ -55,11 +55,11 @@
 						<div class="row gtr-200">
 							<section class="col-4 col-12-narrower">
 							<h3>Teléfono:</h3>
-								<p><a href="#">+34 656 698 565</a></p>
+								<p><a href="tel:+34656698565">+34 656 698 565</a></p>
 								<h3>Horario:</h3>
-								<p><a href="#">De 08:00 a 14:00 y de 16:00 a 18:00</a></p>
+								<p>De 08:00 a 14:00 y de 16:00 a 18:00</p>
 								<h3>Email:</h3>
-								<p><a href="#">info@alceo.com</a></p>
+								<p><a href="mailto:info@alceo.com">info@alceo.com</a></p>
 							</section>
 							<section class="col-8 col-12-narrower">
 							<form>
@@ -102,19 +102,19 @@
 							<section class="col-3 col-6-narrower col-12-mobilep">
 								<h3>MENÚ</h3>
 								<ul class="links">
-									<li><a href="#">HOME</a></li>
-									<li><a href="#">COMUNIDAD</a></li>
-									<li><a href="#">ÁREA DE USUARIO</a></li>
-									<li><a href="#">CONTACTO</a></li>
+									<li><a href="../index.php">Home</a></li>
+									<li><a href="#">Comunidad</a></li>
+									<li><a href="../controllers/areaUsuarioController.php">Área de usuario</a></li>
+									<li class="current"><a href="/paginas/contacto.php">Contacto</a></li>
 								</ul>
 							</section>
 							<section class="col-3 col-6-narrower col-12-mobilep">
 								<h3>CONTACTO</h3>
 								<ul class="links">
-									<li><a href="#">+34 656 698 565</a></li>
-									<li><a href="#">info@alceo.com</a></li>
-									<li><a href="#">IES Paco Mollá</a></li>
-									<li><a href="#">De 08:00 a 14:00 y de 16:00 a 18:00</a></li>
+									<li><a href="tel:+34656698565">+34 656 698 565</a></li>
+									<li><a href="mailto:info@alceo.com">info@alceo.com</a></li>
+									<li>>IES Paco Mollá</li>
+									<li>De 08:00 a 14:00 y de 16:00 a 18:00</li>
 								</ul>
 							</section>
 							<section class="col-6 col-12-narrower">
