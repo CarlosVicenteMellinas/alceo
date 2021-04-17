@@ -108,14 +108,31 @@
 							</section>
 						</div>
 					</div>
-                    <div style="text-align:center; margin:auto; padding: 30px 0px 30px 0px">
-                    <form method="POST" action="/controllers/editarUsuarioController.php">
-                        <button type="submit" name="editarPerfil" id="editarPerfil">
-                        <span><i class="far fa-edit"></i> Editar Perfil</span>
-                        </button>
-                    </form>
+                </section>
+                <section class="wrapper style1">
+                <div class="container">
+						<div class="row gtr-200">
+                    <section class="col-6 col-12-narrower">
+						<div class="box highlight">	
+                            <form method="POST" action="/controllers/editarUsuarioController.php">
+                                <button type="submit" name="editarPerfil" id="editarPerfil">
+                                <span><i class="far fa-edit"></i> Editar Perfil</span>
+                                </button>
+                            </form>
+                        </div>
+					</section>
+                    <section class="col-6 col-12-narrower">
+						<div class="box highlight">	
+                            <form method="POST" action="/controllers/editarUsuarioController.php">
+                                <button type="submit" name="editarPerfil" id="editarPerfil">
+                                <span><i class="far fa-trash-alt"></i> Eliminar Perfil</span>
+                                </button>
+                            </form>
+                        </div>
+					</section>
                     </div>
-				</section>
+                    </div>
+                </section>
             <?php }  
             
             
