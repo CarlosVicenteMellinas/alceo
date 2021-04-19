@@ -14,9 +14,18 @@ function cargarArea() {
     include '../paginas/area-usuario.php';
 }
 
-if(!empty($_SESSION['usuario'])) {
+function borrarUsuario() {
+    $link =Conectar::conexion();
+    $query = mysqli_query($link, 'DELETE FROM USUARIO WHERE cod='.$_SESSION['id']);
+    session_destroy();
+    header("Location: /paginas/area-usuario.php");
+}
+
+if (!empty($_POST['borrarPerfil'])) {
+    borrarUsuario();
+} else if(!empty($_SESSION['usuario'])) {
     cargarArea();
-} else {
+}  else {
     header("Location: /paginas/area-usuario.php");
 }
 

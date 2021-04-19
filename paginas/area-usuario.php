@@ -123,8 +123,8 @@
 					</section>
                     <section class="col-6 col-12-narrower">
 						<div class="box highlight">	
-                            <form method="POST" action="/controllers/editarUsuarioController.php">
-                                <button type="submit" name="editarPerfil" id="editarPerfil">
+                            <form method="POST" action="/controllers/areaUsuarioController.php">
+                                <button type="submit" name="borrarPerfil" id="borrarPerfil" value="borrar">
                                 <span><i class="far fa-trash-alt"></i> Eliminar Perfil</span>
                                 </button>
                             </form>
