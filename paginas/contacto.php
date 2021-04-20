@@ -62,25 +62,25 @@
 								<p><a href="mailto:info@alceo.com">info@alceo.com</a></p>
 							</section>
 							<section class="col-8 col-12-narrower">
-							<form>
+							<form method="POST" action="/controllers/contactoController.php">
 									<div class="row gtr-50">
 										<div class="col-6 col-12-mobilep">
-											<input type="text" name="Nombre" id="Nombre" placeholder="Nombre" />
+											<input type="text" name="nombre" id="nombre" placeholder="Nombre" required/>
 										</div>
 										<div class="col-6 col-12-mobilep">
-											<input type="email" name="email" id="email" placeholder="Email" />
+											<input type="email" name="email" id="email" placeholder="Email" required/>
 										</div>
 										<div class="col-6 col-12-mobilep">
-											<input type="text" name="telefono" id="telefono" placeholder="Teléfono" />
+											<input type="text" name="telefono" id="telefono" placeholder="Teléfono" required/>
 										</div>
 										<div class="col-6 col-12-mobilep">
-											<input type="text" name="asunto" id="asunto" placeholder="Asunto" />
+											<input type="text" name="asunto" id="asunto" placeholder="Asunto" required/>
 										</div>
 										<div class="col-12">
-											<textarea name="Mensaje" id="Mensaje" placeholder="Mensaje" rows="5"></textarea>
+											<textarea name="mensaje" id="mensaje" placeholder="Mensaje" rows="5" required></textarea>
 										</div>
 										<div class="col-12">
-												<input type="submit" id="submit_contacto" value="ENVIAR" />
+												<input type="submit" name="submit_contacto" id="submit_contacto" value="ENVIAR" required/>
 										</div>
 									</div>
 								</form>
@@ -132,7 +132,7 @@
 										</div>
 										<div class="col-12">
 											<ul class="actions">
-												<li><input type="submit" class="button alt" value="Send Message" /></li>
+												<li><input type="submit" id="enviar" name="enviar" class="button alt" value="Send Message" /></li>
 											</ul>
 										</div>
 									</div>
