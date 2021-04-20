@@ -45,7 +45,7 @@
 				<section id="banner">
 					<header>
 						<h2>Alceo: <em>Tu sitio de confianza para guardar tus rutinas y ejercicios favoritos</em></h2>
-						<a href="#" class="button">Ir al generador</a>
+						<a href="/controllers/areaUsuarioController.php" class="button">Ir al generador</a>
 					</header>
 				</section>
 
@@ -151,7 +151,7 @@
 					<div class="container">
 						<header>
 							<h2>¿Te hemos convencido? Tu nuevo estilo de vida a solo un click</h2>
-							<a href="#" class="button">Ir al generador</a>
+							<a href="/controllers/areaUsuarioController.php" class="button">Ir al generador</a>
 						</header>
 					</div>
 				</section>
@@ -204,10 +204,10 @@
 
 					<!-- Icons -->
 						<ul class="icons">
-							<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
-							<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
-							<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
-							<li><a href="#" class="icon brands fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
+							<li><a href="https://www.instagram.com/" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+							<li><a href="https://twitter.com/" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
+							<li><a href="https://www.facebook.com/" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+							<li><a href="https://www.linkedin.com/" class="icon brands fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
 						</ul>
 
 					<!-- Copyright -->
