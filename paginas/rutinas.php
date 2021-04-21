@@ -13,46 +13,50 @@
 	</head>
 	<body class="is-preload">
 		<?php
-	    session_start();
-        $inactividad = 3600;
-        if(!empty($_SESSION["timeout"])){
-            $sessionTTL = time() - $_SESSION["timeout"];
-            if($sessionTTL > $inactividad){
-                session_destroy();
-                header("Location: /paginas/area-usuario.php");
-            }
-        } 
+	    if (session_status() === PHP_SESSION_NONE) {
+            session_start();
+        }
+        if (!empty($_SESSION['usuario'])) {
+            $inactividad = 3600;
+            if(!empty($_SESSION["timeout"])){
+                $sessionTTL = time() - $_SESSION["timeout"];
+                if($sessionTTL > $inactividad){
+                    session_destroy();
+                    header("Location: /paginas/area-usuario.php");
+                }
+            } 
         ?>
 		<div id="page-wrapper">
 
 			<!-- Header -->
 				<div id="header">
 				<!-- Logo -->
-					<a href="/index.php" id="logo"><img src="/images/logo-alceo.png" width="9%"></a>
+					<a href="index.php" id="logo"><img src="/images/logo-alceo.png" width="9%"></a>
 
 				<!-- Nav -->
 					<nav id="nav">
 						<ul>
-						<?php if (!empty($_SESSION['usuario'])) { ?>
-							<li class="current"><a href="/index.php">Home</a></li>
+							<li><a href="/index.php">Home</a></li>
 							<li><a href="#">Comunidad</a></li>
 							<li><a href="/controllers/areaUsuarioController.php">Área de usuario</a></li>
-							<li><a href="/controllers/rutinas/rutinasController.php">Rutinas</a></li>
+							<li class="current"><a href="/controllers/rutinas/rutinasController.php">Rutinas</a></li>
 							<li><a href="/paginas/contacto.php">Contacto</a></li>
-						<?php } else { ?>
-							<li class="current"><a href="/index.php">Home</a></li>
-							<li><a href="#">Comunidad</a></li>
-							<li><a href="/controllers/areaUsuarioController.php">Área de usuario</a></li>
-							<li><a href="/paginas/contacto.php">Contacto</a></li>
-						<?php } ?>
 						</ul>
 					</nav>
 				</div>
 
 			<!-- Banner -->
 				<section id="banner">
-					<h2 class="pagina_error">Error inesperado</h2>
+					<header>
+						<h2>Alceo: <em>Tu sitio de confianza para guardar tus rutinas y ejercicios favoritos</em></h2>
+						<a href="/controllers/areaUsuarioController.php" class="button">Ir al generador</a>
+					</header>
 				</section>
+
+			<!-- Highlights -->
+                <div>
+                    <h2>Mis Rutinas</h2>
+                </div>
 			<!-- Footer -->
 				<div id="footer">
 					<div class="container">
@@ -60,10 +64,10 @@
 							<section class="col-3 col-6-narrower col-12-mobilep">
 								<h3>MENÚ</h3>
 								<ul class="links">
-									<li><a href="/index.php">HOME</a></li>
-									<li><a href="#">COMUNIDAD</a></li>
-									<li><a href="/controllers/areaUsuarioController.php">ÁREA DE USUARIO</a></li>
-									<li><a href="/contacto.php">>CONTACTO</a></li>
+									<li><a href="/index.php">Home</a></li>
+									<li><a href="#">Comunidad</a></li>
+									<li><a href="/controllers/areaUsuarioController.php">Área de usuario</a></li>
+									<li><a href="/paginas/contacto.php">Contacto</a></li>
 								</ul>
 							</section>
 							<section class="col-3 col-6-narrower col-12-mobilep">
@@ -125,6 +129,15 @@
 			<script src="/assets/js/breakpoints.min.js"></script>
 			<script src="/assets/js/util.js"></script>
 			<script src="/assets/js/main.js"></script>
+        
+        <?php    
+            } else {
+        ?>
+        <div>
+                <h2 class="error">Tienes que iniciar sesion para acceder</h2>
+                <a href="/index.php">Vuelta a la pagina principal</a>
+            </div>
 
+        <?php } ?>
 	</body>
 </html>

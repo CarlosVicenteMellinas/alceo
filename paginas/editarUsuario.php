@@ -36,10 +36,18 @@
                 <!-- Nav -->
                     <nav id="nav">
                         <ul>
-                            <li><a href="/index.php">Home</a></li>
-                            <li><a href="#">Comunidad</a></li>
-                            <li class="current"><a href="/controllers/areaUsuarioController.php">Área de usuario</a></li>
-                            <li><a href="/paginas/contacto.php">Contacto</a></li>
+                        <?php if (!empty($_SESSION['usuario'])) { ?>
+							<li><a href="/index.php">Home</a></li>
+							<li><a href="#">Comunidad</a></li>
+							<li class="current"><a href="/controllers/areaUsuarioController.php">Área de usuario</a></li>
+							<li><a href="/controllers/rutinas/rutinasController.php">Rutinas</a></li>
+							<li><a href="/paginas/contacto.php">Contacto</a></li>
+						<?php } else { ?>
+							<li><a href="/index.php">Home</a></li>
+							<li><a href="#">Comunidad</a></li>
+							<li class="current"><a href="/controllers/areaUsuarioController.php">Área de usuario</a></li>
+							<li><a href="/paginas/contacto.php">Contacto</a></li>
+						<?php } ?>
                         </ul>
                     </nav>
 				</div>
