@@ -10,6 +10,17 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="/assets/css/main.css" />
+        <style>
+            .box.highlight{
+                margin: 0;
+	            padding: 0;
+	            list-style: none;
+	            text-decoration: none;
+                border: none;
+                outline: none;
+            }
+            
+        </style>
 	</head>
 	<body class="is-preload">
         <?php
@@ -74,11 +85,13 @@
 					<div class="container">
 						<div class="row gtr-200">
                         <section class="col-6 col-12-narrower">
+                        <div class="cuadrados-flotantes">
 								<div class="box highlight">
                                 <i class="fas fa-male"></i>
 									<h3>Nick:</h3>
                                     <h3 class="nombre_perfil"><?php echo '<h1 class="nombre_perfil">'.$_SESSION['usuario'].'</h1>'; ?></h3>
 								</div>
+                                </div>
 							</section>
                         <section class="col-6 col-12-narrower">
 								<div class="box highlight">

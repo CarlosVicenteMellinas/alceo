@@ -55,8 +55,29 @@
 
 			<!-- Highlights -->
                 <div>
-                    <h2>Mis Rutinas</h2>
+                    <h2 id="titulo-generador">Mis Rutinas</h2>
                 </div>
+				<section class="wrapper style1">
+					<div class="container">
+						<div class="row gtr-200" >
+							<section class="col-4 col-12-narrower" >
+								<div class="box highlight r">
+                                <i class="far fa-envelope"></i>
+									<h3><a href="#">Rutina 1</a></h3>
+								</div>
+							</section>
+						</div>
+					</div>
+					<section class="col-8 col-12-narrower">
+						<div class="box highlight">	
+                            <form>
+                                <button type="submit" name="generarRutina" id="generarRutina" value="Generar Rutina">
+                                <span><i class="fas fa-rocket"></i> Generar Rutina</span>
+                                </button>
+                            </form>
+                        </div>
+					</section>
+                </section>
 			<!-- Footer -->
 				<div id="footer">
 					<div class="container">
