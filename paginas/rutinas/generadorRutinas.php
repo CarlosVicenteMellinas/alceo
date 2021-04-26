@@ -55,29 +55,27 @@
 
 			<!-- Highlights -->
                 <div>
-                    <h2 id="titulo-generador">Mis Rutinas</h2>
-                </div>
-				<section class="wrapper style1">
-					<div class="container">
-						<div class="row gtr-200" >
-							<section class="col-4 col-12-narrower" >
-								<div class="box highlight r">
-                                <i class="far fa-envelope"></i>
-									<h3><a href="#">Rutina 1</a></h3>
-								</div>
-							</section>
-						</div>
-					</div>
-					<section class="col-8 col-12-narrower">
-						<div class="box highlight">	
-                            <form method="POST" action="/controllers/rutinas/rutinasController.php">
-                                <button type="submit" name="generarRutina" id="generarRutina" value="Generar Rutina">
-                                <span><i class="fas fa-rocket"></i> Generar Rutina</span>
-                                </button>
-                            </form>
+                <form method="POST" action="generadorManualController.php">
+                    <h2 id="titulo-generador">Generador Manual</h2>
+                    <div>
+                        <div>
+                            <label for="objetivo">Objetivo:</label>
+                            <select id="objetivo" name="objetivo" required>
+                                <option selected disabled>No seleccionado</option>
+                                <?php 
+                                    foreach ($options as $option) {
+                                        echo $option;
+                                    }
+                                ?>
+                            </select>
                         </div>
-					</section>
-                </section>
+                        <div>
+                            <label for="nombre">Nombre:</label>
+                            <input type="text" id="nombre" name="nombre" required>
+                        </div>
+                    </div>
+                </form>
+                </div>
 			<!-- Footer -->
 				<div id="footer">
 					<div class="container">
