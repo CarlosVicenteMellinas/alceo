@@ -88,7 +88,7 @@
                         <div class="cuadrados-flotantes">
 								<div class="box highlight">
                                 <i class="fas fa-male ocultar"></i>
-									<h3>Nick:</h3>
+									<h3 class="nombre_perfil">Nick:</h3>
                                     <h3 class="nombre_perfil"><?php echo '<h1 class="nombre_perfil">'.$_SESSION['usuario'].'</h1>'; ?></h3>
 								</div>
                                 </div>
@@ -96,7 +96,7 @@
                         <section class="col-6 col-12-narrower">
 								<div class="box highlight">
                                 <i class="fas fa-male ocultar" ></i>
-									<h3>Nombre Completo:</h3>
+									<h3 class="nombre_perfil">Nombre Completo:</h3>
                                     <h3 class="nombre_perfil"><?php if(!empty($usuario['nombre'])) {echo $usuario['nombre'];} else {echo "Error al cargar la pagina";} ?></h3>
 								</div>
 							</section>
