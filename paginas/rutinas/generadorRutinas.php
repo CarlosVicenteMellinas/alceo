@@ -57,38 +57,37 @@
                 <div class="generador-manual">
                 <form method="POST" action="generadorManualController.php">
                     <h2 id="titulo-generador">Generador Manual</h2>
-                    <div>
-                        <div>
-                            <label for="objetivo">Objetivo:</label>
-                            <select id="objetivo" name="objetivo" required>
-                                <option selected disabled>No seleccionado</option>
-                                <?php 
-                                    foreach ($options as $option) {
-                                        echo $option;
-                                    }
-                                ?>
-                            </select>
-                        </div>
-								</br>
-                        <div>
-                            <label for="nombre">Nombre:</label>
-                            <input type="text" id="nombre" name="nombre" required>
-                        </div>
-                    </div>
+					<div>
+						<label for="objetivo">Objetivo:</label>
+						<select id="objetivo" name="objetivo" required>
+							<option selected disabled>No seleccionado</option>
+							<?php 
+								foreach ($options as $option) {
+									echo $option;
+								}
+							?>
+						</select>
+					</div>
 					</br>
 					<div>
-						<div>
-							<label for="dificultad">Dificultad:</label>
-							<input type="number" name="dificultad" id="dificultad" readonly>
-						</div>
-						</br>
-						<div>
-							<label for="duracion">Duracion:</label>
-							<input type="text" name="duracion" id="duracion">
-						</div>
-						<input type="hidden" name="fecha" id="fecha">
+						<label for="nombre">Nombre:</label>
+						<input type="text" id="nombre" name="nombre" required>
 					</div>
-
+					</br>
+					<div>
+						<label for="dificultad">Dificultad:</label>
+						<input type="number" name="dificultad" id="dificultad" readonly>
+					</div>
+					</br>
+					<div>
+						<label for="duracion">Duracion:</label>
+						<input type="text" name="duracion" id="duracion">
+					</div>
+					<input type="hidden" name="fecha" id="fecha">
+					<div id="botonAnyadir">Añadir Ejercicio</div>
+					<div id="ejerciciosAnyadidos">
+					</div>
+					<input type="submit" name="enviar" id="enviar" value="Guardar Rutina">
                 </form>
                 </div>
 			<!-- Footer -->
