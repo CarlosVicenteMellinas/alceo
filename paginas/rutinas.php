@@ -70,7 +70,7 @@
 					</div>
 					<section class="col-8 col-12-narrower">
 						<div class="box highlight">	
-                            <form>
+							<form method="POST" action="/controllers/rutinas/rutinasController.php">
                                 <button type="submit" name="generarRutina" id="generarRutina" value="Generar Rutina">
                                 <span><i class="fas fa-rocket"></i> Generar Rutina</span>
                                 </button>

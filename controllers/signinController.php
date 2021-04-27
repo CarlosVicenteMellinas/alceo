@@ -160,7 +160,7 @@ function cargarPaginaSignin() {
     $query = mysqli_query($link, 'SELECT * FROM PLANES');
     $options = array();
     while ($results = mysqli_fetch_array($query)) {
-        array_push($options,'<option value="'.$results["cod"].'">'.$results["nombre"].'</option>');
+        array_push($options,'<option value="'.$results["cod"].'">'.$results["nombre"].' ('.$results["precio"].' €)</option>');
     }
     mysqli_close($link);
     include "../paginas/signin.php";
