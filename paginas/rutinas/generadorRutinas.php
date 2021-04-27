@@ -74,6 +74,18 @@
                             <input type="text" id="nombre" name="nombre" required>
                         </div>
                     </div>
+					<div>
+						<div>
+							<label for="dificultad">Dificultad:</label>
+							<input type="number" name="dificultad" id="dificultad" readonly>
+						</div>
+						<div>
+							<label for="duracion">Duracion:</label>
+							<input type="text" name="duracion" id="duracion">
+						</div>
+						<input type="hidden" name="fecha" id="fecha">
+					</div>
+
                 </form>
                 </div>
 			<!-- Footer -->
