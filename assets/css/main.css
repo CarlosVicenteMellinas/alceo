@@ -327,11 +327,25 @@ input, select, textarea {
 	}
 
 	#borrarFoto, #borrarVideo {
-		background-color:  #007255;
-		border-radius: 5%;
+		background-color: #699f76;
+		border-radius: 5px;
 		color: white;
+		font-weight: bold;
 		cursor: pointer;
-		padding: 0.3em;
+		padding: 10px 25px 10px 25px;
+	}
+
+	.formatoBoton {
+		margin-top: 20px;
+		margin-bottom: 20px;
+		text-align: center;
+		width: 200px;
+		background-color:  #699f76;
+		border-radius: 5px;
+		color: white;
+		font-weight: bold;
+		cursor: pointer;
+		padding: 10px 25px 10px 25px;
 	}
 
 	.box.highlight.r {
@@ -3511,6 +3525,7 @@ input, select, textarea {
 /* Mobile (Portrait) */
 
 	@media screen and (max-width: 480px) {
+
 
 		.ocultar {
 			display: none !important;

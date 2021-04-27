@@ -84,7 +84,7 @@
 						<input type="text" name="duracion" id="duracion">
 					</div>
 					<input type="hidden" name="fecha" id="fecha">
-					<div id="botonAnyadir">Añadir Ejercicio</div>
+					<div id="botonAnyadir" class="formatoBoton">Añadir Ejercicio</div>
 					<div id="ejerciciosAnyadidos">
 					</div>
 					<input type="submit" name="enviar" id="enviar" value="Guardar Rutina">
