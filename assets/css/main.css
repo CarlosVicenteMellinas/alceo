@@ -3512,6 +3512,10 @@ input, select, textarea {
 
 	@media screen and (max-width: 480px) {
 
+		.ocultar {
+			display: none !important;
+		}
+
 		/* Icon */
 
 			.icon.major {

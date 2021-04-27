@@ -87,7 +87,7 @@
                         <section class="col-6 col-12-narrower">
                         <div class="cuadrados-flotantes">
 								<div class="box highlight">
-                                <i class="fas fa-male"></i>
+                                <i class="fas fa-male ocultar"></i>
 									<h3>Nick:</h3>
                                     <h3 class="nombre_perfil"><?php echo '<h1 class="nombre_perfil">'.$_SESSION['usuario'].'</h1>'; ?></h3>
 								</div>
@@ -95,7 +95,7 @@
 							</section>
                         <section class="col-6 col-12-narrower">
 								<div class="box highlight">
-                                <i class="fas fa-male"></i>
+                                <i class="fas fa-male ocultar" ></i>
 									<h3>Nombre Completo:</h3>
                                     <h3 class="nombre_perfil"><?php if(!empty($usuario['nombre'])) {echo $usuario['nombre'];} else {echo "Error al cargar la pagina";} ?></h3>
 								</div>
@@ -108,21 +108,21 @@
 						<div class="row gtr-200">
 							<section class="col-4 col-12-narrower">
 								<div class="box highlight">
-                                <i class="far fa-envelope"></i>
+                                <i class="far fa-envelope ocultar"></i>
 									<h3>Email:</h3>
                                     <h3><?php if(!empty($usuario['correo'])) {echo $usuario['correo'];} else {echo "Error al cargar la pagina";} ?></h3>
 								</div>
 							</section>
 							<section class="col-4 col-12-narrower">
-								<div class="box highlight">	
-                                <i class="fas fa-mobile-alt"></i>						
+								<div class="box highlight ">	
+                                <i class="fas fa-mobile-alt ocultar"></i>						
 									<h3>Teléfono:</h3>
                                     <h3><?php if(!empty($usuario['telefono'])) {echo $usuario['telefono'];} else {echo "Error al cargar la pagina";} ?></h3>
 								</div>
 							</section>
 							<section class="col-4 col-12-narrower">
 								<div class="box highlight">	
-                                <i class="fas fa-ruler"></i>						
+                                <i class="fas fa-ruler ocultar"></i>						
 									<h3>Plan:</h3>
                                     <h3><?php if(!empty($plan['nombre'])) {echo $plan['nombre'];} else {echo "Error al cargar la pagina";} ?></h3>
 								</div>
@@ -137,7 +137,7 @@
 						<div class="box highlight">	
                             <form method="POST" action="/controllers/editarUsuarioController.php">
                                 <button type="submit" name="editarPerfil" id="editarPerfil">
-                                <span><i class="far fa-edit"></i> Editar Perfil</span>
+                                <span><i class="far fa-edit ocultar"></i> Editar Perfil</span>
                                 </button>
                             </form>
                         </div>
@@ -146,7 +146,7 @@
 						<div class="box highlight">	
                             <form method="POST" action="/controllers/areaUsuarioController.php">
                                 <button type="submit" name="borrarPerfil" id="borrarPerfil" value="borrar">
-                                <span><i class="far fa-trash-alt"></i> Eliminar Perfil</span>
+                                <span><i class="far fa-trash-alt ocultar" ></i> Eliminar Perfil</span>
                                 </button>
                             </form>
                         </div>
