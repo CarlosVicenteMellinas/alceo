@@ -336,8 +336,6 @@ input, select, textarea {
 	}
 
 	.formatoBoton {
-		margin-top: 20px;
-		margin-bottom: 20px;
 		text-align: center;
 		width: 200px;
 		background-color:  #699f76;
@@ -346,6 +344,13 @@ input, select, textarea {
 		font-weight: bold;
 		cursor: pointer;
 		padding: 10px 25px 10px 25px;
+		margin-top: 20px;
+		margin-bottom: 20px;
+	}
+
+	.formatoBoton > p {
+		margin: auto;
+		text-align: center;
 	}
 
 	.box.highlight.r {

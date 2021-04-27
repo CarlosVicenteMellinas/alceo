@@ -84,10 +84,13 @@
 						<input type="text" name="duracion" id="duracion">
 					</div>
 					<input type="hidden" name="fecha" id="fecha">
-					<div id="botonAnyadir" class="formatoBoton">Añadir Ejercicio</div>
+					<div style="text-align:center; margin:auto">
+					<div id="botonAnyadir" class="formatoBoton"><p>Añadir Ejercicio<p></div>
+					<input type="submit" name="enviar" id="enviar" class="formatoBotonDerecha" value="Guardar Rutina">
+					</div>
 					<div id="ejerciciosAnyadidos">
 					</div>
-					<input type="submit" name="enviar" id="enviar" value="Guardar Rutina">
+					
                 </form>
                 </div>
 			<!-- Footer -->
