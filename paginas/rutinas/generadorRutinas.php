@@ -54,7 +54,7 @@
 				</section>
 
 			<!-- Highlights -->
-                <div>
+                <div class="generador-manual">
                 <form method="POST" action="generadorManualController.php">
                     <h2 id="titulo-generador">Generador Manual</h2>
                     <div>
@@ -69,16 +69,19 @@
                                 ?>
                             </select>
                         </div>
+								</br>
                         <div>
                             <label for="nombre">Nombre:</label>
                             <input type="text" id="nombre" name="nombre" required>
                         </div>
                     </div>
+					</br>
 					<div>
 						<div>
 							<label for="dificultad">Dificultad:</label>
 							<input type="number" name="dificultad" id="dificultad" readonly>
 						</div>
+						</br>
 						<div>
 							<label for="duracion">Duracion:</label>
 							<input type="text" name="duracion" id="duracion">

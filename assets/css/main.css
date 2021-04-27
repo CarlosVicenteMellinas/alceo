@@ -353,6 +353,11 @@ input, select, textarea {
 		padding: 30px 0px 0px 0px;
 	}
 
+	.generador-manual {
+		width: 60% !important;
+		margin: auto;
+	}
+
 /* Container */
 
 	.container {
@@ -3609,6 +3614,16 @@ input, select, textarea {
 
 			.botones_creacion {
 				display: block;
+			}
+
+			.generador-manual {
+				text-align:center;
+				margin: auto;
+				width: 100%;
+			}
+
+			#objetivo {
+				width: 100% !important;
 			}
 
 		/* CTA */
