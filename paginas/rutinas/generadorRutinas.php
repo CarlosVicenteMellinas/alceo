@@ -55,44 +55,87 @@
 
 			<!-- Highlights -->
                 <div class="generador-manual">
-                <form method="POST" action="generadorManualController.php">
-                    <h2 id="titulo-generador">Generador Manual</h2>
-					<div>
-						<label for="objetivo">Objetivo:</label>
-						<select id="objetivo" name="objetivo" required>
-							<option selected disabled>No seleccionado</option>
-							<?php 
-								foreach ($options as $option) {
-									echo $option;
-								}
-							?>
-						</select>
-					</div>
-					</br>
-					<div>
-						<label for="nombre">Nombre:</label>
-						<input type="text" id="nombre" name="nombre" required>
-					</div>
-					</br>
-					<div>
-						<label for="dificultad">Dificultad:</label>
-						<input type="number" name="dificultad" id="dificultad" readonly>
-					</div>
-					</br>
-					<div>
-						<label for="duracion">Duracion:</label>
-						<input type="text" name="duracion" id="duracion">
-					</div>
-					<input type="hidden" name="fecha" id="fecha">
-					<div style="text-align:center; margin:auto">
-					<div id="botonAnyadir" class="formatoBoton"><p>Añadir Ejercicio<p></div>
-					<input type="submit" name="enviar" id="enviar" class="formatoBotonDerecha" value="Guardar Rutina">
-					</div>
-					<div id="ejerciciosAnyadidos">
-					</div>
-					
-                </form>
-                </div>
+					<form method="POST" action="generadorManualController.php">
+						<h2 id="titulo-generador">Generador Manual</h2>
+						<div>
+							<label for="objetivo">Objetivo:</label>
+							<select id="objetivo" name="objetivo" required>
+								<option selected disabled>No seleccionado</option>
+								<?php 
+									foreach ($options as $option) {
+										echo $option;
+									}
+								?>
+							</select>
+						</div>
+						</br>
+						<div>
+							<label for="nombre">Nombre:</label>
+							<input type="text" id="nombre" name="nombre" required>
+						</div>
+						</br>
+						<div>
+							<label for="dificultad">Dificultad:</label>
+							<input type="number" name="dificultad" id="dificultad" readonly required>
+						</div>
+						</br>
+						<div>
+							<label for="duracion">Duracion:</label>
+							<input type="text" name="duracion" id="duracion" required>
+						</div>
+						<input type="hidden" name="fecha" id="fecha">
+						<h3>Ejercicios:</h3>
+						<div id="ejerciciosAnyadidos">
+							<div>
+								<input type="hidden" value="Muestra" name="ejercicio-1">
+								<input type="hidden" value="Muestra" name="repes-1">
+								<input type="hidden" value="Muestra" name="series-1">
+								<input type="hidden" value="Muestra" name="duracion-1">
+								<p>Ejercicio de muestra</p>
+								<p>Repeticones de muestra</p>
+								<p>Series de muestra</p>
+								<p>Duracion de muestra</p>
+								<p>Dificultad de muestra</p>
+							</div>
+							<div style="text-align:center; margin:auto">
+								<div id="botonAnyadir" class="formatoBoton"><p>Añadir Ejercicio</p></div>
+							</div>
+						</div>
+						<input type="submit" name="enviar" id="enviar" class="formatoBotonDerecha" value="Guardar Rutina">
+						<div id="popup-wrapper">
+							<div id="popup">
+								<div id="popup-close">x</div>
+								<div id="popup-content">
+									<h2>Añade un ejercicio</h2>
+									<label for="ejercicio">Ejercicio:</label>
+									<select id="ejercicio" name="ejercicio" onchange='<?php echo 'changeValues('.json_encode($ejercicios).','.json_encode($gruposM2).','.json_encode($gruposMEjercicios).','.json_encode($materiales2).','.json_encode($materialEjercicio).')'; ?>'required>
+										<option selected disabled>No seleccionado</option>
+										<?php 
+											foreach ($EjOptions as $option) {
+												echo $option;
+											}
+										?>
+									</select>
+									<p id="dificultadText">Dificultad: </p>
+									<label for="grupoM">Grupos Musculares: </label>
+									<div id="gm"></div>
+									<label for="material">Materiales: </label>
+									<div id="mat"></div>
+									<label for="repeticiones">Repeticiones: </label>
+                            		<input type="number" min="1" max="50" id="repeticiones" name="repeticiones" required>
+									<label for="series">Series: </label>
+                            		<input type="number" min="1" max="10" id="series" name="series" required>	
+									<label for="descanso">Descanso: </label>
+                            		<input type="number" min="1" max="300" id="descanso" name="descanso" required>
+									<div style="text-align:center; margin:auto">
+										<div id="botonAnyadir2" class="formatoBoton"><p>Añadir</p></div>
+									</div>		
+								</div>
+							</div>
+						</div>
+					</form>
+				</div>
+			</div>
 			<!-- Footer -->
 				<div id="footer">
 					<div class="container">
@@ -165,7 +208,7 @@
 			<script src="/assets/js/breakpoints.min.js"></script>
 			<script src="/assets/js/util.js"></script>
 			<script src="/assets/js/main.js"></script>
-        
+			<script src="/js/rutinas/generadorRutinas.js"></script>
         <?php    
             } else {
         ?>
