@@ -344,8 +344,7 @@ input, select, textarea {
 		font-weight: bold;
 		cursor: pointer;
 		padding: 10px 25px 10px 25px;
-		margin-top: 20px;
-		margin-bottom: 20px;
+		margin:auto;
 	}
 
 	.formatoBoton > p {
@@ -401,8 +400,9 @@ input, select, textarea {
 		margin: 5% auto;
 		padding: 20px;
 		position: relative;
-		max-height: calc(100vh - 200px);
+		max-height: calc(200vh - 300px);
 		overflow-y: auto;
+		border-radius: 10px;
 	  }
 
 	  #popup-close {
@@ -413,6 +413,18 @@ input, select, textarea {
 		font-size: 1.5rem;
 	  }
 
+	  .divAlCentro {
+		  margin: auto;
+		  text-align: center;
+	  }
+/* Pop up */
+#ejercicio, #repeticiones, #series, #series {
+	margin: auto;
+}
+
+.item-popup {
+	margin-bottom: 20px !important;
+}
 /* Container */
 
 	.container {
@@ -2755,7 +2767,7 @@ input, select, textarea {
 
 	#header {
 		text-align: center;
-		padding: 3em 0 0 0;
+		padding: 0;
 		background-color: #fff;
 		background-image: url("images/bg02.png"), url("images/bg02.png"), url("images/bg01.png");
 		background-position: top left,					top left,					top left;
@@ -2997,7 +3009,7 @@ input, select, textarea {
 /* Footer */
 
 	#footer {
-		padding: 4em 0 8em 0;
+		padding: 4em 0 1em 0;
 	}
 
 		#footer a {

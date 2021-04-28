@@ -83,6 +83,7 @@
 							<label for="duracion">Duracion:</label>
 							<input type="text" name="duracion" id="duracion" required>
 						</div>
+						</br>
 						<input type="hidden" name="fecha" id="fecha">
 						<h3>Ejercicios:</h3>
 						<div id="ejerciciosAnyadidos">
@@ -101,12 +102,16 @@
 								<div id="botonAnyadir" class="formatoBoton"><p>Añadir Ejercicio</p></div>
 							</div>
 						</div>
+						<br>
+						<div class="divAlCentro">
 						<input type="submit" name="enviar" id="enviar" class="formatoBotonDerecha" value="Guardar Rutina">
+						</div>
 						<div id="popup-wrapper">
 							<div id="popup">
 								<div id="popup-close">x</div>
 								<div id="popup-content">
 									<h2>Añade un ejercicio</h2>
+									
 									<label for="ejercicio">Ejercicio:</label>
 									<select id="ejercicio" name="ejercicio" onchange='<?php echo 'changeValues('.json_encode($ejercicios).','.json_encode($gruposM2).','.json_encode($gruposMEjercicios).','.json_encode($materiales2).','.json_encode($materialEjercicio).')'; ?>'required>
 										<option selected disabled>No seleccionado</option>
@@ -116,17 +121,26 @@
 											}
 										?>
 									</select>
+									<br>
 									<p id="dificultadText">Dificultad: </p>
 									<label for="grupoM">Grupos Musculares: </label>
 									<div id="gm"></div>
+									<br>
 									<label for="material">Materiales: </label>
 									<div id="mat"></div>
+									<br>
+									<div class="item-popup">
 									<label for="repeticiones">Repeticiones: </label>
                             		<input type="number" min="1" max="50" id="repeticiones" name="repeticiones" required>
+									</div>
+									<div class="item-popup">
 									<label for="series">Series: </label>
                             		<input type="number" min="1" max="10" id="series" name="series" required>	
+									</div>
+									<div class="item-popup">
 									<label for="descanso">Descanso: </label>
                             		<input type="number" min="1" max="300" id="descanso" name="descanso" required>
+									</div>
 									<div style="text-align:center; margin:auto">
 										<div id="botonAnyadir2" class="formatoBoton"><p>Añadir</p></div>
 									</div>		
