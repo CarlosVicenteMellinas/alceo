@@ -150,60 +150,6 @@
 					</form>
 				</div>
 			</div>
-			<!-- Footer -->
-				<div id="footer">
-					<div class="container">
-						<div class="row">
-							<section class="col-3 col-6-narrower col-12-mobilep">
-								<h3>MENÚ</h3>
-								<ul class="links">
-									<li><a href="/index.php">Home</a></li>
-									<li><a href="#">Comunidad</a></li>
-									<li><a href="/controllers/areaUsuarioController.php">Área de usuario</a></li>
-									<li><a href="/paginas/contacto.php">Contacto</a></li>
-								</ul>
-							</section>
-							<section class="col-3 col-6-narrower col-12-mobilep">
-								<h3>CONTACTO</h3>
-								<ul class="links">
-									<li><a href="tel:+34656698565">+34 656 698 565</a></li>
-									<li><a href="mailto:info@alceo.com">info@alceo.com</a></li>
-									<li>>IES Paco Mollá</li>
-									<li>De 08:00 a 14:00 y de 16:00 a 18:00</li>
-								</ul>
-							</section>
-							<section class="col-6 col-12-narrower">
-								<h3>CONTÁCTANOS</h3>
-								<form>
-									<div class="row gtr-50">
-										<div class="col-6 col-12-mobilep">
-											<input type="text" name="name" id="name" placeholder="Name" />
-										</div>
-										<div class="col-6 col-12-mobilep">
-											<input type="email" name="email" id="email" placeholder="Email" />
-										</div>
-										<div class="col-12">
-											<textarea name="message" id="message" placeholder="Message" rows="5"></textarea>
-										</div>
-										<div class="col-12">
-											<ul class="actions">
-												<li><input type="submit" class="button alt" value="Send Message" /></li>
-											</ul>
-										</div>
-									</div>
-								</form>
-							</section>
-						</div>
-					</div>
-
-					<!-- Icons -->
-						<ul class="icons">
-							<li><a href="https://www.instagram.com/" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
-							<li><a href="https://twitter.com/" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
-							<li><a href="https://www.facebook.com/" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
-							<li><a href="https://www.linkedin.com/" class="icon brands fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
-						</ul>
-
 					<!-- Copyright -->
 						<div class="copyright">
 							<ul class="menu">
