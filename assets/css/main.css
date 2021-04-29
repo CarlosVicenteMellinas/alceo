@@ -3596,7 +3596,7 @@ input, select, textarea {
 	width: 100%;
 	max-width: 75%;
 	background: white;
-	margin: 3% auto;
+	margin: 30% auto;
 	padding: 20px;
 	position: relative;
 	max-height: calc(200vh - 300px);
