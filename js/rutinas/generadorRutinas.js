@@ -1,6 +1,8 @@
 const select = document.getElementById("ejercicio");
 const dificultad = document.getElementById("dificultadText");
-
+const repeticiones = document.getElementById("repeticiones");
+const series = document.getElementById("series");
+const descanso = document.getElementById("descanso");
 
 function changeValues(data, data2 ,data3 ,data4, data5) {
     let cod = select.value;
@@ -83,6 +85,53 @@ function anyadirMaterial2(cod, name) {
    
 }
 
+function comprobarDatos() {
+    valido = true;
+    if (repeticiones.value === '') {
+        valido = false;
+    } else if (series.value === '') {
+        valido = false;
+    } else if (descanso.value === '') {
+        valido = false;
+    } else if (select.value === 'No seleccionado') {
+        valido = false;
+    }
+
+    return valido;
+}
+
+function getSelectedEjercicio() {
+    for (let option of select.children) {
+        if (option.value === select.value) {
+            return option.textContent;
+        }
+    }
+}
+
+function anyadirEjercicio() {
+    let ejercicio = getSelectedEjercicio();
+    let htmlEjer = '<div class="ejerciciosAnyadidos">'+
+        '<input type="hidden" value="Muestra" name="ejercicio-1">'+
+        '<input type="hidden" value="Muestra" name="repes-1">'+
+        '<input type="hidden" value="Muestra" name="series-1">'+
+        '<input type="hidden" value="Muestra" name="duracion-1">'+
+        '<p class="tituloEjer">'+ ejercicio +'</p>'+
+        '<div><p>Repeticones</p><p>'+ repeticiones.value +' </p></div>'+
+        '<div><p>Series</p><p>'+ series.value +'</p></div>'+
+        '<div><p>Descanso</p><p>'+ descanso.value  +'"</p></div>'+
+        '<div><p>Dificultad</p><p>'+ dificultad.textContent.split(':')[1] +'</p></div>'+
+    '</div>';
+    $("#ejerciciosAnyadidosDiv").append(htmlEjer);
+}
+
+function limpiarPopup() {
+    repeticiones.value = "";
+    series.value = "";
+    descanso.value = "";
+    dificultad.textContent = "Dificultad:";
+    select.value = 0;
+}
+
 $(document).ready(function () {
     $("#popup-close").click(() => {
         $("#popup-wrapper").css("display", "none");
@@ -105,5 +154,14 @@ $(document).ready(function () {
     $("#botonAnyadir").click((ev) => {
         ev.stopPropagation();
         $("#popup-wrapper").css("display", "block");
+    });
+
+    $("#botonAnyadir2").click((ev) => {
+        ev.stopPropagation();
+        if (comprobarDatos()) {
+            $("#popup-wrapper").css("display", "none");
+            anyadirEjercicio();
+            limpiarPopup();
+        }
     });
 });

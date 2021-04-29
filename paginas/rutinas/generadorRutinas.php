@@ -86,20 +86,10 @@
 						</br>
 						<input type="hidden" name="fecha" id="fecha">
 						<h3>Ejercicios:</h3>
-						<div id="ejerciciosAnyadidosDiv">
-							<div class="ejerciciosAnyadidos">
-								<input type="hidden" value="Muestra" name="ejercicio-1">
-								<input type="hidden" value="Muestra" name="repes-1">
-								<input type="hidden" value="Muestra" name="series-1">
-								<input type="hidden" value="Muestra" name="duracion-1">
-								<p class="tituloEjer">Ejercicio de muestra</p>
-								<div><p>Repeticones</p><p>5</p></div>
-								<div><p>Series</p><p>4</p></div>
-								<div><p>Descanso</p><p>30"</p></div>
-								<div><p>Dificultad</p><p>3</p></div>
-							</div>
+						<div id="divEjerciciosRutina">
+							<div id="ejerciciosAnyadidosDiv"></div>
 							<div style="text-align:center; margin:auto">
-								<div id="botonAnyadir" class="formatoBoton"><p>Añadir Ejercicio</p></div>
+									<div id="botonAnyadir" class="formatoBoton"><p>Añadir Ejercicio</p></div>
 							</div>
 						</div>
 						<br>
@@ -114,7 +104,7 @@
 									
 									<label for="ejercicio">Ejercicio:</label>
 									<select id="ejercicio" name="ejercicio" onchange='<?php echo 'changeValues('.json_encode($ejercicios).','.json_encode($gruposM2).','.json_encode($gruposMEjercicios).','.json_encode($materiales2).','.json_encode($materialEjercicio).')'; ?>'required>
-										<option selected disabled>No seleccionado</option>
+										<option value="0" selected disabled>No seleccionado</option>
 										<?php 
 											foreach ($EjOptions as $option) {
 												echo $option;
