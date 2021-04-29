@@ -3,6 +3,8 @@ const dificultad = document.getElementById("dificultadText");
 const repeticiones = document.getElementById("repeticiones");
 const series = document.getElementById("series");
 const descanso = document.getElementById("descanso");
+const dificultad2 = document.getElementById("dificultad");
+const duracion = document.getElementById("duracion");
 
 function changeValues(data, data2 ,data3 ,data4, data5) {
     let cod = select.value;
@@ -132,6 +134,21 @@ function limpiarPopup() {
     select.value = 0;
 }
 
+function calcularDificultad() {
+    let dificultadTotal = 0;
+    let ejerciciosTotales = 0;
+    let duracionMinimaTotal = 0;
+
+    $("#ejerciciosAnyadidosDiv .ejerciciosAnyadidos").each(function() {
+        dificultadTotal += parseInt($(this).children("div:last-of-type").children("p:last-of-type").text());
+        ejerciciosTotales++;
+    });
+    
+    dificultad2.value = Math.floor(dificultadTotal/ejerciciosTotales);
+    duracion.value = duracionMinimaTotal;
+    duracion.min = duracionMinimaTotal;
+}
+
 $(document).ready(function () {
     $("#popup-close").click(() => {
         $("#popup-wrapper").css("display", "none");
@@ -162,6 +179,7 @@ $(document).ready(function () {
             $("#popup-wrapper").css("display", "none");
             anyadirEjercicio();
             limpiarPopup();
+            calcularDificultad();
         }
     });
 });

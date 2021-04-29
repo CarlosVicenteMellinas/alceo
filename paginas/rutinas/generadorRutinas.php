@@ -81,7 +81,7 @@
 						</br>
 						<div>
 							<label for="duracion">Duracion:</label>
-							<input type="text" name="duracion" id="duracion" required>
+							<input type="number" name="duracion" id="duracion" required>
 						</div>
 						</br>
 						<input type="hidden" name="fecha" id="fecha">
