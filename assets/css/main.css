@@ -418,10 +418,10 @@ input, select, textarea {
 	width: 100%;
 	max-width: 50%;
 	background: white;
-	margin: 5% auto;
+	margin: 3% auto;
 	padding: 20px;
 	position: relative;
-	max-height: calc(200vh - 300px);
+	max-height: calc(150vh - 300px);
 	overflow-y: auto;
 	border-radius: 10px;
   }
@@ -439,7 +439,7 @@ input, select, textarea {
 	  text-align: center;
   }
 
-	#ejercicio, #repeticiones, #series, #series {
+	#ejercicio, #repeticiones, #series, #series, #gm, #mat {
 	margin: auto;
 	}
 
@@ -447,6 +447,9 @@ input, select, textarea {
 	margin-bottom: 20px !important;
 	}
 
+	.selectMaterial {
+		margin: auto !important;
+	}
 
 /* Container */
 
