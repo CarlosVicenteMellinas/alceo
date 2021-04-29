@@ -376,10 +376,7 @@ input, select, textarea {
 	}
 
 	/* Aquí añadiendo css a la pagina de generador manual de rutinas, para que mi pana sepa mas o menos como hacerla*/
-	#divEjerciciosRutina {
-		border: 1px solid black;
-		border-collapse: collapse;
-	}
+	
 
 	.ejerciciosAnyadidos {
 		border: solid black 1px;
@@ -388,11 +385,16 @@ input, select, textarea {
 		grid-template-rows: 1fr;
 		text-align: center;
 		align-items: center;
+		margin-bottom: 60px;
 
 	}
 
+	.ejerciciosAnyadidos div {
+		border: solid black 1px;
+	}
+
 	.tituloEjer {
-		font-size: 1.1em;
+		font-size: 1.3em;
 		font-weight: bold;
 	}
 
