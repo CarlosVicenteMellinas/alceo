@@ -308,8 +308,7 @@ input, select, textarea {
 	#submit_contacto {
 		margin-bottom: 40px;
 	}
-	/*Holaaa, he insertado todo esto por aqúi :) */
-	/*Bueno y lo de arriba del dropdown, pero eso ya lo habrás visto*/
+
 	input[type='text']#foto2, input[type='text']#video2 {
 		background: none;
 		border:none;
@@ -374,6 +373,26 @@ input, select, textarea {
 	.generador-manual {
 		width: 60% !important;
 		margin: auto;
+	}
+
+	#ejerciciosAnyadidosDiv {
+		border: 1px solid black;
+		border-collapse: collapse;
+	}
+
+	.ejerciciosAnyadidos {
+		border: solid black 1px;
+		display: grid;
+		grid-template-columns: 40% 15% 15% 15% 15%;
+		grid-template-rows: 1fr;
+		text-align: center;
+		align-items: center;
+
+	}
+
+	.tituloEjer {
+		font-size: 1.1em;
+		font-weight: bold;
 	}
 
 	
