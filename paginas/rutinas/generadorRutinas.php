@@ -57,6 +57,11 @@
                 <div class="generador-manual">
 					<form method="POST" action="generadorManualController.php">
 						<h2 id="titulo-generador">Generador Manual</h2>
+						<?php
+						if (!empty($mensaje)) {
+                        	echo $mensaje;
+                    	}
+						?>
 						<div>
 							<label for="objetivo">Objetivo:</label>
 							<select id="objetivo" name="objetivo" required>
@@ -84,7 +89,7 @@
 							<input type="number" name="duracion" id="duracion" required>
 						</div>
 						</br>
-						<input type="hidden" name="fecha" id="fecha">
+						<input type="hidden" name="fecha" id="fecha" value=<?php echo date('Y-m-d');?>>
 						<h3>Ejercicios:</h3>
 						<div id="divEjerciciosRutina">
 							<div id="ejerciciosAnyadidosDiv"></div>
@@ -121,15 +126,15 @@
 									<br>
 									<div class="item-popup">
 									<label for="repeticiones">Repeticiones: </label>
-                            		<input type="number" min="1" max="50" id="repeticiones" name="repeticiones" required>
+                            		<input type="number" min="1" max="50" id="repeticiones" name="repeticiones">
 									</div>
 									<div class="item-popup">
 									<label for="series">Series: </label>
-                            		<input type="number" min="1" max="10" id="series" name="series" required>	
+                            		<input type="number" min="1" max="10" id="series" name="series">	
 									</div>
 									<div class="item-popup">
 									<label for="descanso">Descanso: </label>
-                            		<input type="number" min="1" max="300" id="descanso" name="descanso" required>
+                            		<input type="number" min="1" max="300" id="descanso" name="descanso">
 									</div>
 									<div style="text-align:center; margin:auto">
 										<div id="botonAnyadir2" class="formatoBoton"><p>Añadir</p></div>
