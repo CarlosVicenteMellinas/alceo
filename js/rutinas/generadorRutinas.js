@@ -112,11 +112,17 @@ function getSelectedEjercicio() {
 
 function anyadirEjercicio() {
     let ejercicio = getSelectedEjercicio();
+    let numEjercicios = 1;
+
+    $("#ejerciciosAnyadidosDiv .ejerciciosAnyadidos").each(function() {
+        numEjercicios++;
+    });
+
     let htmlEjer = '<div class="ejerciciosAnyadidos">'+
-        '<input type="hidden" value="Muestra" name="ejercicio-1">'+
-        '<input type="hidden" value="Muestra" name="repes-1">'+
-        '<input type="hidden" value="Muestra" name="series-1">'+
-        '<input type="hidden" value="Muestra" name="duracion-1">'+
+        '<input type="hidden" value="'+ select.value +'" name="ejercicio-'+numEjercicios+'">'+
+        '<input type="hidden" value="'+ repeticiones.value +'" name="repes-'+numEjercicios+'">'+
+        '<input type="hidden" value="'+ series.value +'" name="series-'+numEjercicios+'">'+
+        '<input type="hidden" value="'+ descanso.value +'" name="duracion-'+numEjercicios+'">'+
         '<p class="tituloEjer">'+ ejercicio +'</p>'+
         '<div><p>Repeticones</p><p>'+ repeticiones.value +' </p></div>'+
         '<div><p>Series</p><p>'+ series.value +'</p></div>'+
@@ -140,13 +146,20 @@ function calcularDificultad() {
     let duracionMinimaTotal = 0;
 
     $("#ejerciciosAnyadidosDiv .ejerciciosAnyadidos").each(function() {
-        dificultadTotal += parseInt($(this).children("div:last-of-type").children("p:last-of-type").text());
+        let datos = [];
+        $(this).children("div").each(function () {
+            datos.push($(this).children("p:last-of-type").text());
+        });
+        let duracionMinima = parseInt(datos[2]) * parseInt(datos[1]);
+        duracionMinima += parseInt(datos[0]) * 5 * parseInt(datos[1]);
+        dificultadTotal += parseInt(datos[3]);
+        duracionMinimaTotal += duracionMinima;
         ejerciciosTotales++;
     });
     
     dificultad2.value = Math.floor(dificultadTotal/ejerciciosTotales);
-    duracion.value = duracionMinimaTotal;
-    duracion.min = duracionMinimaTotal;
+    duracion.value = Math.floor(duracionMinimaTotal/60);
+    duracion.min = Math.floor(duracionMinimaTotal/60);
 }
 
 $(document).ready(function () {
