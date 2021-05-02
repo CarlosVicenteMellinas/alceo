@@ -80,13 +80,13 @@
 						</div>
 						</br>
 						<div>
-							<label for="dificultad">Dificultad:</label>
-							<input type="number" name="dificultad" id="dificultad" readonly required>
+							<label for="duracion">Duración (Minutos):</label>
+							<input type="number" name="duracion" id="duracion" required>
 						</div>
 						</br>
 						<div>
-							<label for="duracion">Duracion:</label>
-							<input type="number" name="duracion" id="duracion" required>
+							<label for="dificultad">Dificultad:</label>
+							<input type="number" name="dificultad" id="dificultad" readonly required>
 						</div>
 						</br>
 						<input type="hidden" name="fecha" id="fecha" value=<?php echo date('Y-m-d');?>>

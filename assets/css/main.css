@@ -3615,7 +3615,6 @@ input, select, textarea {
   #popup {
 	font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 	text-align: center;
-	width: 100%;
 	max-width: 75%;
 	background: white;
 	margin: 30% auto;
