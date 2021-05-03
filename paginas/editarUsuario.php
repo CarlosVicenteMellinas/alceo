@@ -10,6 +10,7 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="/assets/css/main.css" />
+        <link rel="icon" type="image/png" href="/images/logo-alceo.png">
 	</head>
 	<body class="is-preload">
         <?php
@@ -31,7 +32,7 @@
 			<!-- Header -->
 				<div id="header">
                 <!-- Logo -->
-                    <a href="../index.php" id="logo"><img src="/images/logo-alceo.png" width="9%"></a>
+                <a href="index.php" id="logo"><img src="/images/logo-alceo-completo.png"  width="20%"></a>
 
                 <!-- Nav -->
                     <nav id="nav">
