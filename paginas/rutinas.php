@@ -61,12 +61,20 @@
 				<section class="wrapper style1">
 					<div class="container">
 						<div class="row gtr-200" >
+						<?php 
+						if (!empty($rutinas)) {
+							foreach ($rutinas as $rutina) {
+						?>
 							<section class="col-4 col-12-narrower" >
 								<div class="box highlight r">
                                 <i class="far fa-envelope"></i>
-									<h3><a href="#">Rutina 1</a></h3>
+									<h3><a href="#"><?php echo $rutina[1];?></a></h3>
 								</div>
 							</section>
+
+						<?php 
+							}
+						} ?>
 						</div>
 					</div>
 					<section class="col-8 col-12-narrower">

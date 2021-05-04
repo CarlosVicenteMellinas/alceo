@@ -1,14 +1,32 @@
 <?php
 require_once "../../model/db.php";
 
-session_start();
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
 
 function cargarPagina() {
+    $link =Conectar::conexion();
+    $query = mysqli_query($link, 'SELECT * FROM RUTINA_USUARIO WHERE usuario='.$_SESSION['id']);
+    $rutinasCod = array();
+    while ($results = mysqli_fetch_array($query)) {
+        array_push($rutinasCod, $results[1]);
+    }
+    mysqli_free_result($query);
+
+    $rutinas = array();
+    foreach ($rutinasCod as $cod) {
+        $query = mysqli_query($link, 'SELECT * FROM RUTINA WHERE cod='.$cod);
+        $results = mysqli_fetch_array($query, MYSQLI_NUM);
+        mysqli_free_result($query);
+
+        array_push($rutinas, $results);
+    }
     
     include '../../paginas/rutinas.php';
 }
 
-function cargarGenerador() {
+function cargarGenerador($mensaje = '') {
     $link =Conectar::conexion();
     $query = mysqli_query($link, 'SELECT * FROM OBJETIVO');
     $options = array();
@@ -64,7 +82,9 @@ function cargarGenerador() {
     include "../../paginas/rutinas/generadorRutinas.php";
 }
 
-if (!empty($_POST['generarRutina'])) {
+if (!empty($mensaje)) {
+    cargarGenerador($mensaje);
+} else if (!empty($_POST['generarRutina'])){
     cargarGenerador();
 } else if (!empty($_SESSION['usuario'])) {
     cargarPagina();
