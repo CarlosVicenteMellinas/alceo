@@ -128,6 +128,7 @@ function anyadirEjercicio() {
         '<div><p>Series</p><p>'+ series.value +'</p></div>'+
         '<div><p>Descanso</p><p>'+ descanso.value  +'"</p></div>'+
         '<div><p>Dificultad</p><p>'+ dificultad.textContent.split(':')[1] +'</p></div>'+
+        '<div class="iconos-generador"><a href="#"><i class="far fa-edit ocultar"></i></a> <a href="#"><i class="far fa-trash-alt ocultar"></i></a></div>'+
     '</div>';
     $("#ejerciciosAnyadidosDiv").append(htmlEjer);
 }
