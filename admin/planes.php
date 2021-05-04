@@ -31,7 +31,7 @@
 				<div id="header">
 
 					<!-- Logo -->
-						<a href="/index.php" id="logo"><img src="/images/logo-alceo.png" width="9%"></a>
+                    <a href="/index.php" id="logo"><img src="/images/logo-alceo-completo.png"  width="20%"></a>
 
 					<!-- Nav -->
 						<nav id="nav">

@@ -10,10 +10,9 @@ function limpiarDatos($data) {
 
 function guardarRutina() {
     $link = Conectar::conexion();
-    $query = mysqli_query($link, 'INSERT INTO RUTINA (nombre, dificultad, duracion, fecha) VALUES ('.limpiarDatos($_POST['nombre']).', '.limpiarDatos($_POST['dificultad']).',
-    '.limpiarDatos($_POST['duracion']).', '.limpiarDatos($_POST['fecha']).')');
+    $query = mysqli_query($link, 'INSERT INTO RUTINA (nombre, dificultad, duracion, fecha, objetivo) VALUES ("'.limpiarDatos($_POST['nombre']).'", '.limpiarDatos($_POST['dificultad']).',
+    '.limpiarDatos($_POST['duracion']).', "'.limpiarDatos($_POST['fecha']).'", '.limpiarDatos($_POST['objetivo']).')');
     mysqli_close($link);
-
     if ($query) {
         header("Location: /paginas/rutinas.php");
     } else {
