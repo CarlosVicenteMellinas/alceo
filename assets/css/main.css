@@ -373,10 +373,7 @@ input, select, textarea {
 	.generador-manual {
 		width: 60% !important;
 		margin: auto;
-	}
-
-	/* Aquí añadiendo css a la pagina de generador manual de rutinas, para que mi pana sepa mas o menos como hacerla*/
-	
+	}	
 
 	.ejerciciosAnyadidos {
 		border: solid black 1px;
