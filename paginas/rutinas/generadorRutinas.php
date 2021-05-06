@@ -134,7 +134,7 @@
                             		<input type="number" min="1" max="10" id="series" name="series">	
 									</div>
 									<div class="item-popup">
-									<label for="descanso">Descanso: </label>
+									<label for="descanso">Descanso (Segundos): </label>
                             		<input type="number" min="1" max="300" id="descanso" name="descanso">
 									</div>
 									<div style="text-align:center; margin:auto">

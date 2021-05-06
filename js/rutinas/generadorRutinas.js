@@ -128,16 +128,11 @@ function anyadirEjercicio() {
         '<div><p>Series</p><p>'+ series.value +'</p></div>'+
         '<div><p>Descanso</p><p>'+ descanso.value  +'"</p></div>'+
         '<div><p>Dificultad</p><p>'+ dificultad.textContent.split(':')[1] +'</p></div>'+
-        '<div class="iconos-generador"><i class="far fa-edit ocultar editarEjercicio"></i><i class="far fa-trash-alt ocultar borrarEjercicio"></i></div>'+
+        '<div class="iconos-generador"><i class="far fa-trash-alt ocultar borrarEjercicio"></i></div>'+
     '</div>';
     $("#ejerciciosAnyadidosDiv").append(htmlEjer);
 
-    $(".editarEjercicio").css("cursor", "pointer");
     $(".borrarEjercicio").css("cursor", "pointer");
-
-    $(".editarEjercicio").click((ev) => {
-        editarEjercicio(ev.target);
-    });
 
     $(".borrarEjercicio").click((ev) => {
         borrarEjercicio(ev.target);
@@ -169,17 +164,20 @@ function calcularDificultad() {
         ejerciciosTotales++;
     });
     
-    dificultad2.value = Math.floor(dificultadTotal/ejerciciosTotales);
+    if (isNaN(Math.floor(dificultadTotal/ejerciciosTotales))) {
+        dificultad2.value = '';
+    } else {
+        dificultad2.value = Math.floor(dificultadTotal/ejerciciosTotales);
+    }
     duracion.value = Math.floor(duracionMinimaTotal/60);
     duracion.min = Math.floor(duracionMinimaTotal/60);
 }
 
-function editarEjercicio(ejercicio) {
-    console.log(ejercicio);
-}
-
 function borrarEjercicio(ejercicio) {
-    console.log(ejercicio);
+    try {
+        ejercicio.parentNode.parentNode.parentNode.removeChild(ejercicio.parentNode.parentNode);
+        calcularDificultad();
+    } catch (e) {}
 }
 
 $(document).ready(function () {
