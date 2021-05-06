@@ -68,7 +68,8 @@
 							<section class="col-4 col-12-narrower" >
 								<div class="box highlight r">
                                 <i class="far fa-envelope"></i>
-									<h3><a href="#"><?php echo $rutina[1];?></a></h3>
+									<h3><a href=<?php echo '"/controllers/rutinas/vistaRutinasController.php?rutina='.$rutina[0].'">'; 
+									echo $rutina[1];?></a></h3>
 								</div>
 							</section>
 
