@@ -62,9 +62,49 @@
 
                 <div>
                     <h2 id="titulo-generador"><?php echo $rutina['nombre']; ?></h2>
+					<div class="container">
+						<div class="row gtr-200">
+                        <section class="col-6 col-12-narrower">
+                        <div class="cuadrados-flotantes">
+								<div class="box highlight">
+								<p>Duración: <?php echo $rutina['duracion']; ?></p>
+								</div>
+                                </div>
+							</section>
+                        <section class="col-6 col-12-narrower">
+								<div class="box highlight">
+                                <p>Fecha: <?php echo $rutina['fecha']; ?></p>
+								</div>
+							</section>
+						</div>
+					</div>
+					<div class="container">
+						<div class="row gtr-200">
+                        <section class="col-6 col-12-narrower">
+                        <div class="cuadrados-flotantes">
+								<div class="box highlight">
+								<p>Dificultad: <?php echo $rutina['dificultad']; ?></p>
+								</div>
+                                </div>
+							</section>
+                        <section class="col-6 col-12-narrower">
+								<div class="box highlight">
+                                <p>Objetivo <?php echo $rutina['objetivo']; ?></p>
+								</div>
+							</section>
+						</div>
+					</div>	
                 </div>
 				<section class="wrapper style1">
-                
+                <div class="tabla"> 
+                    <table id="ejercicios">
+                        <tr><td>Nombre</td><td>Series</td><td>Repeticiones</td><td>Descanso</td><td>Foto</td></tr>
+                    </table>
+                </div>
+				<br>
+				<div class="divAlCentro">
+                    <input type="submit" name="deleteForm" id="deleteForm" value="Borrar Ejercicio">
+				</div>
                 <?php
                 }
                 ?>
