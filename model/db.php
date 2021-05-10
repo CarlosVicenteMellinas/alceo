@@ -16,6 +16,7 @@ class Conectar{
         $contrasenya = "C0nTr@s3ñ4";
         $bd = "AlceoBD";
         
+        
         $conexion=new mysqli($direccion, $usuario, $contrasenya, $bd);
         return $conexion;
     }
