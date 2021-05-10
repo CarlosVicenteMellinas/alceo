@@ -89,7 +89,7 @@
 							</section>
                         <section class="col-6 col-12-narrower">
 								<div class="box highlight">
-                                <p>Objetivo <?php echo $rutina['objetivo']; ?></p>
+                                <p>Objetivo <?php echo $objetivo; ?></p>
 								</div>
 							</section>
 						</div>
@@ -98,12 +98,20 @@
 				<section class="wrapper style1">
                 <div class="tabla"> 
                     <table id="ejercicios">
-                        <tr><td>Nombre</td><td>Series</td><td>Repeticiones</td><td>Descanso</td><td>Foto</td></tr>
+                        <tr><td>Nombre</td><td>Series</td><td>Repeticiones</td><td>Descanso</td><td>Dificultad</td></tr>
+						<?php
+						foreach ($ejercicios as $ejercicio) {
+							echo $ejercicio;
+						}
+						?>
                     </table>
                 </div>
 				<br>
 				<div class="divAlCentro">
-                    <input type="submit" name="deleteForm" id="deleteForm" value="Borrar Ejercicio">
+					<form action="/controllers/rutinas/vistaRutinasController.php" method="POST">
+						<input type="hidden" name="idBorrarRutina" id="idBorrarRutina" value=<?php echo $rutina['cod']; ?>>
+						<input type="submit" name="deleteForm" id="deleteForm" value="Borrar Ejercicio">
+					</form>
 				</div>
                 <?php
                 }
