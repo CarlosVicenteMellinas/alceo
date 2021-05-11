@@ -402,6 +402,14 @@ input, select, textarea {
 		border: none !important;
 	}
 
+	.multimedia-activo:hover {
+		cursor: pointer;
+		color: blue;
+	}
+
+	.multimedia-activo {
+		color: blue;
+	}
 	
 /* Pop up */
 #popup-wrapper {
