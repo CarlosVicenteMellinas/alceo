@@ -98,7 +98,7 @@
 				<section class="wrapper style1">
                 <div class="tabla"> 
                     <table id="ejercicios">
-                        <tr><td>Nombre</td><td>Series</td><td>Repeticiones</td><td>Descanso</td><td>Dificultad</td></tr>
+                        <tr><td>Nombre</td><td>Series</td><td>Repeticiones</td><td>Descanso</td><td>Dificultad</td><td>Multimedia</td></tr>
 						<?php
 						foreach ($ejercicios as $ejercicio) {
 							echo $ejercicio;
