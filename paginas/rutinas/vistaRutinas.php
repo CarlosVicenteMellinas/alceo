@@ -110,9 +110,20 @@
 				<div class="divAlCentro">
 					<form action="/controllers/rutinas/vistaRutinasController.php" method="POST">
 						<input type="hidden" name="idBorrarRutina" id="idBorrarRutina" value=<?php echo $rutina['cod']; ?>>
-						<input type="submit" name="deleteForm" id="deleteForm" value="Borrar Ejercicio">
+						<input type="submit" name="deleteForm" id="deleteForm" value="Borrar Rutina">
 					</form>
 				</div>
+				<div id="popup-wrapper">
+							<div id="popup">
+								<div id="popup-close">x</div>
+								<div id="popup-content">
+									<video id="videoEjercicio" controls>
+										Your browser does not support the video tag.
+									</video>
+									<img id="imagenEjercicio" src="" alt="Imagen del ejercicio" height="500">
+								</div>
+							</div>
+						</div>
                 <?php
                 }
                 ?>
@@ -190,7 +201,7 @@
 			<script src="/assets/js/breakpoints.min.js"></script>
 			<script src="/assets/js/util.js"></script>
 			<script src="/assets/js/main.js"></script>
-			<script src="/js/rutinas/rutinas.js"></script>
+			<script src="/js/rutinas/vistaRutinas.js"></script>
         
         <?php    
             } else {

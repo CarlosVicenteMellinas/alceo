@@ -16,7 +16,15 @@ function cargarRutina() {
     while ($results = mysqli_fetch_array($query)) {
         $query2 = mysqli_query($link, 'SELECT * FROM EJERCICIO WHERE cod='.$results['ejercicio']);
         $ejercicio = mysqli_fetch_array($query2);
-        array_push($ejercicios, '<tr><td>'.$ejercicio['nombre'].'</td><td>'.$results['series'].'</td><td>'.$results['repeticiones'].'</td><td>'.$results['descanso'].'</td><td>'.$ejercicio['dificultad'].'</td><td><i class="multimedia-activo far fa-image"></i>&nbsp&nbsp&nbsp<i class="far fa-file-video"></i></td></tr>');
+        if (!empty($ejercicio['foto']) && !empty($ejercicio['video'])) {
+            array_push($ejercicios, '<tr><td>'.$ejercicio['nombre'].'</td><td>'.$results['series'].'</td><td>'.$results['repeticiones'].'</td><td>'.$results['descanso'].'</td><td>'.$ejercicio['dificultad'].'</td><td><i class="multimedia-activo far fa-image" data-value="'.$ejercicio['foto'].'"></i>&nbsp&nbsp&nbsp<i class="multimedia-activo far fa-file-video" data-value="'.$ejercicio['video'].'"></i></td></tr>');
+        } else if (!empty($ejercicio['foto'])) {
+            array_push($ejercicios, '<tr><td>'.$ejercicio['nombre'].'</td><td>'.$results['series'].'</td><td>'.$results['repeticiones'].'</td><td>'.$results['descanso'].'</td><td>'.$ejercicio['dificultad'].'</td><td><i class="multimedia-activo far fa-image" data-value="'.$ejercicio['foto'].'"></i>&nbsp&nbsp&nbsp<i class="far fa-file-video"></i></td></tr>');
+        } else if (!empty($ejercicio['video'])) {
+            array_push($ejercicios, '<tr><td>'.$ejercicio['nombre'].'</td><td>'.$results['series'].'</td><td>'.$results['repeticiones'].'</td><td>'.$results['descanso'].'</td><td>'.$ejercicio['dificultad'].'</td><td><i class="far fa-image"></i>&nbsp&nbsp&nbsp<i class="multimedia-activo far fa-file-video" data-value="'.$ejercicio['video'].'"></i></td></tr>');
+        } else {
+            array_push($ejercicios, '<tr><td>'.$ejercicio['nombre'].'</td><td>'.$results['series'].'</td><td>'.$results['repeticiones'].'</td><td>'.$results['descanso'].'</td><td>'.$ejercicio['dificultad'].'</td><td><i class="far fa-image"></i>&nbsp&nbsp&nbsp<i class="far fa-file-video"></i></td></tr>');
+        }
     }
     mysqli_free_result($query);
 

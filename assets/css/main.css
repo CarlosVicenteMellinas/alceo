@@ -391,6 +391,11 @@ input, select, textarea {
 		border-left: solid black 1px;
 	}
 
+	#imagenEjercicio, #videoEjercicio {
+		display: none;
+		width: 100%;
+	}
+
 	.tituloEjer {
 		font-size: 1.3em;
 		font-weight: bold;
