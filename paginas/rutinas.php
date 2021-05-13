@@ -38,7 +38,6 @@
 					<nav id="nav">
 						<ul>
 							<li><a href="/index.php">Home</a></li>
-							<li><a href="#">Comunidad</a></li>
 							<li><a href="/controllers/areaUsuarioController.php">Área de usuario</a></li>
 							<li class="current"><a href="/controllers/rutinas/rutinasController.php">Rutinas</a></li>
 							<li><a href="/paginas/contacto.php">Contacto</a></li>
