@@ -3721,6 +3721,17 @@ input, select, textarea {
 				display: block;
 			}
 
+			#generarRutina {
+				width: auto;
+				
+			}
+
+			.box.highlight.r {
+				padding: 30px;
+				text-align: center;
+				padding-left: none !important;
+			}
+
 		/* Box */
 
 			.box.highlight {
