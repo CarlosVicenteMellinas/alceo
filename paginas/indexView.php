@@ -107,7 +107,7 @@
 										echo "<h3>".$plan1["nombre"]."</h3>";
 										echo "<h2>".$plan1["precio"]." €</h2>";
 									?>
-										<p>Duis neque nisi, dapibus sed mattis et quis, nibh. Sed et dapibus nisl amet mattis, sed a rutrum accumsan sed. Suspendisse eu.</p>
+										<p>Navega por la interfaz de toda nuestra página web y informate de las últimas noticias de nuestro foro.</p>
 									</div>
 								</div>
 							</section>
