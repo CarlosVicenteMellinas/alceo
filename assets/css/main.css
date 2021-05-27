@@ -2629,10 +2629,7 @@ input, select, textarea {
 			}
 
 
-			table {
-				display: block;
-				overflow-x: auto;
-			  }
+			
 
 		@media screen and (max-width: 736px) {
 
@@ -3764,6 +3761,11 @@ input, select, textarea {
 		#forms form {
 			padding-top: 30px;
 		}
+
+		table {
+			display: block;
+			overflow-x: auto;
+		  }
 
 		.tabla > h3 {
 			font-size: 30px !important;
