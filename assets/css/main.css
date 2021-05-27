@@ -240,6 +240,7 @@ input, select, textarea {
 
 	td {
 		padding: 5px !important;
+		border: 1px solid #5F906A;
 	}
 
 	p.correcto {
@@ -2626,6 +2627,12 @@ input, select, textarea {
 			ul.actions.fit.stacked {
 				width: 100%;
 			}
+
+
+			table {
+				display: block;
+				overflow-x: auto;
+			  }
 
 		@media screen and (max-width: 736px) {
 
