@@ -133,7 +133,7 @@
 										echo "<h3>".$plan3["nombre"]."</h3>";
 										echo "<h2>".$plan3["precio"]." €</h2>";
 									?>
-										<p¿>Quieres ir mas allá? Guarda hasta 4 rutinas con tu seguimiento de pesos y publica tus propios artículos en nuestra sección de blog y comenta en ellos.</p>
+										<p>¿Quieres ir mas allá? Guarda hasta 4 rutinas con tu seguimiento de pesos y publica tus propios artículos en nuestra sección de blog y comenta en ellos.</p>
 									</div>
 								</div>
 							</section>
