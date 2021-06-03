@@ -148,7 +148,7 @@
 					<!-- Copyright -->
 						<div class="copyright" style="margin: auto; text-align: center; padding-top:60px">
 							<ul class="menu">
-								<li>&copy; Alceo. All rights reserved</li><li>Design: <a href="#">Carlos Vicente Mellinas y Pascual Vicedo Guerra</a></li>
+								<li>&copy; Alceo. All rights reserved</li><li>Design: Carlos Vicente Mellinas y Pascual Vicedo Guerra</li>
 							</ul>
 						</div>
 
