@@ -472,6 +472,22 @@ input, select, textarea {
 		margin: auto !important;
 	}
 
+	#formBotonGenerador {
+		display: inline-block;
+		line-height: 2.75em;
+		min-width: 9em;
+		text-align: center;
+		text-decoration: none;
+		font-weight: 600;
+		letter-spacing: -0.025em
+	}
+
+	#formBotonGenerador > button {
+		padding: 0 1.5em;
+		font-size: 0.9em;
+		font-weight: 600;
+	}
+
 /* Container */
 
 	.container {

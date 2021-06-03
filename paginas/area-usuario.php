@@ -67,7 +67,19 @@
 				<section id="banner">
 					<header>
 						<h2>Alceo: <em>Tu sitio de confianza para guardar tus rutinas y ejercicios favoritos</em></h2>
-						<a href="/controllers/areaUsuarioController.php" class="button">Ir al generador</a>
+                        <?php
+                            if (!empty($_SESSION['usuario'])) {
+                        ?>
+						<form method="POST" action="/controllers/rutinas/rutinasController.php" id="formBotonGenerador">
+                            <button type="submit" name="generarRutina" id="generarRutina" class="button" value="Ir al generador">
+							Ir al generador
+							</button>
+                        </form>
+                        <?php
+                            } else {
+                        ?>
+                        <a href="/controllers/areaUsuarioController.php" class="button">Ir al generador</a>
+                        <?php } ?>
 					</header>
 				</section>
             <!-- Area Usuario -->
