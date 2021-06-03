@@ -49,7 +49,11 @@
 				<section id="banner">
 					<header>
 						<h2>Alceo: <em>Tu sitio de confianza para guardar tus rutinas y ejercicios favoritos</em></h2>
-						<a href="/controllers/areaUsuarioController.php" class="button">Ir al generador</a>
+						<form method="POST" action="/controllers/rutinas/rutinasController.php" id="formBotonGenerador">
+							<button type="submit" name="generarRutina" id="generarRutina" class="button" value="Ir al generador">
+							Ir al generador
+							</button>
+                        </form>
 					</header>
 				</section>
 
@@ -146,7 +150,7 @@
 					<!-- Copyright -->
 						<div class="copyright">
 							<ul class="menu">
-								<li>&copy; Alceo. All rights reserved</li><li>Design: <a href="#">Carlos Vicente Mellinas y Pascual Vicedo Guerra</a></li>
+								<li>&copy; Alceo. All rights reserved</li><li>Design: Carlos Vicente Mellinas y Pascual Vicedo Guerra</li>
 							</ul>
 						</div>
 
