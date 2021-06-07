@@ -52,7 +52,7 @@
                 <div>
                     <h2 class="tituloForm">Material</h2>
                     <div id="alter">
-                        <form id="selectForm" action="/controllers/material/materialDeleteController.php" method="POST">
+                        <form style="text-align:center" id="selectForm" action="/controllers/material/materialDeleteController.php" method="POST">
                             <label for="">Selecciona un material:</label>
                             <select id="material" onchange='<?php echo 'setID('.json_encode($material).')'; ?>'>
                                 <option disabled selected>No seleccionado</option>
