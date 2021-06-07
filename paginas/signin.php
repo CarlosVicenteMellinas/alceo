@@ -134,7 +134,7 @@
                         </section>
                         <section class="col-6 col-12-narrower">
                             <h3>CONTÁCTANOS</h3>
-                            <form>
+                            <form action="/controllers/contactoController.php" method="POST">
                                 <div class="row gtr-50">
                                     <div class="col-6 col-12-mobilep">
                                         <input type="text" name="name" id="name" placeholder="Name" />

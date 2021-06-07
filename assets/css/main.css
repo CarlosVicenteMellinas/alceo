@@ -488,6 +488,16 @@ input, select, textarea {
 		font-weight: 600;
 	}
 
+	.respuestaMail {
+		margin-top: 2em;
+		text-align: center;
+		background-color: white;
+		padding-top: 2em;
+		padding-bottom: 1em;
+		font-size: 1.1em;
+		font-weight: bold;
+	}
+
 /* Container */
 
 	.container {

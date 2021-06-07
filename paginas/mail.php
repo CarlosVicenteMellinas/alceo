@@ -14,7 +14,9 @@
 	</head>
 	<body class="is-preload">
 		<?php
-	    session_start();
+        if (session_status() === PHP_SESSION_NONE) {
+            session_start();
+        }
         $inactividad = 3600;
         if(!empty($_SESSION["timeout"])){
             $sessionTTL = time() - $_SESSION["timeout"];
@@ -22,12 +24,13 @@
                 session_destroy();
                 header("Location: /paginas/area-usuario.php");
             }
-        } 
+        }
+        if (!empty($respuesta)) {
+        
         ?>
 		<div id="page-wrapper">
 
-			<!-- Header -->
-				<div id="header">
+        <div id="header">
 				<!-- Logo -->
 				<a href="/index.php" id="logo"><img src="/images/logo-alceo-completo.png"  width="20%"></a>
 
@@ -67,74 +70,11 @@
                         <?php } ?>
 					</header>
 				</section>
-
-			<!-- Highlights -->
-				<section class="wrapper style1">
-					<div class="container">
-						<div class="row gtr-200">
-							<section class="col-4 col-12-narrower">
-							<h3>Teléfono:</h3>
-								<p><a href="tel:+34656698565">+34 656 698 565</a></p>
-								<h3>Horario:</h3>
-								<p>De 08:00 a 14:00 y de 16:00 a 18:00</p>
-								<h3>Email:</h3>
-								<p><a href="mailto:info@alceo.com">info@alceo.com</a></p>
-							</section>
-							<section class="col-8 col-12-narrower">
-							<form method="POST" action="/controllers/contactoController.php">
-									<div class="row gtr-50">
-										<div class="col-6 col-12-mobilep">
-											<?php
-											if (!empty($nombre)) {?>
-											<input type="text" name="nombre" id="nombre" placeholder="Nombre" value=<?php echo '"'.$nombre.'"'; ?> required/>
-											<?php
-											} else {?>
-											<input type="text" name="nombre" id="nombre" placeholder="Nombre" required/>
-											<?php
-											}?>
-										</div>
-										<div class="col-6 col-12-mobilep">
-											<?php
-											if (!empty($correo)) {?>
-											<input type="email" name="correo" id="email" placeholder="Email" value=<?php echo '"'.$correo.'"'; ?> required/>
-											<?php
-											} else {?>
-											<input type="email" name="correo" id="email" placeholder="Email" required/>
-											<?php
-											}?>
-										</div>
-										<div class="col-6 col-12-mobilep">
-											<input type="text" name="telefono" id="telefono" placeholder="Teléfono" required/>
-										</div>
-										<div class="col-6 col-12-mobilep">
-											<input type="text" name="asunto" id="asunto" placeholder="Asunto" required/>
-										</div>
-										<div class="col-12">
-											<?php
-											if (!empty($mensaje)) {?>
-											<textarea name="mensaje" id="mensaje" placeholder="Mensaje" rows="5" required><?php echo $mensaje; ?></textarea>
-											<?php
-											} else {?>
-											<textarea name="mensaje" id="mensaje" placeholder="Mensaje" rows="5" required></textarea>
-											<?php
-											}?>
-										</div>
-										<div class="col-12">
-												<input type="submit" name="submit_contacto" id="submit_contacto" value="ENVIAR" required/>
-										</div>
-									</div>
-								</form>
-							</section>
-						</div>
-					</div>
-				</section>
-				<section class="col-1 col-12-narrower">
-							<h2 class="cabecera_mapa">Contáctanos:</h2>
-							<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12493.5133750654!2d-0.7795171!3d38.4789109!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x157a37c112acbc6a!2sI.E.S.%20Poeta%20Paco%20Moll%C3%A0!5e0!3m2!1ses!2ses!4v1618332409301!5m2!1ses!2ses" 
-								width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-						</div>
-				</section>
-
+                <div class="respuestaMail">
+                    <?php 
+                        echo $respuesta;
+                    ?>
+                </div>
 			<!-- Footer -->
 				<div id="footer">
 					<div class="container">
@@ -142,10 +82,10 @@
 							<section class="col-3 col-6-narrower col-12-mobilep">
 								<h3>MENÚ</h3>
 								<ul class="links">
-									<li><a href="../index.php">Home</a></li>
-									<li><a href="#">Comunidad</a></li>
-									<li><a href="../controllers/areaUsuarioController.php">Área de usuario</a></li>
-									<li class="current"><a href="/paginas/contacto.php">Contacto</a></li>
+									<li><a href="/index.php">HOME</a></li>
+									<li><a href="#">COMUNIDAD</a></li>
+									<li><a href="/controllers/areaUsuarioController.php">ÁREA DE USUARIO</a></li>
+									<li><a href="/contacto.php">>CONTACTO</a></li>
 								</ul>
 							</section>
 							<section class="col-3 col-6-narrower col-12-mobilep">
@@ -172,7 +112,7 @@
 										</div>
 										<div class="col-12">
 											<ul class="actions">
-												<li><input type="submit" id="enviar" name="enviar" class="button alt" value="Send Message" /></li>
+												<li><input type="submit" class="button alt" value="Send Message" /></li>
 											</ul>
 										</div>
 									</div>
@@ -180,7 +120,6 @@
 							</section>
 						</div>
 					</div>
-
 					<!-- Icons -->
 						<ul class="icons">
 							<li><a href="https://www.instagram.com/" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
@@ -199,6 +138,18 @@
 				</div>
 
 		</div>
+        <?php
+        } else {
+
+        ?>
+            <div>
+                <h2 class="error">Error inesperado</h2>
+                <a href="/index.php">Vuelta a la pagina principal</a>
+            </div>
+        <?php 
+
+        }
+        ?>
 
 		<!-- Scripts -->
 			<script src="/assets/js/jquery.min.js"></script>
