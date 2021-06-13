@@ -3637,10 +3637,12 @@ input, select, textarea {
 
 
 				#gm, #mat {
+					display: inherit;
 					margin-right: 1.5em;
 				}
 
 				input[type='text'].selectGM, input[type='text'].selectMaterial {
+					width: 100%;
 					background-color: white;
 				}
 
