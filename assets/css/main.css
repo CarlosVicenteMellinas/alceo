@@ -468,7 +468,7 @@ input, select, textarea {
 	margin-bottom: 20px !important;
 	}
 
-	#selectForm #ejercicio, #mat .selectMaterial {
+	#selectForm #ejercicio, #mat input[type='text'].selectMaterial {
 		margin: 0;
 	}
 
