@@ -92,7 +92,7 @@
 							</section>
                         <section class="col-6 col-12-narrower">
 								<div class="box highlight">
-                                <p>Objetivo <?php echo $objetivo; ?></p>
+                                <p>Objetivo: <?php echo $objetivo; ?></p>
 								</div>
 							</section>
 						</div>
