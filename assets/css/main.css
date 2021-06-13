@@ -460,12 +460,16 @@ input, select, textarea {
 	  text-align: center;
   }
 
-	#repeticiones, #series, #series, #gm, #mat {
+	#ejercicio, #repeticiones, #series, #series, #gm, #mat {
 	margin: auto;
 	}
 
 	.item-popup {
 	margin-bottom: 20px !important;
+	}
+
+	.selectMaterial {
+		margin: auto !important;
 	}
 
 	#formBotonGenerador {
@@ -3633,17 +3637,6 @@ input, select, textarea {
 				input[type="password"],
 				input[type="email"] {
 					line-height: 1em;
-				}
-
-
-				#gm, #mat {
-					display: inherit;
-					margin-right: 1.5em;
-				}
-
-				input[type='text'].selectGM, input[type='text'].selectMaterial {
-					width: 100%;
-					background-color: white;
 				}
 
 		/* Menu */
