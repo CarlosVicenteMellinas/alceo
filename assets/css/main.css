@@ -469,7 +469,7 @@ input, select, textarea {
 	}
 
 	#selectForm #ejercicio, #mat input[type='text'].selectMaterial {
-		margin: 0;
+		margin: 0 !important;
 	}
 
 	.selectMaterial {
