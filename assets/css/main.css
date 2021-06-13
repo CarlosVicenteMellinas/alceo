@@ -443,7 +443,7 @@ input, select, textarea {
 	margin: 3% auto;
 	padding: 20px;
 	position: relative;
-	max-height: calc(150vh - 300px);
+	max-height: calc(125vh - 300px);
 	overflow-y: auto;
 	border-radius: 10px;
   }
