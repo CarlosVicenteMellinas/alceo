@@ -472,6 +472,10 @@ input, select, textarea {
 		margin: 0 !important;
 	}
 
+	#delete form select {
+		margin: auto !important;
+	}
+
 	.selectMaterial {
 		margin: auto !important;
 	}
