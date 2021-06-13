@@ -3635,6 +3635,15 @@ input, select, textarea {
 					line-height: 1em;
 				}
 
+
+				#gm, #mat {
+					margin-right: 1.5em;
+				}
+
+				input[type='text'].selectGM, input[type='text'].selectMaterial {
+					background-color: white;
+				}
+
 		/* Menu */
 
 			ul.menu li {
