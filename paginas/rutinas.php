@@ -71,7 +71,7 @@
 							<section class="col-4 col-12-narrower" >
 								<form action="/controllers/rutinas/vistaRutinasController.php" method="POST" class="botonRutina">								
 									<div class="box highlight r">
-									<i class="ocultar far fa-dumbbell"></i>
+									<i class="ocultar fas fa-dumbbell"></i>
 										<h3><?php echo $rutina[1];?></h3>
 										<input type="hidden" name="idRutina" value=<?php echo '"'.$rutina[0].'"';?>>
 									</div>
