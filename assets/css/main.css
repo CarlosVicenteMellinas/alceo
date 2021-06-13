@@ -468,6 +468,10 @@ input, select, textarea {
 	margin-bottom: 20px !important;
 	}
 
+	#ddmaterial .selectMaterial {
+		margin: 0;
+	}
+
 	.selectMaterial {
 		margin: auto !important;
 	}
