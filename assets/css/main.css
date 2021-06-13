@@ -460,16 +460,12 @@ input, select, textarea {
 	  text-align: center;
   }
 
-	#ejercicio, #repeticiones, #series, #series, #gm, #mat {
+	#repeticiones, #series, #series, #gm, #mat {
 	margin: auto;
 	}
 
 	.item-popup {
 	margin-bottom: 20px !important;
-	}
-
-	.selectMaterial {
-		margin: auto !important;
 	}
 
 	#formBotonGenerador {
