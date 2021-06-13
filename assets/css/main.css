@@ -220,6 +220,7 @@ input, select, textarea {
 	.tabla {
 		padding-top: 40px;
 		margin: auto;
+		margin-bottom: 2em;
 	}
 
 	.tabla > h3 {
