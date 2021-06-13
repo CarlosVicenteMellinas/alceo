@@ -51,7 +51,7 @@
             <!-- Eliminacion -->
                 <div>
                     <h2 class="tituloForm">Objetivo</h2>
-                    <div id="alter">
+                    <div id="delete">
                         <form style="text-align:center" id="selectForm" action="/controllers/objetivo/objetivoDeleteController.php" method="POST">
                             <label for="">Selecciona un objetivo:</label>
                             <select id="objetivo" onchange='<?php echo 'setID('.json_encode($objetivo).')'; ?>'>

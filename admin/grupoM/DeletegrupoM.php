@@ -51,7 +51,7 @@
             <!-- Eliminacion -->
                 <div>
                     <h2 class="tituloForm">Grupos Musculares</h2>
-                    <div id="alter">
+                    <div id="delete">
                         <form style="text-align:center" id="selectForm" action="/controllers/grupoM/grupoMDeleteController.php" method="POST">
                             <label for="">Selecciona un grupo muscular:</label>
                             <select id="grupoM" onchange='<?php echo 'setID('.json_encode($grupoM).')'; ?>'>
